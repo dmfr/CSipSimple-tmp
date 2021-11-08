@@ -1,0 +1,26 @@
+{
+    "logs": [
+        {
+            "outputFile": "/storage/Development/CSipSimple-new/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-ar/values-ar.xml",
+            "map": [
+                {
+                    "source": "/storage/Development/CSipSimple-new/app/src/main/res/values-ar/wizard_sipme_strings.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "2",
+                        "startOffsets": "53",
+                        "endColumns": "87",
+                        "endOffsets": "138"
+                    },
+                    "to": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "89",
+                        "endOffsets": "140"
+                    }
+                }
+            ]
+        }
+    ]
+}

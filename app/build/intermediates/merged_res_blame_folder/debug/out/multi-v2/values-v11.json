@@ -1,0 +1,43 @@
+{
+    "logs": [
+        {
+            "outputFile": "/storage/Development/CSipSimple-new/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-v11/values-v11.xml",
+            "map": [
+                {
+                    "source": "/storage/Development/CSipSimple-new/app/src/main/res/values-v11/bools.xml",
+                    "from": {
+                        "startLines": "4,3",
+                        "startColumns": "4,4",
+                        "startOffsets": "98,56",
+                        "endColumns": "47,41",
+                        "endOffsets": "141,93"
+                    },
+                    "to": {
+                        "startLines": "2,3",
+                        "startColumns": "4,4",
+                        "startOffsets": "55,103",
+                        "endColumns": "47,41",
+                        "endOffsets": "98,140"
+                    }
+                },
+                {
+                    "source": "/storage/Development/CSipSimple-new/app/src/main/res/values-v11/style.xml",
+                    "from": {
+                        "startLines": "4,8,6",
+                        "startColumns": "4,4,4",
+                        "startOffsets": "116,279,187",
+                        "endColumns": "69,93,90",
+                        "endOffsets": "181,368,273"
+                    },
+                    "to": {
+                        "startLines": "4,5,6",
+                        "startColumns": "4,4,4",
+                        "startOffsets": "145,214,307",
+                        "endColumns": "68,92,89",
+                        "endOffsets": "209,302,392"
+                    }
+                }
+            ]
+        }
+    ]
+}

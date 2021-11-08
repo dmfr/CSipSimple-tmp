@@ -1,0 +1,14 @@
+Index: pjsip/sources/pjmedia/src/pjmedia/stream.c
+===================================================================
+--- pjsip.orig/sources/pjmedia/src/pjmedia/stream.c    2014-06-22 14:49:04.188287832 +0200
++++ pjsip/sources/pjmedia/src/pjmedia/stream.c 2014-06-22 14:49:04.184287475 +0200
+@@ -2264,7 +2264,8 @@
+ 
+ 
+     /* Set up jitter buffer */
+-    pjmedia_jbuf_set_adaptive( stream->jb, jb_init, jb_min_pre, jb_max_pre);
++    //pjmedia_jbuf_set_adaptive( stream->jb, jb_init, jb_min_pre, jb_max_pre);
++    pjmedia_jbuf_set_fixed( stream->jb, jb_init );
+ 
+     /* Create decoder channel: */
+ 

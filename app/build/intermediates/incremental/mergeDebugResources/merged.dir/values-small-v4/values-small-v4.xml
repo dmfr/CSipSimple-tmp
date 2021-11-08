@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <bool name="menu_in_bar">false</bool>
+    <dimen name="incall_bottom_bar_height">36dip</dimen>
+    <integer name="dialpad_layout_weight_autocomplete_list">30</integer>
+    <style name="TextAppearance.SlidingTabActive" parent="@android:style/TextAppearance">
+        <item name="android:textColor">@android:color/black</item>
+        <item name="android:textSize">22sp</item>
+    </style>
+</resources>

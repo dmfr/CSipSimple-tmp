@@ -1,0 +1,1405 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:ns1="urn:oasis:names:tc:xliff:document:1.2" xmlns:ns2="http://schemas.android.com/tools">
+    <string-array name="acc_stun_use_choices">
+        <item>@string/default_str</item>
+        <item>@string/disabled</item>
+    </string-array>
+    <string-array name="acc_stun_use_values">
+        <item>-1</item>
+        <item>0</item>
+    </string-array>
+    <string-array name="answer_choices">
+        <item>@string/ignore_call</item>
+        <item>@string/take_call</item>
+    </string-array>
+    <string-array name="audio_implementation_choices">
+        <item>Java</item>
+    </string-array>
+    <string-array name="audio_implementation_values">
+        <item>0</item>
+    </string-array>
+    <string-array name="auto_on_off_choices">
+        <item>@string/default_str</item>
+        <item>@string/disabled</item>
+        <item>@string/force</item>
+    </string-array>
+    <string-array name="auto_on_off_values">
+        <item>-1</item>
+        <item>0</item>
+        <item>1</item>
+    </string-array>
+    <string-array name="band_types">
+        <item>nb</item>
+        <item>wb</item>
+    </string-array>
+    <string-array name="band_types_name">
+        <item>@string/slow</item>
+        <item>@string/fast</item>
+    </string-array>
+    <string-array name="clock_rate_choices">
+        <item>@string/auto</item>
+        <item>8KHz</item>
+        <item>16KHz</item>
+        <item>32KHz</item>
+        <item>44.1KHz</item>
+	<item>48kHz</item>
+    </string-array>
+    <string-array name="clock_rate_values">
+        <item>0</item>
+        <item>8000</item>
+        <item>16000</item>
+        <item>32000</item>
+        <item>44100</item>
+	<item>48000</item>
+    </string-array>
+    <string-array name="contact_rewrite_method_choices">
+        <item>@string/legacy</item>
+        <item>@string/normal</item>
+    </string-array>
+    <string-array name="contact_rewrite_method_values">
+        <item>1</item>
+        <item>2</item>
+    </string-array>
+    <string-array name="data_type_choices">
+        <item>@string/plain_password</item>
+        <item>@string/data_digest</item>
+        <!-- <item>Ext aka</item> -->
+    </string-array>
+    <string-array name="data_type_values">
+        <item>0</item>
+        <item>1</item>
+        <!-- <item>16</item> -->
+    </string-array>
+    <string-array name="default_smiley_names">
+        <item>Happy</item> <!-- 0: :-) -->
+        <item>Sad</item> <!-- 1: :-( -->
+        <item>Winking</item> <!-- 2: ;-) -->
+        <item>Tongue sticking out</item> <!-- 3: :-P -->
+        <item>Surprised</item> <!-- 4: =-O -->
+        <item>Kissing</item> <!-- 5: :-* -->
+        <item>Yelling</item> <!-- 6: :O -->
+        <item>Cool</item> <!-- 7: B-) -->
+        <item>Money mouth</item> <!-- 8: :-$ -->
+        <item>Foot in mouth</item> <!-- 9: :-! -->
+        <item>Embarrassed</item> <!-- 10: :-[ -->
+        <item>Angel</item> <!-- 11: O:-) -->
+        <item>Undecided</item> <!-- 12: :-\\ -->
+        <item>Crying</item> <!-- 13: :\'( -->
+        <item>Lips are sealed</item> <!-- 14: :-X -->
+        <item>Laughing</item> <!-- 15: :-D -->
+        <item>Confused</item> <!-- 16: o_O -->
+    </string-array>
+    <string-array name="default_smiley_texts">
+        <item>:-)</item> <!-- 0: Happy -->
+        <item>:-(</item> <!-- 1: Sad -->
+        <item>;-)</item> <!-- 2: Winking -->
+        <item>:-P</item> <!-- 3: Tongue sticking out -->
+        <item>=-O</item> <!-- 4: Surprised -->
+        <item>:-*</item> <!-- 5: Kissing -->
+        <item>:O</item> <!-- 6: Yelling -->
+        <item>B-)</item> <!-- 7: Cool -->
+        <item>:-$</item> <!-- 8: Money mouth -->
+        <item>:-!</item> <!-- 9: Foot in mouth -->
+        <item>:-[</item> <!-- 10: Embarrassed -->
+        <item>O:-)</item> <!-- 11: Angel -->
+        <item>:-\\</item> <!-- 12: Undecided -->
+        <item>:\'(</item> <!-- 13: Crying -->
+        <item>:-X</item> <!-- 14: Lips are sealed -->
+        <item>:-D</item> <!-- 15: Laughing -->
+        <item>o_O</item> <!-- 16: Confused -->
+    </string-array>
+    <string-array name="dial_press_mode_choices">
+        <item>@string/use_android_setting</item>
+        <item>@string/force</item>
+        <item>@string/prevent</item>
+    </string-array>
+    <string-array name="dial_press_mode_values">
+        <item>0</item> <!-- Auto -->
+        <item>1</item> <!-- Force -->
+        <item>2</item> <!-- Prevent -->
+    </string-array>
+    <string-array name="dtmf_mode_choices">
+        <item>@string/auto</item>
+        <item>@string/rtp</item>
+        <item>@string/in_band</item>
+        <item>@string/sip_info</item>
+    </string-array>
+    <string-array name="dtmf_mode_values">
+        <item>0</item> <!-- Auto -->
+        <item>1</item> <!-- RTP -->
+        <item>2</item> <!-- In band emulation -->
+        <item>3</item> <!-- SIP INFO -->
+    </string-array>
+    <string-array name="echo_mode_choices">
+        <item>@string/auto</item>
+        <item>@string/speex</item>
+        <item>@string/simple</item>
+        <item>@string/webrtc</item>
+    </string-array>
+    <string-array name="echo_mode_values">
+        <item>0</item> <!-- Default -->
+        <item>1</item> <!-- Speex -->
+        <item>2</item> <!-- Simple -->
+        <item>3</item> <!-- WebRTC -->
+    </string-array>
+    <string-array name="filters_action">
+        <item>@string/cant_call</item>
+        <item>@string/rewrite</item>
+        <item>@string/stop_processing</item>
+        <item>@string/direct_call</item>
+        <item>@string/auto_answer</item>
+    </string-array>
+    <string-array name="filters_type">
+        <item>@string/starts_with</item>
+        <item>@string/ends_with</item>
+        <item>@string/contains</item>
+        <item>@string/all</item>
+        <item>@string/has_exactly_n_digits</item>
+        <item>@string/has_more_than_n_digits</item>
+        <item>@string/is_exactly</item>
+        <item>@string/custom_regexp</item>
+        <item>@string/bluetooth</item>
+        <item>@string/call_info_header</item>
+    </string-array>
+    <string-array name="gsm_integration_type_choices">
+        <item>@string/auto</item>
+        <item>@string/force</item>
+        <item>@string/prevent</item>
+    </string-array>
+    <string-array name="gsm_integration_type_values">
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
+    </string-array>
+    <string-array name="h264_level_choices">
+        <item>@string/auto</item>
+        <item>1.0</item>
+        <item>1b</item>
+        <item>1.1</item>
+        <item>1.2</item>
+        <item>1.3</item>
+        <item>2.0</item>
+        <item>2.1</item>
+        <item>2.2</item>
+        <item>3.0</item>
+        <item>3.1</item>
+        <item>3.2</item>
+        <item>4.0</item>
+        <item>4.1</item>
+        <item>4.2</item>
+        <item>5.0</item>
+        <item>5.1</item>
+        <item>5.2</item>
+    </string-array>
+    <string-array name="h264_level_values">
+        <item>0</item>
+        <item>10</item>
+        <item>9</item>
+        <item>11</item>
+        <item>12</item>
+        <item>13</item>
+        <item>20</item>
+        <item>21</item>
+        <item>22</item>
+        <item>30</item>
+        <item>31</item>
+        <item>32</item>
+        <item>40</item>
+        <item>41</item>
+        <item>42</item>
+        <item>50</item>
+        <item>51</item>
+        <item>52</item>
+    </string-array>
+    <string-array name="h264_profile_choices">
+        <item>Baseline</item>
+        <item>Mainline</item>
+    </string-array>
+    <string-array name="h264_profile_values">
+        <item>66</item>
+        <item>77</item>
+    </string-array>
+    <array name="lockscreen_answer_choices">
+        <item>@string/take_call</item>
+        <item>@null</item>
+        <item>@string/ignore_call</item>
+        <item>@null</item>
+    </array>
+    <array name="lockscreen_direction_descriptions">
+        <item>@string/description_direction_right</item>
+        <item>@string/description_direction_up</item>
+        <item>@string/description_direction_left</item>
+        <item>@null</item>
+    </array>
+    <array name="lockscreen_targets_when_incall">
+        <item>@drawable/ic_lockscreen_answer</item>
+        <item>@null</item>
+        <item>@drawable/ic_lockscreen_decline</item>
+        <item>@null</item>
+    </array>
+    <string-array name="micro_source_choices">
+        <item>DEFAULT</item>
+        <item>MIC</item>
+        <item>VOICE_CALL</item>
+        <item>VOICE_COMMUNICATION</item>
+        <item>VOICE_CALL_UP</item>
+        <item>VOICE_CALL_DOWN</item>
+        <item>CAMCORDER</item>
+        <item>VOICE_RECOGNITION</item>
+    </string-array>
+    <string-array name="micro_source_values">
+        <item>0</item>
+        <item>1</item>
+        <item>4</item>
+        <item>7</item>
+        <item>2</item>
+        <item>3</item>
+        <item>5</item>
+        <item>6</item>
+    </string-array>
+    <string-array name="presence_status_names">
+        <item>@string/online</item>
+        <item>@string/offline</item>
+    </string-array>
+    <string-array name="reg_use_proxy_choices">
+        <item>@string/no_proxy</item>
+        <item>@string/outbound_proxies</item>
+        <item>@string/accounts_proxies</item>
+        <item>@string/all</item>
+    </string-array>
+    <string-array name="reg_use_proxy_values">
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+    </string-array>
+    <string-array name="replace_type">
+        <item>@string/prefix_by</item>
+        <item>@string/suffix_with</item>
+        <item>@string/replace_match_by</item>
+        <item>@string/replace_all_by</item>
+        <item>@string/custom_regexp</item>
+    </string-array>
+    <string-array name="scheme_choices">
+        <item>@string/digest</item>
+        <item>@string/pgp</item>
+    </string-array>
+    <string-array name="scheme_values">
+        <item>Digest</item>
+        <item>PGP</item>
+    </string-array>
+    <string-array name="sip_audio_mode_choices">
+        <item>NORMAL</item>
+        <item>RINGTONE</item>
+        <item>IN_CALL</item>
+        <item>IN_COMMUNICATION</item>
+    </string-array>
+    <string-array name="sip_audio_mode_values">
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+    </string-array>
+    <string-array name="sip_data_sources">
+        <item>@string/uri_nbr</item>
+        <item>@string/uri_im</item>
+    </string-array>
+    <string-array name="tls_method_choices">
+        <item>@string/auto</item>
+        <item>TLSv1</item>
+        <item>TLSv1.1</item>
+        <item>TLSv1.2</item>
+        <item>SSLv2</item>
+        <item>SSL3</item>
+        <item>SSL23</item>
+    </string-array>
+    <string-array name="tls_method_values">
+        <item>0</item> <!-- Auto -->
+        <item>31</item> <!-- TLSv1 -->
+        <item>32</item> <!-- TLSv1.1 -->
+        <item>33</item> <!-- TLSv1.2 -->
+        <item>20</item> <!-- SSLv2 -->
+        <item>30</item> <!-- SSL3 -->
+        <item>23</item> <!-- SSL23 -->
+    </string-array>
+    <string-array name="transport_choices">
+        <item>@string/auto</item>
+        <item>UDP</item>
+        <item>TCP</item>
+        <item>TLS</item>
+    </string-array>
+    <string-array name="transport_values">
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+    </string-array>
+    <string-array name="unlocker_type_choices">
+        <item>@string/use_android_setting</item>
+        <item>@string/slider</item>
+        <item>@string/buttons</item>
+        <item>@string/glowpad</item>
+    </string-array>
+    <string-array name="unlocker_type_values">
+        <item>0</item> <!-- Auto -->
+        <item>1</item> <!-- Slider -->
+        <item>2</item> <!-- Buttons -->
+        <item>3</item> <!-- GlowPad -->
+    </string-array>
+    <string-array name="uri_scheme_choices">
+        <item>sip</item>
+        <item>sips</item>
+        <item>tel</item>
+    </string-array>
+    <string-array name="uri_scheme_values">
+        <item>sip</item>
+        <item>sips</item>
+        <item>tel</item>
+    </string-array>
+    <string-array name="use_srtp_acc_choices">
+        <item>@string/default_str</item>
+        <item>@string/disabled</item>
+        <item>@string/optional</item>
+        <item>@string/mandatory</item>
+    </string-array>
+    <string-array name="use_srtp_acc_values">
+        <item>-1</item>
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
+    </string-array>
+    <string-array name="use_srtp_choices">
+        <item>@string/disabled</item>
+        <item>@string/optional</item>
+        <item>@string/mandatory</item>
+    </string-array>
+    <string-array name="use_srtp_values">
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
+    </string-array>
+    <string-array name="use_zrtp_acc_choices">
+        <item>@string/default_str</item>
+        <item>@string/no_zrtp</item>
+        <item>@string/create_zrtp</item>
+    </string-array>
+    <string-array name="use_zrtp_acc_values">
+        <item>-1</item>
+        <item>0</item>
+        <item>1</item>
+    </string-array>
+    <string-array name="use_zrtp_choices">
+        <item>@string/no_zrtp</item>
+        <item>@string/create_zrtp</item>
+    </string-array>
+    <string-array name="use_zrtp_values">
+        <item>1</item>
+        <item>2</item>
+    </string-array>
+    <attr format="reference|color" name="background"/>
+    <attr format="reference|color" name="backgroundSplit"/>
+    <attr format="reference" name="divider"/>
+    <attr name="gravity">
+
+        <!-- Push object to the top of its container, not changing its size. -->
+        <flag name="top" value="0x30"/>
+        <!-- Push object to the bottom of its container, not changing its size. -->
+        <flag name="bottom" value="0x50"/>
+        <!-- Push object to the left of its container, not changing its size. -->
+        <flag name="left" value="0x03"/>
+        <!-- Push object to the right of its container, not changing its size. -->
+        <flag name="right" value="0x05"/>
+        <!-- Place object in the vertical center of its container, not changing its size. -->
+        <flag name="center_vertical" value="0x10"/>
+        <!-- Grow the vertical size of the object if needed so it completely fills its container. -->
+        <flag name="fill_vertical" value="0x70"/>
+        <!-- Place object in the horizontal center of its container, not changing its size. -->
+        <flag name="center_horizontal" value="0x01"/>
+        <!-- Grow the horizontal size of the object if needed so it completely fills its container. -->
+        <flag name="fill_horizontal" value="0x07"/>
+        <!-- Place the object in the center of its container in both the vertical and horizontal axis, not changing its size. -->
+        <flag name="center" value="0x11"/>
+        <!-- Grow the horizontal and vertical size of the object if needed so it completely fills its container. -->
+        <flag name="fill" value="0x77"/>
+        <!--
+Additional option that can be set to have the top and/or bottom edges of
+the child clipped to its container's bounds.
+The clip will be based on the vertical gravity: a top gravity will clip the bottom
+edge, a bottom gravity will clip the top edge, and neither will clip both edges.
+        -->
+        <flag name="clip_vertical" value="0x80"/>
+        <!--
+Additional option that can be set to have the left and/or right edges of
+the child clipped to its container's bounds.
+The clip will be based on the horizontal gravity: a left gravity will clip the right
+edge, a right gravity will clip the left edge, and neither will clip both edges.
+        -->
+        <flag name="clip_horizontal" value="0x08"/>
+        <!-- Push object to the beginning of its container, not changing its size. -->
+        <flag name="start" value="0x00800003"/>
+        <!-- Push object to the end of its container, not changing its size. -->
+        <flag name="end" value="0x00800005"/>
+    </attr>
+    <attr format="dimension" name="height"/>
+    <attr format="reference" name="subtitleTextStyle"/>
+    <attr format="reference" name="titleTextStyle"/>
+    <bool name="menu_in_bar">true</bool>
+    <bool name="use_cupcake_prefs">true</bool>
+    <bool name="use_dual_panes">false</bool>
+    <bool name="use_hc_prefs">false</bool>
+    <color name="account_error">#FFFF0F00</color>
+    <color name="account_inactive">#FF646464</color>
+    <color name="account_unregistered">#FFFFC200</color>
+    <color name="account_valid">#FF84E300</color>
+    <dimen name="call_detail_button_spacing">2dip</dimen>
+    <dimen name="call_detail_contact_name_margin">24dip</dimen>
+    <dimen name="call_log_call_action_size">32dip</dimen>
+    <dimen name="call_log_call_action_width">52dip</dimen>
+    <dimen name="call_log_icon_margin">4dip</dimen>
+    <dimen name="call_log_indent_margin">24dip</dimen>
+    <dimen name="call_log_inner_margin">8dip</dimen>
+    <dimen name="call_log_list_contact_photo_size">64dip</dimen>
+    <dimen name="call_log_list_item_height">56dip</dimen>
+    <dimen name="call_log_outer_margin">0dip</dimen>
+    <dimen name="dialpad_digits_text_size">35sp</dimen>
+    <dimen name="dialpad_vertical_margin">2dip</dimen>
+    <dimen name="expanded_height">128dip</dimen>
+    <dimen name="glowpadview_glow_radius">75dip</dimen>
+    <dimen name="glowpadview_inner_radius">15dip</dimen>
+    <dimen name="glowpadview_snap_margin">40dip</dimen>
+    <dimen name="glowpadview_target_placement_radius">135dip</dimen>
+    <dimen name="incall_bottom_bar_height">80dip</dimen>
+    <dimen name="incoming_call_widget_asset_margin">28dp</dimen>
+    <dimen name="incoming_call_widget_circle_size">94dp</dimen>
+    <dimen name="keyguard_lockscreen_outerring_diameter">270dp</dimen>
+    <dimen name="message_contact_photo_size">54dip</dimen>
+    <dimen name="message_item_text_padding_left_right">8dip</dimen>
+    <dimen name="message_item_text_padding_top">5dip</dimen>
+    <dimen name="normal_height">64dip</dimen>
+    <dimen name="right_panel_fading_edge">50px</dimen>
+    <dimen name="right_panel_margin_left">0dip</dimen>
+    <dimen name="right_panel_margin_vertical">0dip</dimen>
+    <item name="menu_accbtn_accounts" type="id"/>
+    <item name="menu_accbtn_extras" type="id"/>
+    <integer name="dialpad_layout_weight_additional_buttons">15</integer>
+    <integer name="dialpad_layout_weight_autocomplete_list">40</integer>
+    <integer name="dialpad_layout_weight_dialpad">65</integer>
+    <integer name="dialpad_layout_weight_digits">20</integer>
+    <item name="dialpad_compose" type="layout">@layout/dialpad_compose_3x5</item>
+    <item name="sip_home" type="layout">@layout/sip_home_one_pane</item>
+    <string name="accounts">Accounts</string>
+    <string name="accounts_proxies">Accounts proxies</string>
+    <string name="acct_expired">Registration Expired</string>
+    <string name="acct_inactive">Inactive</string>
+    <string name="acct_regerror">Error while registering</string>
+    <string name="acct_regfailed">Register Failed - Check your Configuration</string>
+    <string name="acct_registered">Registered</string>
+    <string name="acct_registering">Registering…</string>
+    <string name="acct_unregistered">Not Registered</string>
+    <string name="activate">Activate</string>
+    <string name="activate_account">Activate account</string>
+    <string name="activate_presence_sharing">Share presence</string>
+    <string name="add_account">Add account</string>
+    <string name="add_attachment">Attach</string>
+    <string name="add_bandwidth_tias_in_sdp">Add bandwidth modifier TIAS in SDP</string>
+    <string name="add_bandwidth_tias_in_sdp_desc">As per RFC3890. Needed for video on Avaya servers but breaks buggy parsing for some SIP servers.</string>
+    <string name="add_call">Add call</string>
+    <string name="add_filter">Add filter / rewrite rule</string>
+    <string name="advanced_ui">Advanced tweaks</string>
+    <string name="all">All</string>
+    <string name="all_threads">All threads</string>
+    <string name="already_have_account">I already have an account</string>
+    <string name="always_available">Always available</string>
+    <string name="always_available_desc">Will use battery but incoming calls are always received</string>
+    <string name="android_integration">Integrate with Android</string>
+    <string name="android_integration_desc">Integration with native dialer and call logs</string>
+    <string name="anonymous_recipient">Anonymous</string>
+    <string name="another_application_use_sip_port">Another application is currently using SIP port! Can\'t start !!!</string>
+    <string name="app_label">Messaging</string>
+    <string name="app_name">CSipSimple</string>
+    <string name="apply_rewrite">Apply rewriting</string>
+    <string name="ask_for_automatically_resize">Automatically resize picture before sending?</string>
+    <string name="audio">Audio</string>
+    <string name="audio_implementation">Audio implementation</string>
+    <string name="audio_implementation_desc">Backend for audio</string>
+    <string name="audio_quality">Audio quality</string>
+    <string name="audio_troubleshooting">Audio troubleshooting</string>
+    <string name="audio_troubleshooting_desc">Workarounds for audio routing</string>
+    <string name="audio_volume">Volume</string>
+    <string name="auto">Auto</string>
+    <string name="auto_answer">Auto answer</string>
+    <string name="auto_connect_bluetooth">Auto connect bluetooth</string>
+    <string name="auto_connect_bluetooth_desc">Try to use BT SCO automatically (may break standard audio routing case)</string>
+    <string name="auto_connect_speaker">Auto connect rear speaker</string>
+    <string name="auto_connect_speaker_desc">Automatically use rear speaker when answering a call</string>
+    <string name="auto_detect_speaker">Auto detect speaker usage</string>
+    <string name="auto_detect_speaker_desc">Switch to rear speaker when phone is horizontal during a call.</string>
+    <string name="auto_record_calls">Auto record calls</string>
+    <string name="auto_record_calls_desc">Record calls as soon as connected</string>
+    <string name="availability_profile">Availability profile</string>
+    <string name="availability_tg">Mobile data availability</string>
+    <string name="away">Away</string>
+    <string name="backup">Backup</string>
+    <string name="backup_restore">Backup / Restore</string>
+    <string name="band_for_3g">Band type for 3G</string>
+    <string name="band_for_edge">Band type for EDGE</string>
+    <string name="band_for_gprs">Band type for GPRS</string>
+    <string name="band_for_other">Band type for other</string>
+    <string name="band_for_wifi">Band type for wifi</string>
+    <string name="bluetooth">BlueTooth</string>
+    <string name="busy">Busy</string>
+    <string name="buttons">Buttons</string>
+    <string name="ca_list_file">TLS CA file</string>
+    <string name="ca_list_file_desc">For example /sdcard/CSipSimple/myAuthority.ca</string>
+    <string name="call">Call</string>
+    <string name="callAgain">Call again</string>
+    <string name="callBack">Call back</string>
+    <string name="callDetailsDurationFormat"><ns1:g example="42" id="minutes">%1$s</ns1:g> mins <ns1:g example="28" id="seconds">%2$s</ns1:g> secs</string>
+    <string name="callLog_delDialog_message">Are you sure you want to delete all calls from the log?</string>
+    <string name="callLog_delDialog_no">No</string>
+    <string name="callLog_delDialog_title">Delete Call Logs</string>
+    <string name="callLog_delDialog_yes">Yes</string>
+    <string name="callLog_delete_all">Delete all calls</string>
+    <string name="callLog_delete_entry">Delete this call</string>
+    <string name="call_info_header">Has Call-Info for immediate answer</string>
+    <string name="call_log_item_count_and_date">(<ns1:g id="count">%1$d</ns1:g>) <ns1:g id="date">%2$s</ns1:g></string>
+    <string name="call_state_calling">Calling…</string>
+    <string name="call_state_confirmed">Talking</string>
+    <string name="call_state_connecting">Connecting…</string>
+    <string name="call_state_disconnected">Hung up</string>
+    <string name="call_state_early">Ringing…</string>
+    <string name="call_state_incoming">Incoming call…</string>
+    <string name="call_state_null">ERROR</string>
+    <string name="calllog_tab_name_text">CallLogs</string>
+    <string name="cancel">Cancel</string>
+    <string name="cant_call">Can\'t call</string>
+    <string name="cant_write_file">Error writing file</string>
+    <string name="captcha">Captcha</string>
+    <string name="cert_file">TLS certificate file</string>
+    <string name="cert_file_desc">For example /sdcard/CSipSimple/myCert.crt</string>
+    <string name="choose_wizard">Choose wizard</string>
+    <string name="clear_call">End</string>
+    <string name="codec_h264_bitrate">H264 bitrate</string>
+    <string name="codec_h264_bitrate_desc">Use 0 for default for selected level</string>
+    <string name="codec_h264_level">H264 level</string>
+    <string name="codec_h264_profile">H264 profile</string>
+    <string name="codecs">Codecs</string>
+    <string name="codecs_availability_text">Only available if sip is currently registered</string>
+    <string name="codecs_band_types">Connections bandwidth types for codecs</string>
+    <string name="codecs_desc">Priority (0 is disabled)</string>
+    <string name="codecs_extra_settings">Extra codec settings</string>
+    <string name="codecs_per_bandwidth">Codec priority list per bandwidth</string>
+    <string name="codecs_per_bandwidth_desc">Use separate codec priority lists for fast and slow networks</string>
+    <string name="compose_title">Compose</string>
+    <string name="compressing">Picture too large. Compressing…</string>
+    <string name="configure">Configure</string>
+    <string name="confirm_delete_all_conversations">All threads will be deleted.</string>
+    <string name="confirm_delete_all_messages">The entire thread will be deleted.</string>
+    <string name="confirm_delete_conversation">The entire thread will be deleted.</string>
+    <string name="confirm_delete_locked_message">Are you sure you want to delete this locked message?</string>
+    <string name="confirm_delete_message">The message will be deleted.</string>
+    <string name="confirm_dialog_title">Delete</string>
+    <string name="connection_not_valid">Selected network route not allowed with current settings you have setup</string>
+    <string name="contains">Contains</string>
+    <string name="copy_message_text">Copy message text</string>
+    <string name="country_code">Country code</string>
+    <string name="create_account">Create account</string>
+    <string name="create_new_message">Compose new message</string>
+    <string name="create_zrtp">Create ZRTP</string>
+    <string name="csipsimple_shortcut">SIP - shortcut</string>
+    <string name="custom_regexp">Custom RegExp</string>
+    <string name="data_digest">Data digest</string>
+    <string name="deactivate">Deactivate</string>
+    <string name="deactivate_account">Deactivate account</string>
+    <string name="deactivate_presence_sharing">Stop sharing presence</string>
+    <string name="default_str">Default</string>
+    <string name="delete">Delete</string>
+    <string name="delete_account">Delete account</string>
+    <string name="delete_filter">Delete filter</string>
+    <string name="delete_message">Delete message</string>
+    <string name="delete_thread">Delete thread</string>
+    <string name="description_call">Call <ns1:g id="name">%1$s</ns1:g></string>
+    <string name="description_delete_button">backspace</string>
+    <string name="description_dial_button">dial</string>
+    <string name="description_dial_video_button">video dial</string>
+    <string name="description_digits_edittext">number to dial</string>
+    <string name="description_direction_left">Left</string>
+    <string name="description_direction_right">Right</string>
+    <string name="description_direction_up">Up</string>
+    <string name="description_image_button_eight">eight</string>
+    <string name="description_image_button_five">five</string>
+    <string name="description_image_button_four">four</string>
+    <string name="description_image_button_nine">nine</string>
+    <string name="description_image_button_one">one</string>
+    <string name="description_image_button_pound">pound</string>
+    <string name="description_image_button_seven">seven</string>
+    <string name="description_image_button_six">six</string>
+    <string name="description_image_button_star">star</string>
+    <string name="description_image_button_three">three</string>
+    <string name="description_image_button_two">two</string>
+    <string name="description_image_button_zero">zero</string>
+    <string name="dial_press_tone">Dialing tone feedback</string>
+    <string name="dial_press_tone_desc">Play touch tones when dialing</string>
+    <string name="dial_press_vibrate">Dialing vibrate feedback</string>
+    <string name="dial_press_vibrate_desc">Haptic (vibrate) feedback when dialing</string>
+    <string name="dial_tab_name_text">Dial</string>
+    <string name="dialpad">DTMF</string>
+    <string name="digest">Digest</string>
+    <string name="direct_call">Directly call</string>
+    <string name="disable_rport">Disable rport in request</string>
+    <string name="disable_rport_desc">Only activate for buggy servers. Disable RFC 3581 support by not sending rport.</string>
+    <string name="disable_tcp_switch">Disable TCP switch</string>
+    <string name="disable_tcp_switch_desc">If activated, prevent the stack to switch to TCP for big UDP packets.</string>
+    <string name="disabled">Disabled</string>
+    <string name="disconnect_and_future_incoming_explaination">By disconnecting the application, you will not be available on SIP until next start of the application, whatever network settings you set</string>
+    <string name="disconnect_and_incoming_explaination">You are configured to be available for this network !!! By clicking OK here you confirm that you don\'t want to be available until next start of the application</string>
+    <string name="disconnect_and_will_restart">Will automatically restart when : <ns1:g example="3G" id="networks">%s</ns1:g> will become available (change settings if you don\'t want)</string>
+    <string name="display_icon_in_status_bar">Display icon in status bar</string>
+    <string name="display_icon_in_status_bar_desc">Should the application display an icon in the status bar when registered</string>
+    <string name="display_icon_in_status_bar_nbr">Display number in status bar</string>
+    <string name="display_icon_in_status_bar_nbr_desc">Display the number of registered accounts in status bar</string>
+    <string name="do_focus_audio">Focus audio</string>
+    <string name="do_focus_audio_desc">Disabling will result overlaps with music but may help with routing</string>
+    <string name="done">Done</string>
+    <string name="download">Download</string>
+    <string name="downloading">Downloading</string>
+    <string name="downloading_text">Downloading</string>
+    <string name="dscp_val">DSCP value</string>
+    <string name="dscp_val_desc">DSCP value for SIP traffic</string>
+    <string name="dtmf_pause_time">Time of DTMF pause</string>
+    <string name="dtmf_pause_time_desc">Pause (,) separator waiting time in ms</string>
+    <string name="dtmf_press_tone">DTMF tone feedback</string>
+    <string name="dtmf_press_tone_desc">Play touch tones when sending DTMF in call</string>
+    <string name="dtmf_wait_time">Time of DTMF wait</string>
+    <string name="dtmf_wait_time_desc">Wait (;) separator waiting time in ms</string>
+    <string name="echo_cancellation">Echo cancellation</string>
+    <string name="echo_cancellation_desc">Activate echo cancellation</string>
+    <string name="echo_cancellation_tail">Echo cancellation tail</string>
+    <string name="echo_cancellation_tail_desc">Tail length of echo cancellation</string>
+    <string name="echo_mode">Echo mode</string>
+    <string name="echo_mode_desc">Algorithm for echo</string>
+    <string name="edit">Edit</string>
+    <string name="email_address">Email address</string>
+    <string name="empty_description"/>
+    <string name="enable_dns_srv">Resolve DNS SRV</string>
+    <string name="enable_dns_srv_desc">Use the application resolver to resolve DNS names</string>
+    <string name="enable_ice">Enable ICE</string>
+    <string name="enable_ice_desc">Turn on ICE feature</string>
+    <string name="enable_ns">Noise reduction</string>
+    <string name="enable_ns_desc">Works if echo cancellation is activated and WebRTC echo canceller backend used</string>
+    <string name="enable_qos">Enable QoS</string>
+    <string name="enable_qos_desc">Enable QoS on packets</string>
+    <string name="enable_stun">Enable STUN</string>
+    <string name="enable_stun2">Use new STUN format</string>
+    <string name="enable_stun2_desc">STUN requests for resolving socket mapped address should use the new format</string>
+    <string name="enable_stun_desc">Turn on STUN feature</string>
+    <string name="enable_tcp">TCP</string>
+    <string name="enable_tcp_desc">Enable TCP transport</string>
+    <string name="enable_tls">TLS</string>
+    <string name="enable_tls_desc">Enable TLS transport</string>
+    <string name="enable_turn">Enable TURN</string>
+    <string name="enable_turn_desc">Turn on TURN feature</string>
+    <string name="enable_udp">UDP</string>
+    <string name="enable_udp_desc">Enable UDP transport</string>
+    <string name="enable_vad">Voice audio detection</string>
+    <string name="enable_vad_desc">Activate voice audio detection</string>
+    <string name="ends_with">Ends with</string>
+    <string name="expert_preferences">Expert mode</string>
+    <string name="faq">FAQ</string>
+    <string name="fast">Fast</string>
+    <string name="favorites_tab_name_text">Favorites</string>
+    <string name="filters">Filters</string>
+    <string name="filters_desc">To apply when integration to Android is used</string>
+    <string name="filters_for">Filters for</string>
+    <string name="first_name">First name</string>
+    <string name="for_incomings">For incoming calls</string>
+    <string name="for_outgoings">For outgoing calls</string>
+    <string name="force">Force</string>
+    <string name="force_no_update">Force no update</string>
+    <string name="force_no_update_desc">Some buggy remote party announce to support UPDATE method while it does not, this option force the legacy way to manage UPDATE/re-INVITE</string>
+    <string name="frames_per_rtp_packet">Frames per RTP packet</string>
+    <string name="g729_frame_per_packet">G729 RTP frames per packet</string>
+    <string name="gadget_title">SIP - Account switcher</string>
+    <string name="general_ui">General user interface</string>
+    <string name="generic_wizards_text">Generic wizards</string>
+    <string name="glowpad">GlowPad</string>
+    <string name="gsm">Mobile</string>
+    <string name="gsm_integration_type">Mobile phone integration</string>
+    <string name="gsm_integration_type_desc">How the application uses your mobile phone (or not)</string>
+    <string name="has_exactly_n_digits">Has exactly N digits</string>
+    <string name="has_io_queue">IO Queue</string>
+    <string name="has_io_queue_desc">Activate Queue for input/output</string>
+    <string name="has_more_than_n_digits">Has more than N digits</string>
+    <string name="help">Help</string>
+    <string name="hidden_sender_address">Hidden sender address</string>
+    <string name="hold_call">Hold</string>
+    <string name="ice_aggressive">Aggressive ICE</string>
+    <string name="ice_aggressive_desc">Whether to use aggressive nomination</string>
+    <string name="ignore_call">Ignore</string>
+    <string name="ilbc_frame_per_packet">iLBC RTP frames per packet</string>
+    <string name="image_too_large">Picture too large</string>
+    <string name="in_band">In band generation</string>
+    <string name="info">Info</string>
+    <string name="init">Init…</string>
+    <string name="installing_library_text">Installing library…</string>
+    <string name="integrate_tel_privileged">Integrate privileged intent</string>
+    <string name="integrate_tel_privileged_desc">Different way to integrate stock dialer. You should disable integrate dialer integration if you use it.</string>
+    <string name="integrate_with_native_calllogs">Call logs integration</string>
+    <string name="integrate_with_native_calllogs_desc">SIP calls will be merged (if possible) into native call logs</string>
+    <string name="integrate_with_native_dialer">Dialer integration</string>
+    <string name="integrate_with_native_dialer_desc">When dialing with native dialer you\'ll be asked if you want to use SIP or mobile</string>
+    <string name="integrate_with_native_music">Integrate with Music application</string>
+    <string name="integrate_with_native_music_desc">Disable it if you use another music application than the official one</string>
+    <string name="intializing_text">Initialize</string>
+    <string name="invalid_sip_uri">Sip uri is invalid for call</string>
+    <string name="invert_proximity_sensor">Invert proximity sensor</string>
+    <string name="invert_proximity_sensor_desc">May help on some devices when manufacturer inverted near and far</string>
+    <string name="invert_selection">Invert selection</string>
+    <string name="is_exactly">Is exactly</string>
+    <string name="keep_alive_interval">Connection keep alive</string>
+    <string name="keep_alive_interval_desc">Interval (sec) for KA packets</string>
+    <string name="keep_awake_incall">Keep awake while on call</string>
+    <string name="keep_awake_incall_desc">Fixes if you get choppy sound when screen turn off while in WIFI call</string>
+    <string name="kilobyte">KB</string>
+    <string name="last_name">Last name</string>
+    <string name="leave_minus_1_default">Leave -1 to default</string>
+    <string name="legacy">Legacy</string>
+    <string name="legal_information">Legal information</string>
+    <string name="loading">Loading</string>
+    <string name="lock_wifi">Lock WiFi</string>
+    <string name="lock_wifi_desc">Prevent WiFi idle when SIP is connected</string>
+    <string name="lock_wifi_perfs">High perfs lock</string>
+    <string name="lock_wifi_perfs_desc">Wifi lock in High perfs mode (drain battery faster)</string>
+    <string name="log_level">Log level</string>
+    <string name="log_level_desc">Log level for debug between 0 (none) and 5 (verbose)</string>
+    <string name="log_use_direct_file">Log directly to a file</string>
+    <string name="log_use_direct_file_desc">Log into file directly instead of logcat</string>
+    <string name="mandatory">Mandatory</string>
+    <string name="me">Me</string>
+    <string name="media_thread_count">Media thread count</string>
+    <string name="media_thread_count_desc">Number of thread allocated for media processing</string>
+    <string name="menu_add_address_to_contacts">Add <ns1:g id="name">%s</ns1:g> to Contacts</string>
+    <string name="menu_add_to_contacts">Add to Contacts</string>
+    <string name="menu_call">Call</string>
+    <string name="menu_compose_new">Compose</string>
+    <string name="menu_delete">Delete thread</string>
+    <string name="menu_delete_all">Delete threads</string>
+    <string name="menu_disconnect">Disconnect</string>
+    <string name="menu_insert_smiley">Insert smiley</string>
+    <string name="menu_view">View thread</string>
+    <string name="menu_view_contact">View contact</string>
+    <string name="message_options">Message options</string>
+    <string name="messagelist_sender_self">Me</string>
+    <string name="messages_tab_name_text">Messages</string>
+    <string name="micro_source">Mic source</string>
+    <string name="micro_source_desc">Source for microphone. Choosing the appropriate value may improve echo cancellation</string>
+    <string name="misc">Misc</string>
+    <string name="missed_call">Missed call</string>
+    <string name="modify_account">Modify account</string>
+    <string name="mute">Mute</string>
+    <string name="narrowband">Narrowband</string>
+    <string name="nat_traversal">NAT traversal</string>
+    <string name="native_dialer_integration">Native dialer integration</string>
+    <string name="network_route_polling">Check for network changes each (minutes)</string>
+    <string name="network_route_polling_desc">Android 4.0 VPN check workaround. Leave to 0 if not in this case to disable</string>
+    <string name="network_rtp_port">RTP port</string>
+    <string name="network_rtp_port_desc">Port for RTP ports range start</string>
+    <string name="network_tcp_transport_port">TCP Port</string>
+    <string name="network_tcp_transport_port_desc">Port number to bind locally</string>
+    <string name="network_tls_server_name">TLS server name</string>
+    <string name="network_tls_server_name_desc">For multi-hosting server (optional)</string>
+    <string name="network_tls_transport_port">TLS Port</string>
+    <string name="network_tls_transport_port_desc">Port number to bind locally</string>
+    <string name="network_udp_transport_port">UDP Port</string>
+    <string name="network_udp_transport_port_desc">Port number to bind locally</string>
+    <string name="never_available">Only for outgoing</string>
+    <string name="never_available_desc">Activate the SIP client automatically when necessary</string>
+    <string name="new_message">New message</string>
+    <string name="next">Next</string>
+    <string name="no">Cancel</string>
+    <string name="no_accounts">No accounts</string>
+    <string name="no_call_history">No call history</string>
+    <string name="no_phone_found">No phone found for this contact</string>
+    <string name="no_proxy">No proxy</string>
+    <string name="no_voice_mail_configured">No voicemail configured</string>
+    <string name="no_zrtp">No ZRTP</string>
+    <string name="normal">Normal</string>
+    <string name="normal_preferences">Normal mode</string>
+    <string name="not_configured_multiple_calls">The application is not configured to allow multiple calls</string>
+    <string name="obtain_themes">Obtain more themes</string>
+    <string name="obtain_themes_desc">Get themes apps on the market</string>
+    <string name="offline">Offline</string>
+    <string name="ok">OK</string>
+    <string name="on_hold">On Hold</string>
+    <string name="ongoing_call">Call in Progress</string>
+    <string name="online">Online</string>
+    <string name="open_keyboard_to_compose_message">Open keyboard to compose message</string>
+    <string name="optional">Optional</string>
+    <string name="optional_sip_code">Optional sip code</string>
+    <string name="other_accounts">Other accounts</string>
+    <string name="other_country_providers_text">Other country providers</string>
+    <string name="outbound_proxies">Outbound proxies</string>
+    <string name="outgoing_call_chooser_call_text">Call</string>
+    <string name="override_nameserver">Use a custom DNS</string>
+    <string name="override_nameserver_desc">Left blank to retrieve DNS from Android</string>
+    <string name="perfs">Performances</string>
+    <string name="permdesc_configureSip">Configure SIP accounts and settings, access to SIP contents (call logs, messages...), extends and hook SIP flow</string>
+    <string name="permdesc_useSip">Place SIP calls, send SIP messages</string>
+    <string name="permlab_configureSip">Full access to SIP Accounts/Calls/Messages</string>
+    <string name="permlab_useSip">Use sip</string>
+    <string name="pgp">PGP</string>
+    <string name="pickup_sip_uri">Pickup SIP contact</string>
+    <string name="plain_password">Plain password</string>
+    <string name="play_waittone_on_hold">Wait tone on hold</string>
+    <string name="play_waittone_on_hold_desc">Play a tone when remote part hold</string>
+    <string name="prefix_by">Prefix by</string>
+    <string name="prefs">Settings</string>
+    <string name="prefs_calls">Call options</string>
+    <string name="prefs_calls_desc">Options related to calls</string>
+    <string name="prefs_fast">Easy configuration</string>
+    <string name="prefs_fast_desc">Quick options to use if you don\'t know how SIP works</string>
+    <string name="prefs_media">Media</string>
+    <string name="prefs_media_desc">Codecs and in-call sound behavior</string>
+    <string name="prefs_network">Network</string>
+    <string name="prefs_network_desc">How SIP can be connected to the network</string>
+    <string name="prefs_ui">User interface</string>
+    <string name="prefs_ui_desc">Tweak the user interface</string>
+    <string name="presence">Presence</string>
+    <string name="prevent">Prevent</string>
+    <string name="prevent_screen_rotation">Prevent screen rotation</string>
+    <string name="prevent_screen_rotation_desc">Avoid rotation of the screen and keep in portrait mode</string>
+    <string name="privkey_file">TLS private key file</string>
+    <string name="privkey_file_desc">For example /sdcard/CSipSimple/myKey.key</string>
+    <string name="recentCalls_empty">No Call Logs</string>
+    <string name="recipient_label">Recipient: </string>
+    <string name="reconnect">Reconnect</string>
+    <string name="record">Record</string>
+    <string name="record_logs">Record logs to send it to dev team and report a bug</string>
+    <string name="reject_call">Reject</string>
+    <string name="reorder">Reorder</string>
+    <string name="replace_all_by">Replace all by</string>
+    <string name="replace_match_by">Replace match by</string>
+    <string name="restart_aud_on_routing_change">Restart stream when change routing</string>
+    <string name="restart_aud_on_routing_change_desc">Mandatory for Bluetooth when default clock rate is different of 8kHz. Disabling could help to switch faster.</string>
+    <string name="restore_default">"Restore default settings"</string>
+    <string name="resume_call">Resume</string>
+    <string name="returnCall">Return call</string>
+    <string name="rewrite">Rewrite</string>
+    <string name="ringtone">Ringtone</string>
+    <string name="ringtone_desc">Default ringtone for SIP calls</string>
+    <string name="rtp">RTP</string>
+    <string name="rtp_dscp_val_desc">DSCP value for RTP traffic</string>
+    <string name="save">Save</string>
+    <string name="secure_media">Secure media</string>
+    <string name="secure_transport">Secure transport</string>
+    <string name="secure_transport_desc">Security mechanism for SIP and RTP</string>
+    <string name="send">Send</string>
+    <string name="send_dtmf">Send DTMF</string>
+    <string name="send_logs">Stop recording logs (OPTIONALLY send it)</string>
+    <string name="sending_message">Sending…</string>
+    <string name="sent_on">"Sent: <ns1:g id="date">%s</ns1:g>"</string>
+    <string name="service_ticker_registered_text">SIP Registered</string>
+    <string name="set_android_group">Choose android group</string>
+    <string name="set_audio_generate_tone">Tone hack</string>
+    <string name="set_audio_generate_tone_desc">Generate a tone before making calls</string>
+    <string name="set_sip_data">Choose sip uri data</string>
+    <string name="setup_audio_before_init">Setup audio before init</string>
+    <string name="setup_audio_before_init_desc">Put audio in correct mode before audio stream initialization</string>
+    <string name="show_password">Show password</string>
+    <string name="simple">Simple</string>
+    <string name="sip_audio_mode">Audio mode for SIP calls</string>
+    <string name="sip_audio_mode_desc">Change only if developers advise you to</string>
+    <string name="sip_call">SIP Call</string>
+    <string name="sip_dtmf">DTMF mode</string>
+    <string name="sip_dtmf_desc">How to send DTMF</string>
+    <string name="sip_info">SIP INFO</string>
+    <string name="sip_protocol">SIP protocol</string>
+    <string name="sip_protocol_desc">SIP protocol tweak.</string>
+    <string name="slider">Slider</string>
+    <string name="slow">Slow</string>
+    <string name="snd_auto_close_time">Auto close time</string>
+    <string name="snd_auto_close_time_desc">Time to wait for close audio channel</string>
+    <string name="snd_bt_mic_level">Bluetooth mic amplification</string>
+    <string name="snd_bt_speaker_level">Bluetooth listening amplification</string>
+    <string name="snd_clock_rate">Clock rate</string>
+    <string name="snd_clock_rate_desc">Audio channel frequency</string>
+    <string name="snd_media_quality">Media quality</string>
+    <string name="snd_media_quality_desc">Quality of the media stream (modify only if you know what you are doing)</string>
+    <string name="snd_mic_level">Micro amplification</string>
+    <string name="snd_mic_level_desc">Adjust the mic signal level (1 do nothing)</string>
+    <string name="snd_ptime">Audio frame ptime</string>
+    <string name="snd_ptime_desc">The value here will affect the samples per frame of both the sound device and the conference bridge. Specifying lower ptime will normally reduce the latency.</string>
+    <string name="snd_speaker_level">Speaker amplification</string>
+    <string name="snd_speaker_level_desc">Adjust the speaker signal level (1 do nothing)</string>
+    <string name="snd_stream_level">Initial stream level</string>
+    <string name="snd_stream_level_desc">Set the initial level for audio stream (Android stream)</string>
+    <string name="speaker">Speaker</string>
+    <string name="speex">Speex</string>
+    <string name="start_with_text_dialer">Text dialer</string>
+    <string name="start_with_text_dialer_desc">Start with text dialer</string>
+    <string name="starts_with">Starts with</string>
+    <string name="status_failed">Unsuccessful</string>
+    <string name="status_label">Status: </string>
+    <string name="status_none">(None)</string>
+    <string name="status_pending">Pending</string>
+    <string name="status_received">Received</string>
+    <string name="status_rejected">Rejected</string>
+    <string name="status_unread">Unread</string>
+    <string name="stop_processing">Stop processing</string>
+    <string name="stop_recording">Stop recording</string>
+    <string name="stun_server">STUN servers</string>
+    <string name="stun_server_desc">STUN servers (HOST[:PORT], …)</string>
+    <string name="suffix_with">Suffix with</string>
+    <string name="support_multiple_calls">Support multiple calls</string>
+    <string name="support_multiple_calls_desc">Allow conference and multiple concurrent calls</string>
+    <string name="switch_to_digit">Switch to digit mode</string>
+    <string name="switch_to_text">Switch to text mode</string>
+    <string name="take_call">Answer</string>
+    <string name="tcp_keep_alive_interval_mobile">Mobile TCP keep alive</string>
+    <string name="tcp_keep_alive_interval_wifi">Wifi TCP keep alive</string>
+    <string name="test_audio">Audio test</string>
+    <string name="test_audio_network_failure">Test failed : \nSwitch to a valid network first</string>
+    <string name="test_audio_ongoing">Ongoing test… \nSpeak in the mic and listen to the earpiece</string>
+    <string name="test_audio_prepare">Preparing audio test…</string>
+    <string name="tg_allowed">I\'m allowed to use mobile</string>
+    <string name="tg_allowed_desc">Your carrier allows VoIP over your mobile data connection. Note that mobile carrier may also bill extra charge for data usage.</string>
+    <string name="theme">Theme</string>
+    <string name="theme_desc">Theme for the application</string>
+    <string name="this_codec_is_not_free">**This codec is not free !!!**\nPlease ensure that somebody (your SIP provider or yourself) have purchased a license that allow you to use this codec! We (as application distributors) are not responsible for an illegal use of this codec.\nIt\'s up to you to be sure that you are authorized to use this codec.\nPurchase link : </string>
+    <string name="thread_count">Thread count</string>
+    <string name="thread_count_desc">Number of thread allocated to SIP stack. 0 saves battery.</string>
+    <string name="timer_min_se">Minimum session expiration</string>
+    <string name="timer_min_se_desc">Minimum session expiration period, in seconds. Must not be lower than 90.</string>
+    <string name="timer_sess_expires">Session expiration period</string>
+    <string name="timer_sess_expires_desc">Session expiration period, in seconds. Must not be lower than min_se.</string>
+    <string name="tls">TLS</string>
+    <string name="tls_keep_alive_interval_mobile">Mobile TLS keep alive</string>
+    <string name="tls_keep_alive_interval_wifi">Wifi TLS keep alive</string>
+    <string name="tls_method">TLS Method</string>
+    <string name="tls_method_desc">Method for TLS transport</string>
+    <string name="tls_password">TLS password</string>
+    <string name="tls_password_desc">TLS password to private key file</string>
+    <string name="touch_lock">Double tap to unlock</string>
+    <string name="transfer_to_call">Transfer to call</string>
+    <string name="transport">Transport</string>
+    <string name="transport_desc">Force the use of a transport for this account</string>
+    <string name="transport_secure_full">End-to-end signaling is supposed secure</string>
+    <string name="transport_secure_to_server">TLS transport is used for immediate hop</string>
+    <string name="tsx_t1_timeout">Transaction T1 timeout value.</string>
+    <string name="tsx_t2_timeout">Transaction T2 timeout value.</string>
+    <string name="tsx_t4_timeout">Transaction T4 timeout value.</string>
+    <string name="tsx_td_timeout">Transaction completed timer for INVITE.</string>
+    <string name="tsx_timeout_desc">Leave -1 for default RFC 3261 values</string>
+    <string name="turn_password">TURN password</string>
+    <string name="turn_password_desc">Password for TURN authentication</string>
+    <string name="turn_server">Turn server</string>
+    <string name="turn_server_desc">TURN server (HOST:PORT)</string>
+    <string name="turn_transport">TURN transport</string>
+    <string name="turn_transport_desc">Transport for TURN feature</string>
+    <string name="turn_username">TURN user</string>
+    <string name="turn_username_desc">Username for TURN authentication</string>
+    <string name="type_incoming">Incoming</string>
+    <string name="type_missed">Missed</string>
+    <string name="type_outgoing">Outgoing</string>
+    <string name="type_sip_uri_or_autocomplete">Sip uri or autocomplete</string>
+    <string name="type_to_compose_text_enter_to_send">Type to compose</string>
+    <string name="udp_keep_alive_interval_mobile">Mobile UDP keep alive</string>
+    <string name="udp_keep_alive_interval_wifi">Wifi UDP keep alive</string>
+    <string name="unable_to_download_file">Unable to download file</string>
+    <string name="undelivered_msg_dialog_title">Undelivered message</string>
+    <string name="undelivered_sms_dialog_body">Unable to send this message.</string>
+    <string name="unknown">Unknown</string>
+    <string name="unlock">Unlock</string>
+    <string name="unsupported_media_format">Unsupported <ns1:g id="name">%1$s</ns1:g> format</string>
+    <string name="update_nightly_build">Update nightly build</string>
+    <string name="uri_im">IM with custom SIP scheme</string>
+    <string name="uri_nbr">Phone number</string>
+    <string name="uri_sip">Internet call</string>
+    <string name="use">Use :</string>
+    <string name="use_3g">Use 3G (and better)</string>
+    <string name="use_3g_disclamer">Your carrier MUST allow you to use this option. Note that mobile carrier may also bill extra charge for data usage.</string>
+    <string name="use_alternate_unlocker">Don\'t use slide answer</string>
+    <string name="use_alternate_unlocker_desc">Use buttons instead of slide to take incoming calls</string>
+    <string name="use_android_setting">Use Android setting</string>
+    <string name="use_anyway">Use anyway</string>
+    <string name="use_anyway_desc">Don\'t care Android network status. Should not be used for normal cases</string>
+    <string name="use_compact_form">Use compact SIP</string>
+    <string name="use_compact_form_desc">Reduce SIP packets size. May not work on old SIP servers</string>
+    <string name="use_edge">Use EDGE</string>
+    <string name="use_gprs">Use GPRS</string>
+    <string name="use_ipv6">Use IPv6</string>
+    <string name="use_ipv6_desc">Switch to IPv6 mode (your network and phone must support it)</string>
+    <string name="use_mode_api">Use Mode audio API</string>
+    <string name="use_mode_api_desc">Try to enable that if audio is routing to speaker instead of earpiece</string>
+    <string name="use_other">Use other networks</string>
+    <string name="use_other_in_desc">For example WiMax for incoming calls</string>
+    <string name="use_other_out_desc">For example WiMax for outgoing calls</string>
+    <string name="use_partial_wake_lock">Use partial wake lock</string>
+    <string name="use_partial_wake_lock_desc">Ensure CPU is always running for the application (drain battery)</string>
+    <string name="use_pstn">Use mobile</string>
+    <string name="use_roaming">Use in roaming</string>
+    <string name="use_roaming_desc">When android detects a roaming situation</string>
+    <string name="use_routing_api">Use routing API</string>
+    <string name="use_routing_api_desc">Try to enable that if audio is routing to speaker instead of earpiece</string>
+    <string name="use_sgs_call_hack">Use Samsung Galaxy Hack</string>
+    <string name="use_sgs_call_hack_desc">Pre set call mode to solve routing</string>
+    <string name="use_soft_volume">Use software volume</string>
+    <string name="use_soft_volume_desc">Use software volume instead of android volume</string>
+    <string name="use_srtp">SRTP mode</string>
+    <string name="use_srtp_desc">Mode for Secure RTP</string>
+    <string name="use_video">Use video</string>
+    <string name="use_video_desc">Send video from device automatically</string>
+    <string name="use_webrtc_hack">Use WebRTC implementation</string>
+    <string name="use_webrtc_hack_desc">Implementation made by WebRTC team</string>
+    <string name="use_wifi">Use WiFi</string>
+    <string name="use_wifi_in_desc">Use WiFi for incoming calls</string>
+    <string name="use_wifi_out_desc">Use WiFi for outgoing calls</string>
+    <string name="use_zrtp">ZRTP mode</string>
+    <string name="use_zrtp_desc">Mode for Secured ZRTP</string>
+    <string name="user_agent">User agent</string>
+    <string name="user_agent_desc">Agent presented by the application (if default will add infos)</string>
+    <string name="user_personal_domain">User personal domain</string>
+    <string name="user_prefix">User prefix</string>
+    <string name="user_suffix">User suffix</string>
+    <string name="verify_client">Check client</string>
+    <string name="verify_client_desc">Verify client\'s certificate</string>
+    <string name="verify_server">Check server</string>
+    <string name="verify_server_desc">Verify server\'s certificate</string>
+    <string name="vid_in_auto_show">Auto show video</string>
+    <string name="vid_in_auto_show_desc">Show video of remote side automatically</string>
+    <string name="vid_out_auto_transmit">Auto send video</string>
+    <string name="vid_out_auto_transmit_desc">Send video from device automatically</string>
+    <string name="video">Video</string>
+    <string name="video_capture_size">Video capture size</string>
+    <string name="video_capture_size_desc">Size of capture frames</string>
+    <string name="view">View</string>
+    <string name="view_existing_issues">Consult existing issues</string>
+    <string name="voice_mail">Voice mail</string>
+    <string name="voice_mail_number">VM number</string>
+    <string name="w_advanced_auth_id">Sip authentication ID</string>
+    <string name="w_advanced_auth_id_desc">Leave blank for same as Username</string>
+    <string name="w_advanced_caller_id">Caller ID</string>
+    <string name="w_advanced_caller_id_desc">Caller ID to send with calls</string>
+    <string name="w_advanced_display_name">Account name</string>
+    <string name="w_advanced_display_name_desc">Display name for this account</string>
+    <string name="w_advanced_password">Password</string>
+    <string name="w_advanced_password_desc">Password for SIP server authentication</string>
+    <string name="w_advanced_proxy">Proxy</string>
+    <string name="w_advanced_proxy_desc">Proxy domain/IP[:port] (optional, not always needed)</string>
+    <string name="w_advanced_use_tcp">Use TCP (not UDP)</string>
+    <string name="w_advanced_username">Username</string>
+    <string name="w_advanced_username_desc">Username for SIP server authentication (do no write the @sip.server)</string>
+    <string name="w_authorization_auth_name">Authentication name</string>
+    <string name="w_authorization_auth_name_desc">Sip authentication</string>
+    <string name="w_authorization_phone_number">User name</string>
+    <string name="w_authorization_phone_number_desc">Sip user account</string>
+    <string name="w_basic_password">Password</string>
+    <string name="w_basic_password_desc">Password to access your account</string>
+    <string name="w_basic_username">User</string>
+    <string name="w_basic_username_desc">Account name / Login (do not write the @sip.server)</string>
+    <string name="w_callcentric_password">Password</string>
+    <string name="w_callcentric_password_desc">Password for your Callcentric account</string>
+    <string name="w_callcentric_phone_number">SIP Phone Number</string>
+    <string name="w_callcentric_phone_number_desc">Callcentric SIP phone number (1777xxxxxxx)</string>
+    <string name="w_common_display_name">Account name</string>
+    <string name="w_common_display_name_desc">Display name for this account</string>
+    <string name="w_common_password">Password</string>
+    <string name="w_common_password_desc">Password for your account</string>
+    <string name="w_common_phone_number">Phone number</string>
+    <string name="w_common_phone_number_desc">Sip phone number given by your provider</string>
+    <string name="w_common_server">Server</string>
+    <string name="w_common_server_desc">SIP server domain/IP[:port]</string>
+    <string name="w_common_username">User name</string>
+    <string name="w_common_username_desc">Sip account login (do not write the @sip.server)</string>
+    <string name="w_cryptel_password">Crypto Key</string>
+    <string name="w_cryptel_password_desc">Crypto Key</string>
+    <string name="w_expert_acc_id">Account id</string>
+    <string name="w_expert_acc_id_desc">Format : "DisplayName &lt;sip:login@registrar>"</string>
+    <string name="w_expert_allow_contact_rewrite">Allow contact rewrite</string>
+    <string name="w_expert_allow_sdp_nat_rewrite">Allow SDP NAT rewrite</string>
+    <string name="w_expert_allow_sdp_nat_rewrite_desc">Fix the address sent in SDP to use the same interface address as the one in the REGISTER request (ONLY when STUN and ICE are not used)</string>
+    <string name="w_expert_allow_via_rewrite">Allow via rewrite</string>
+    <string name="w_expert_allow_via_rewrite_desc">Fix the Via sent-by to use the same interface address as the one in the REGISTER request</string>
+    <string name="w_expert_contact_rewrite_method">Contact rewrite method</string>
+    <string name="w_expert_data">Data (password)</string>
+    <string name="w_expert_data_desc">Password (or other data) for authentication</string>
+    <string name="w_expert_datatype">Data type</string>
+    <string name="w_expert_datatype_desc">Type of data</string>
+    <string name="w_expert_default_uri_scheme">Default uri scheme</string>
+    <string name="w_expert_default_uri_scheme_desc">Scheme to prepend to callee uri if not specified</string>
+    <string name="w_expert_display_name">Account name</string>
+    <string name="w_expert_display_name_desc">Display name for this account</string>
+    <string name="w_expert_force_contact">Force contact</string>
+    <string name="w_expert_ipv6_media_use">Use IPV6 for media</string>
+    <string name="w_expert_ka_interval">Keep-alive interval (sec)</string>
+    <string name="w_expert_media_transport">Media transport</string>
+    <string name="w_expert_mwi_enabled">Subscribe MWI</string>
+    <string name="w_expert_mwi_enabled_desc">Get notifications of voice mail box</string>
+    <string name="w_expert_prevent_tcp">Prevent TCP (only try UDP)</string>
+    <string name="w_expert_proxy">Proxy URI</string>
+    <string name="w_expert_proxy_desc">Format : "sip:proxy.net[:port]"</string>
+    <string name="w_expert_publish_enabled">Publish enabled</string>
+    <string name="w_expert_realm">Realm</string>
+    <string name="w_expert_realm_desc">Authentication domain (if you don\'t know, use \'*\')</string>
+    <string name="w_expert_reg_dbr">Register delay before refresh (sec)</string>
+    <string name="w_expert_reg_dbr_desc">Specify the number of seconds to refresh the client registration before the registration expires.</string>
+    <string name="w_expert_reg_timeout">Register timeout (sec)</string>
+    <string name="w_expert_reg_uri">Registration URI</string>
+    <string name="w_expert_reg_uri_desc">Format : "sip:registrar.net[:port]"</string>
+    <string name="w_expert_reg_use_proxy">How to use proxy</string>
+    <string name="w_expert_rtp_bound_addr">RTP bound address</string>
+    <string name="w_expert_rtp_bound_addr_desc">Optional where the socket should be bound to. To only selectively bind the socket to particular interface (instead of 0.0.0.0)</string>
+    <string name="w_expert_rtp_public_addr">RTP public address</string>
+    <string name="w_expert_rtp_public_addr_desc">Optional to advertise the address of RTP transport.</string>
+    <string name="w_expert_t_proxy">Proxy</string>
+    <string name="w_expert_try_clean_registers">Try to clean registers</string>
+    <string name="w_expert_try_clean_registers_desc">Allow app to try to clean old registrations if needed</string>
+    <string name="w_expert_use_tcp">Use TCP (not UDP)</string>
+    <string name="w_expert_username">Username</string>
+    <string name="w_expert_username_desc">Username for authentication</string>
+    <string name="w_fritz_extension">Device number</string>
+    <string name="w_fritz_extension_advise">Don\'t forget to enable the reg_from_outside = yes; for this extension first</string>
+    <string name="w_fritz_extension_desc">Fritz boxes internal telephony device number</string>
+    <string name="w_fritz_proxy">Your domain name</string>
+    <string name="w_fritz_proxy_desc">Your dyndns or similar hostname</string>
+    <string name="w_iinet_password">Special VoIP password</string>
+    <string name="w_iinet_password_desc">Not the same as connection password</string>
+    <string name="w_iinet_state">State</string>
+    <string name="w_iinet_state_desc">The relevant state from the following list</string>
+    <string name="w_iinet_username">VoIP phone number</string>
+    <string name="w_iinet_username_desc">Remove any formatting such as spaces and dashes</string>
+    <string name="w_onsip_authentication_name">Auth username</string>
+    <string name="w_onsip_authentication_name_desc">SIP authentication user</string>
+    <string name="w_onsip_password">SIP Password</string>
+    <string name="w_onsip_password_desc">SIP account password</string>
+    <string name="w_onsip_server">Domain</string>
+    <string name="w_onsip_server_desc">SIP domain</string>
+    <string name="w_onsip_username">SIP Username</string>
+    <string name="w_onsip_username_desc">Sip account username</string>
+    <string name="w_ovh_phone_number_desc">Phone number should be formated as 0033xxxxxx</string>
+    <string name="w_pbxes_user_extension">User extension (something like user-1)</string>
+    <string name="w_sapo_phone_number_desc">Phone number should be formated as +35130xxxxxx</string>
+    <string name="w_sipgate_display_name">Account name</string>
+    <string name="w_sipgate_display_name_desc" ns2:ignore="UnusedResources">Display name for this account</string>
+    <string name="w_sipgate_password" ns2:ignore="UnusedResources">SIP Password</string>
+    <string name="w_sipgate_password_desc" ns2:ignore="UnusedResources">Different from your password! Check on sipgate website your SIP Password</string>
+    <string name="w_sipgate_server_desc" ns2:ignore="UnusedResources">Something like that : sipgate.co.uk</string>
+    <string name="w_sipgate_username">SIP-ID</string>
+    <string name="w_sipgate_username_desc" ns2:ignore="UnusedResources">Different from your sipgate login! Check on sipgate website your SIP-ID</string>
+    <string name="w_sipme_phone_number_desc">Your phone number normally starting with 078555</string>
+    <string name="warn_ignore">Ignore</string>
+    <string name="warn_no_stun">STUN not enabled</string>
+    <string name="warn_no_stun_description"> If you have no incoming sound while in call, it probably due to the fact you are under a NATed network and your SIP provider doesn\'t manage that.\n 
+       	In order to workaround this case, it\'s sometimes useful to enable the STUN option.\n
+       	If you have no incoming audio problem ignore this warning.\n
+       	If you are in a country where public network is separated from other public networks, you may have to change the STUN server.\n
+       	Use of STUN consume more battery.</string>
+    <string name="warn_no_stun_enable">I\'m getting silent calls</string>
+    <string name="warn_no_stun_ignore">My calls are fine</string>
+    <string name="warn_priv_int">Dialer integration</string>
+    <string name="warn_priv_int_description">It appears that other applications installed on the phone tries to integrate to android too.\n
+	    They do that a way that doesn\'t allow clever features like the one provided by us such as Filtering/Rewriting rules.\n\n
+	    You have two choice : \n
+	    Continue using our integration and install plugins to support other applications. (This will allow to apply filtering/rewriting rules on these applications too). \n
+	    To do so, choose to always use mobile dialer instead of other applications using the checkbox when you\'ll make your next call.</string>
+    <string name="warn_priv_int_description2">Second solution is to make the application integrate the same non clever way than other application.\n
+	    This is an option supported by the application but discouraged because it\'s way less clever and provide a worse user experience.</string>
+    <string name="warn_priv_int_register">Use non clever integration</string>
+    <string name="warn_sdcard">Installation on SDCard</string>
+    <string name="warn_sdcard_description">You have configured to be available for incoming call. But you have moved the application to SDCard.\nThis is discouraged, you should leave the application on internal storage.</string>
+    <string name="warn_vpn_ics">VPN changes for 4.0</string>
+    <string name="warn_vpn_ics_1">Check each 1 minute</string>
+    <string name="warn_vpn_ics_5">Check each 5 minutes</string>
+    <string name="warn_vpn_ics_description"> You are running android 4.0 which doesn\'t notify about VPN status.\n
+        A possible workaround is to check the route at regular interval.</string>
+    <string name="warning">WARNING</string>
+    <string name="webrtc">WebRTC</string>
+    <string name="welcome_caption_text">Welcome</string>
+    <string name="wideband">Wideband</string>
+    <string name="wifi_available">Available on WiFi</string>
+    <string name="wifi_available_desc">Availability of incoming calls based on WiFi profile</string>
+    <string name="world_wide_providers_text">World wide providers</string>
+    <string name="xfer_uri">Transfer to number</string>
+    <string name="yes">OK</string>
+    <string name="zrtp_revoke_trusted_remote">Revoke trusted ZRTP remote</string>
+    <string name="zrtp_trust_remote">Trust ZRTP remote</string>
+    <style name="ButtonBar" parent="@android:style/ButtonBar"/>
+    <style name="ButtonBar.AlertDialog" parent="@android:style/ButtonBar"/>
+    <style name="ButtonBarButton" parent="@android:style/Widget.Button"/>
+    <style name="DarkTheme" parent="android:Theme.Holo">
+        <item name="android:actionBarItemBackground">@drawable/abs__item_background_holo_dark</item>
+    </style>
+    <style name="DarkTheme.Dialog" parent="android:Theme.Holo.Dialog">
+
+        <!-- TODO : use android:attr on 11 -->
+        <!--
+        <item name="actionBarItemBackground">@drawable/abs__item_background_holo_dark</item>
+        -->
+        <!--
+        <item name="android:windowNoTitle">false</item>
+        <item name="android:windowAnimationStyle">@null</item>
+        <item name="android:windowBackground">@drawable/panel_background</item>
+        -->
+    </style>
+    <style name="DarkTheme.NoTitle" parent="android:Theme.Holo.Dialog">
+    <!--
+    <item name="actionBarItemBackground">@drawable/abs__item_background_holo_dark</item>
+    -->
+    </style>
+    <style name="DialPadRow">
+        <item name="android:layout_height">fill_parent</item>
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_weight">0.25</item>
+    </style>
+    <style name="DialtactsDialpadButtonStyle">
+        <item name="android:layout_width">0dip</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:layout_weight">1</item>
+
+    </style>
+    <style name="DialtactsDigitsTextAppearance">
+        <item name="android:maxLines">1</item>
+        <item name="android:scrollHorizontally">true</item>
+        <item name="android:textSize">@dimen/dialpad_digits_text_size</item>
+        <item name="android:freezesText">true</item>
+        <item name="android:focusableInTouchMode">true</item>
+        <item name="android:editable">true</item>
+        <item name="android:cursorVisible">false</item>
+        <item name="android:layout_weight">0</item>
+    </style>
+    <style name="NotificationText">
+        <item name="android:textColor">?android:attr/textColorPrimary</item>
+    </style>
+    <style name="NotificationTitle">
+        <item name="android:textColor">?android:attr/textColorPrimary</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+    <style name="TextAppearance.SlidingTabActive" parent="@android:style/TextAppearance">
+        <item name="android:textColor">@android:color/black</item>
+        <item name="android:textSize">28sp</item>
+    </style>
+    <style name="TextAppearance.SlidingTabNormal" parent="@android:style/TextAppearance">
+        <item name="android:textColor">?android:attr/textColorTertiary</item>
+        <item name="android:textSize">28sp</item>
+        <item name="android:shadowDx">0.0</item>
+        <item name="android:shadowDy">1.0</item>
+        <item name="android:shadowRadius">5.0</item>
+        <item name="android:shadowColor">@android:color/black</item>
+    </style>
+    <style name="Theme" parent="android:Theme"/>
+    <style name="Theme.Transparent">
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowIsFloating">false</item>
+        <item name="android:backgroundDimEnabled">false</item>
+    </style>
+    <style name="formWhiteBlock">
+
+        <!-- <item name="android:background">@drawable/form_white_background</item> -->
+        <item name="android:padding">10dp</item>
+        <item name="android:layout_margin">5dp</item>
+    </style>
+    <style name="homeTabIndicatorText">
+        <item name="android:textColor">@color/tab_cond_text</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+    <style name="list_left_column">
+        <item name="android:layout_width">68dip</item>
+        <item name="android:layout_height">68dip</item>
+    </style>
+    <declare-styleable name="DarkTheme">
+    <attr format="reference" name="actionBarItemBackground"/>
+
+    </declare-styleable>
+    <declare-styleable name="GlowPadView">
+
+        <!-- Reference to an array resource that be shown as targets around a circle. -->
+        <attr name="targetDrawables"/>
+
+        <!-- Reference to an array resource that be used as description for the targets around the circle. -->
+        <attr name="targetDescriptions"/>
+
+        <!-- Reference to an array resource that be used to announce the directions with targets around the circle. -->
+        <attr name="directionDescriptions"/>
+
+        <!-- Sets a drawable as the center. -->
+        <attr name="handleDrawable"/>
+
+        <!-- Drawable to use for wave ripple animation. -->
+        <attr format="reference" name="outerRingDrawable"/>
+
+        <!-- Drawble used for drawing points -->
+        <attr format="reference" name="pointDrawable"/>
+
+        <!-- Inner radius of glow area. -->
+        <attr format="dimension" name="innerRadius"/>
+
+        <!-- Outer radius of glow area. Target icons will be drawn on this circle. -->
+        <attr name="outerRadius"/>
+
+        <!-- Radius of glow under finger. -->
+        <attr format="dimension" name="glowRadius"/>
+
+        <!-- Tactile feedback duration for actions. Set to '0' for no vibration. -->
+        <attr name="vibrationDuration"/>
+
+        <!-- How close we need to be before snapping to a target. -->
+        <attr name="snapMargin"/>
+
+        <!-- Number of waves/chevrons to show in animation. -->
+        <attr name="feedbackCount"/>
+
+        <!-- Used when the handle shouldn't wait to be hit before following the finger -->
+        <attr name="alwaysTrackFinger"/>
+
+        <!-- Location along the circle of the first item, in degrees. -->
+        <attr format="float" name="firstItemOffset"/>
+
+        <!-- Causes targets to snap to the finger location on activation. -->
+        <attr format="boolean" name="magneticTargets"/>
+        <attr name="gravity"/>
+
+        <!--
+Determine whether the glow pad is allowed to scale to fit the bounds indicated
+by its parent. If this is set to false, no scaling will occur. If this is set to true
+scaling will occur to fit for any axis in which gravity is set to center.
+        -->
+        <attr format="boolean" name="allowScaling"/>
+    </declare-styleable>
+    <declare-styleable name="MultiWaveView">
+
+        <!-- Reference to an array resource that be shown as targets around a circle. -->
+        <attr format="reference" name="targetDrawables"/>
+
+        <!-- Reference to an array resource that be used as description for the targets around the circle. -->
+        <attr format="reference" name="targetDescriptions"/>
+
+        <!-- Reference to an array resource that be used to announce the directions with targets around the circle. -->
+        <attr format="reference" name="directionDescriptions"/>
+
+        <!-- Sets a drawable as the drag center. -->
+        <attr format="reference" name="handleDrawable"/>
+
+        <!-- Drawables to use for chevron animations. May be null. -->
+        <attr format="reference" name="chevronDrawables"/>
+
+        <!-- Drawable to use for wave ripple animation. -->
+        <attr format="reference" name="waveDrawable"/>
+
+        <!-- Outer radius of target circle. Icons will be drawn on this circle. -->
+        <attr format="dimension" name="outerRadius"/>
+
+        <!-- Tactile feedback duration for actions. Set to '0' for no vibration. -->
+        <attr format="integer" name="vibrationDuration"/>
+
+        <!-- How close we need to be before snapping to a target. -->
+        <attr format="dimension" name="snapMargin"/>
+
+        <!-- Number of waves/chevrons to show in animation. -->
+        <attr format="integer" name="feedbackCount"/>
+
+        <!-- Used when the handle shouldn't wait to be hit before following the finger -->
+        <attr format="boolean" name="alwaysTrackFinger"/>
+    </declare-styleable>
+</resources>

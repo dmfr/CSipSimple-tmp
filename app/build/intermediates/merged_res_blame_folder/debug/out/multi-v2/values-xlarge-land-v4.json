@@ -1,0 +1,43 @@
+{
+    "logs": [
+        {
+            "outputFile": "/storage/Development/CSipSimple-new/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-xlarge-land-v4/values-xlarge-land-v4.xml",
+            "map": [
+                {
+                    "source": "/storage/Development/CSipSimple-new/app/src/main/res/values-xlarge-land/dimens.xml",
+                    "from": {
+                        "startLines": "5,3,4",
+                        "startColumns": "4,4,4",
+                        "startOffsets": "172,56,112",
+                        "endColumns": "54,55,59",
+                        "endOffsets": "222,107,167"
+                    },
+                    "to": {
+                        "startLines": "3,4,5",
+                        "startColumns": "4,4,4",
+                        "startOffsets": "99,154,210",
+                        "endColumns": "54,55,59",
+                        "endOffsets": "149,205,265"
+                    }
+                },
+                {
+                    "source": "/storage/Development/CSipSimple-new/app/src/main/res/values-xlarge-land/layout.xml",
+                    "from": {
+                        "startLines": "21,19,18",
+                        "startColumns": "4,4,4",
+                        "startOffsets": "942,859,785",
+                        "endColumns": "43,81,73",
+                        "endOffsets": "981,936,854"
+                    },
+                    "to": {
+                        "startLines": "2,6,7",
+                        "startColumns": "4,4,4",
+                        "startOffsets": "55,270,352",
+                        "endColumns": "43,81,73",
+                        "endOffsets": "94,347,421"
+                    }
+                }
+            ]
+        }
+    ]
+}

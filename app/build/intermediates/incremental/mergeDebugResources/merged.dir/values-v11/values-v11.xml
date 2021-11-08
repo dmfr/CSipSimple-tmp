@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <bool name="use_cupcake_prefs">false</bool>
+    <bool name="use_hc_prefs">true</bool>
+    <style name="ButtonBar" parent="@android:style/Holo.ButtonBar"/>
+    <style name="ButtonBar.AlertDialog" parent="@android:style/Holo.ButtonBar.AlertDialog"/>
+    <style name="ButtonBarButton" parent="@android:style/Widget.Holo.Button.Borderless"/>
+</resources>

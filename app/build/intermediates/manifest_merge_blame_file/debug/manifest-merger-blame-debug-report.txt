@@ -1,0 +1,1082 @@
+1<?xml version="1.0" encoding="utf-8"?>
+2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+3    package="com.csipsimple"
+4    android:installLocation="auto"
+5    android:versionCode="2459"
+6    android:versionName="1.02.03" >
+7
+8    <uses-sdk
+8-->/storage/Development/CSipSimple-new/app/src/main/AndroidManifest.xml:15:5-17:41
+9        android:minSdkVersion="4"
+9-->/storage/Development/CSipSimple-new/app/src/main/AndroidManifest.xml:16:9-35
+10        android:targetSdkVersion="16" />
+10-->/storage/Development/CSipSimple-new/app/src/main/AndroidManifest.xml:17:9-38
+11
+12    <supports-screens
+12-->/storage/Development/CSipSimple-new/app/src/main/AndroidManifest.xml:8:5-13:40
+13        android:anyDensity="true"
+13-->/storage/Development/CSipSimple-new/app/src/main/AndroidManifest.xml:9:9-34
+14        android:largeScreens="true"
+14-->/storage/Development/CSipSimple-new/app/src/main/AndroidManifest.xml:10:9-36
+15        android:normalScreens="true"
+15-->/storage/Development/CSipSimple-new/app/src/main/AndroidManifest.xml:11:9-37
+16        android:smallScreens="true"
+16-->/storage/Development/CSipSimple-new/app/src/main/AndroidManifest.xml:12:9-36
+17        android:xlargeScreens="true" />
+17-->/storage/Development/CSipSimple-new/app/src/main/AndroidManifest.xml:13:9-37
+18
+19    <uses-permission android:name="android.permission.INTERNET" />
+19-->/storage/Development/CSipSimple-new/app/src/main/AndroidManifest.xml:19:5-67
+19-->/storage/Development/CSipSimple-new/app/src/main/AndroidManifest.xml:19:22-64
+20    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+20-->/storage/Development/CSipSimple-new/app/src/main/AndroidManifest.xml:20:5-71
+20-->/storage/Development/CSipSimple-new/app/src/main/AndroidManifest.xml:20:22-68
+21    <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" />
+21-->/storage/Development/CSipSimple-new/app/src/main/AndroidManifest.xml:21:5-80
+21-->/storage/Development/CSipSimple-new/app/src/main/AndroidManifest.xml:21:22-77
+22    <uses-permission android:name="android.permission.PROCESS_OUTGOING_CALLS" />
+22-->/storage/Development/CSipSimple-new/app/src/main/AndroidManifest.xml:22:5-81
+22-->/storage/Development/CSipSimple-new/app/src/main/AndroidManifest.xml:22:22-78
+23    <uses-permission android:name="android.permission.WRITE_SETTINGS" />
+23-->/storage/Development/CSipSimple-new/app/src/main/AndroidManifest.xml:23:5-73
+23-->/storage/Development/CSipSimple-new/app/src/main/AndroidManifest.xml:23:22-70
+24    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+24-->/storage/Development/CSipSimple-new/app/src/main/AndroidManifest.xml:24:5-75
+24-->/storage/Development/CSipSimple-new/app/src/main/AndroidManifest.xml:24:22-72
+25    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+25-->/storage/Development/CSipSimple-new/app/src/main/AndroidManifest.xml:25:5-76
+25-->/storage/Development/CSipSimple-new/app/src/main/AndroidManifest.xml:25:22-73
+26    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+26-->/storage/Development/CSipSimple-new/app/src/main/AndroidManifest.xml:26:5-79
+26-->/storage/Development/CSipSimple-new/app/src/main/AndroidManifest.xml:26:22-76
+27    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+27-->/storage/Development/CSipSimple-new/app/src/main/AndroidManifest.xml:27:5-81
+27-->/storage/Development/CSipSimple-new/app/src/main/AndroidManifest.xml:27:22-78
+28    <uses-permission android:name="android.permission.READ_CONTACTS" />
+28-->/storage/Development/CSipSimple-new/app/src/main/AndroidManifest.xml:28:5-72
+28-->/storage/Development/CSipSimple-new/app/src/main/AndroidManifest.xml:28:22-69
+29    <uses-permission android:name="android.permission.WRITE_CONTACTS" />
+29-->/storage/Development/CSipSimple-new/app/src/main/AndroidManifest.xml:29:5-73
+29-->/storage/Development/CSipSimple-new/app/src/main/AndroidManifest.xml:29:22-70
+30    <uses-permission android:name="android.permission.CALL_PHONE" />
+30-->/storage/Development/CSipSimple-new/app/src/main/AndroidManifest.xml:30:5-69
+30-->/storage/Development/CSipSimple-new/app/src/main/AndroidManifest.xml:30:22-66
+31    <!--
+32    <uses-permission android:name="android.permission.CALL_PRIVILEGED" /> 
+33    was useless anyway as only granted to system app and
+34    we don't have core integration anymore with these plugins
+35    -->
+36    <uses-permission android:name="android.permission.WAKE_LOCK" />
+36-->/storage/Development/CSipSimple-new/app/src/main/AndroidManifest.xml:36:5-68
+36-->/storage/Development/CSipSimple-new/app/src/main/AndroidManifest.xml:36:22-65
+37    <uses-permission android:name="android.permission.DISABLE_KEYGUARD" />
+37-->/storage/Development/CSipSimple-new/app/src/main/AndroidManifest.xml:37:5-75
+37-->/storage/Development/CSipSimple-new/app/src/main/AndroidManifest.xml:37:22-72
+38    <uses-permission android:name="android.permission.VIBRATE" />
+38-->/storage/Development/CSipSimple-new/app/src/main/AndroidManifest.xml:38:5-66
+38-->/storage/Development/CSipSimple-new/app/src/main/AndroidManifest.xml:38:22-63
+39    <uses-permission android:name="android.permission.BLUETOOTH" />
+39-->/storage/Development/CSipSimple-new/app/src/main/AndroidManifest.xml:39:5-68
+39-->/storage/Development/CSipSimple-new/app/src/main/AndroidManifest.xml:39:22-65
+40    <uses-permission android:name="android.permission.READ_LOGS" />
+40-->/storage/Development/CSipSimple-new/app/src/main/AndroidManifest.xml:40:5-68
+40-->/storage/Development/CSipSimple-new/app/src/main/AndroidManifest.xml:40:22-65
+41    <uses-permission android:name="android.permission.WRITE_CALL_LOG" />
+41-->/storage/Development/CSipSimple-new/app/src/main/AndroidManifest.xml:41:5-73
+41-->/storage/Development/CSipSimple-new/app/src/main/AndroidManifest.xml:41:22-70
+42    <uses-permission android:name="android.permission.USE_SIP" />
+42-->/storage/Development/CSipSimple-new/app/src/main/AndroidManifest.xml:42:5-66
+42-->/storage/Development/CSipSimple-new/app/src/main/AndroidManifest.xml:42:22-63
+43    <uses-permission android:name="android.permission.CONFIGURE_SIP" />
+43-->/storage/Development/CSipSimple-new/app/src/main/AndroidManifest.xml:43:5-72
+43-->/storage/Development/CSipSimple-new/app/src/main/AndroidManifest.xml:43:22-69
+44    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+44-->/storage/Development/CSipSimple-new/app/src/main/AndroidManifest.xml:44:5-81
+44-->/storage/Development/CSipSimple-new/app/src/main/AndroidManifest.xml:44:22-78
+45    <uses-permission android:name="android.permission.CAMERA" />
+45-->/storage/Development/CSipSimple-new/app/src/main/AndroidManifest.xml:45:5-65
+45-->/storage/Development/CSipSimple-new/app/src/main/AndroidManifest.xml:45:22-62
+46    <uses-permission android:name="android.permission.BROADCAST_STICKY" />
+46-->/storage/Development/CSipSimple-new/app/src/main/AndroidManifest.xml:46:5-75
+46-->/storage/Development/CSipSimple-new/app/src/main/AndroidManifest.xml:46:22-72
+47    <uses-permission android:name="android.permission.READ_PROFILE" />
+47-->/storage/Development/CSipSimple-new/app/src/main/AndroidManifest.xml:47:5-71
+47-->/storage/Development/CSipSimple-new/app/src/main/AndroidManifest.xml:47:22-68
+48    <!--
+49    Not taken into account?
+50    Regarding Diane's comment this was never implemented 
+51    and was dropped in most recent android versions 
+52    <uses-permission android:name="android.permission.RAISED_THREAD_PRIORITY" />
+53    -->
+54
+55
+56    <!-- COMMENT THIS if you plan to use in library mode -->
+57    <permission
+57-->/storage/Development/CSipSimple-new/app/src/main/AndroidManifest.xml:57:5-62:47
+58        android:name="android.permission.USE_SIP"
+58-->/storage/Development/CSipSimple-new/app/src/main/AndroidManifest.xml:58:9-50
+59        android:description="@string/permdesc_useSip"
+59-->/storage/Development/CSipSimple-new/app/src/main/AndroidManifest.xml:59:9-54
+60        android:label="@string/permlab_useSip"
+60-->/storage/Development/CSipSimple-new/app/src/main/AndroidManifest.xml:60:9-47
+61        android:permissionGroup="android.permission-group.COST_MONEY"
+61-->/storage/Development/CSipSimple-new/app/src/main/AndroidManifest.xml:61:9-70
+62        android:protectionLevel="dangerous" />
+62-->/storage/Development/CSipSimple-new/app/src/main/AndroidManifest.xml:62:9-44
+63    <permission
+63-->/storage/Development/CSipSimple-new/app/src/main/AndroidManifest.xml:63:5-68:47
+64        android:name="android.permission.CONFIGURE_SIP"
+64-->/storage/Development/CSipSimple-new/app/src/main/AndroidManifest.xml:64:9-56
+65        android:description="@string/permdesc_configureSip"
+65-->/storage/Development/CSipSimple-new/app/src/main/AndroidManifest.xml:65:9-60
+66        android:label="@string/permlab_configureSip"
+66-->/storage/Development/CSipSimple-new/app/src/main/AndroidManifest.xml:66:9-53
+67        android:permissionGroup="android.permission-group.COST_MONEY"
+67-->/storage/Development/CSipSimple-new/app/src/main/AndroidManifest.xml:67:9-70
+68        android:protectionLevel="dangerous" />
+68-->/storage/Development/CSipSimple-new/app/src/main/AndroidManifest.xml:68:9-44
+69
+70    <!-- END OF COMMENT THIS -->
+71
+72    <uses-feature
+72-->/storage/Development/CSipSimple-new/app/src/main/AndroidManifest.xml:72:5-74:36
+73        android:name="android.hardware.wifi"
+73-->/storage/Development/CSipSimple-new/app/src/main/AndroidManifest.xml:73:9-45
+74        android:required="false" />
+74-->/storage/Development/CSipSimple-new/app/src/main/AndroidManifest.xml:74:9-33
+75    <uses-feature
+75-->/storage/Development/CSipSimple-new/app/src/main/AndroidManifest.xml:75:5-77:36
+76        android:name="android.hardware.telephony"
+76-->/storage/Development/CSipSimple-new/app/src/main/AndroidManifest.xml:76:9-50
+77        android:required="false" />
+77-->/storage/Development/CSipSimple-new/app/src/main/AndroidManifest.xml:77:9-33
+78    <uses-feature
+78-->/storage/Development/CSipSimple-new/app/src/main/AndroidManifest.xml:78:5-80:35
+79        android:name="android.hardware.microphone"
+79-->/storage/Development/CSipSimple-new/app/src/main/AndroidManifest.xml:79:9-51
+80        android:required="true" />
+80-->/storage/Development/CSipSimple-new/app/src/main/AndroidManifest.xml:80:9-32
+81    <uses-feature
+81-->/storage/Development/CSipSimple-new/app/src/main/AndroidManifest.xml:81:5-83:36
+82        android:name="android.hardware.touchscreen"
+82-->/storage/Development/CSipSimple-new/app/src/main/AndroidManifest.xml:82:9-52
+83        android:required="false" />
+83-->/storage/Development/CSipSimple-new/app/src/main/AndroidManifest.xml:83:9-33
+84    <uses-feature
+84-->/storage/Development/CSipSimple-new/app/src/main/AndroidManifest.xml:84:5-86:36
+85        android:name="android.hardware.bluetooth"
+85-->/storage/Development/CSipSimple-new/app/src/main/AndroidManifest.xml:85:9-50
+86        android:required="false" />
+86-->/storage/Development/CSipSimple-new/app/src/main/AndroidManifest.xml:86:9-33
+87    <uses-feature
+87-->/storage/Development/CSipSimple-new/app/src/main/AndroidManifest.xml:87:5-89:36
+88        android:name="android.hardware.screen.portrait"
+88-->/storage/Development/CSipSimple-new/app/src/main/AndroidManifest.xml:88:9-56
+89        android:required="false" />
+89-->/storage/Development/CSipSimple-new/app/src/main/AndroidManifest.xml:89:9-33
+90    <uses-feature
+90-->/storage/Development/CSipSimple-new/app/src/main/AndroidManifest.xml:90:5-92:36
+91        android:name="android.hardware.camera"
+91-->/storage/Development/CSipSimple-new/app/src/main/AndroidManifest.xml:91:9-47
+92        android:required="false" />
+92-->/storage/Development/CSipSimple-new/app/src/main/AndroidManifest.xml:92:9-33
+93    <uses-feature
+93-->/storage/Development/CSipSimple-new/app/src/main/AndroidManifest.xml:93:5-95:36
+94        android:name="android.hardware.camera.autofocus"
+94-->/storage/Development/CSipSimple-new/app/src/main/AndroidManifest.xml:94:9-57
+95        android:required="false" />
+95-->/storage/Development/CSipSimple-new/app/src/main/AndroidManifest.xml:95:9-33
+96    <uses-feature
+96-->/storage/Development/CSipSimple-new/app/src/main/AndroidManifest.xml:96:5-98:36
+97        android:name="android.hardware.camera.flash"
+97-->/storage/Development/CSipSimple-new/app/src/main/AndroidManifest.xml:97:9-53
+98        android:required="false" />
+98-->/storage/Development/CSipSimple-new/app/src/main/AndroidManifest.xml:98:9-33
+99    <uses-feature
+99-->/storage/Development/CSipSimple-new/app/src/main/AndroidManifest.xml:99:5-101:36
+100        android:name="android.hardware.camera.front"
+100-->/storage/Development/CSipSimple-new/app/src/main/AndroidManifest.xml:100:9-53
+101        android:required="false" />
+101-->/storage/Development/CSipSimple-new/app/src/main/AndroidManifest.xml:101:9-33
+102
+103    <application
+103-->/storage/Development/CSipSimple-new/app/src/main/AndroidManifest.xml:103:5-569:19
+104        android:allowBackup="true"
+104-->/storage/Development/CSipSimple-new/app/src/main/AndroidManifest.xml:104:9-35
+105        android:backupAgent="com.csipsimple.backup.SipBackupAgent"
+105-->/storage/Development/CSipSimple-new/app/src/main/AndroidManifest.xml:105:9-67
+106        android:debuggable="true"
+107        android:hardwareAccelerated="true"
+107-->/storage/Development/CSipSimple-new/app/src/main/AndroidManifest.xml:106:9-43
+108        android:icon="@drawable/ic_launcher_nightly"
+108-->/storage/Development/CSipSimple-new/app/src/main/AndroidManifest.xml:107:9-53
+109        android:label="@string/app_name" >
+109-->/storage/Development/CSipSimple-new/app/src/main/AndroidManifest.xml:108:9-41
+110        <meta-data
+110-->/storage/Development/CSipSimple-new/app/src/main/AndroidManifest.xml:109:9-111:39
+111            android:name="app_type"
+111-->/storage/Development/CSipSimple-new/app/src/main/AndroidManifest.xml:110:13-36
+112            android:value="nightly" />
+112-->/storage/Development/CSipSimple-new/app/src/main/AndroidManifest.xml:111:13-36
+113        <meta-data
+113-->/storage/Development/CSipSimple-new/app/src/main/AndroidManifest.xml:112:9-114:37
+114            android:name="app_channel"
+114-->/storage/Development/CSipSimple-new/app/src/main/AndroidManifest.xml:113:13-39
+115            android:value="trunk" />
+115-->/storage/Development/CSipSimple-new/app/src/main/AndroidManifest.xml:114:13-34
+116        <meta-data
+116-->/storage/Development/CSipSimple-new/app/src/main/AndroidManifest.xml:115:9-117:82
+117            android:name="com.google.android.backup.api_key"
+117-->/storage/Development/CSipSimple-new/app/src/main/AndroidManifest.xml:116:13-61
+118            android:value="AEdPqrEAAAAIL5x8Klvg-Y8nV4j4PNSy2JH6yQZ49yKbrqKJAw" />
+118-->/storage/Development/CSipSimple-new/app/src/main/AndroidManifest.xml:117:13-79
+119
+120        <!--
+121        Samsung multiview support
+122        <uses-library
+123            android:name="com.sec.android.app.multiwindow"
+124            android:required="false" />
+125        -->
+126        <meta-data
+126-->/storage/Development/CSipSimple-new/app/src/main/AndroidManifest.xml:125:9-127:36
+127            android:name="com.sec.android.support.multiwindow"
+127-->/storage/Development/CSipSimple-new/app/src/main/AndroidManifest.xml:126:13-63
+128            android:value="true" />
+128-->/storage/Development/CSipSimple-new/app/src/main/AndroidManifest.xml:127:13-33
+129
+130        <activity
+130-->/storage/Development/CSipSimple-new/app/src/main/AndroidManifest.xml:129:9-169:20
+131            android:name="com.csipsimple.ui.SipHome"
+131-->/storage/Development/CSipSimple-new/app/src/main/AndroidManifest.xml:130:13-53
+132            android:label="@string/app_name"
+132-->/storage/Development/CSipSimple-new/app/src/main/AndroidManifest.xml:131:13-45
+133            android:launchMode="singleTask"
+133-->/storage/Development/CSipSimple-new/app/src/main/AndroidManifest.xml:132:13-44
+134            android:theme="@style/DarkTheme"
+134-->/storage/Development/CSipSimple-new/app/src/main/AndroidManifest.xml:133:13-45
+135            android:uiOptions="splitActionBarWhenNarrow" >
+135-->/storage/Development/CSipSimple-new/app/src/main/AndroidManifest.xml:134:13-57
+136            <intent-filter>
+136-->/storage/Development/CSipSimple-new/app/src/main/AndroidManifest.xml:135:13-140:29
+137                <action android:name="android.intent.action.MAIN" />
+137-->/storage/Development/CSipSimple-new/app/src/main/AndroidManifest.xml:136:17-69
+137-->/storage/Development/CSipSimple-new/app/src/main/AndroidManifest.xml:136:25-66
+138
+139                <category android:name="android.intent.category.LAUNCHER" />
+139-->/storage/Development/CSipSimple-new/app/src/main/AndroidManifest.xml:138:17-77
+139-->/storage/Development/CSipSimple-new/app/src/main/AndroidManifest.xml:138:27-74
+140                <category android:name="android.intent.category.MULTIWINDOW_LAUNCHER" />
+140-->/storage/Development/CSipSimple-new/app/src/main/AndroidManifest.xml:139:17-89
+140-->/storage/Development/CSipSimple-new/app/src/main/AndroidManifest.xml:139:27-86
+141            </intent-filter>
+142            <intent-filter android:priority="10" >
+142-->/storage/Development/CSipSimple-new/app/src/main/AndroidManifest.xml:141:13-145:29
+142-->/storage/Development/CSipSimple-new/app/src/main/AndroidManifest.xml:141:28-49
+143                <action android:name="com.csipsimple.phone.action.DIALER" />
+143-->/storage/Development/CSipSimple-new/app/src/main/AndroidManifest.xml:142:17-77
+143-->/storage/Development/CSipSimple-new/app/src/main/AndroidManifest.xml:142:25-74
+144
+145                <category android:name="android.intent.category.DEFAULT" />
+145-->/storage/Development/CSipSimple-new/app/src/main/AndroidManifest.xml:144:17-76
+145-->/storage/Development/CSipSimple-new/app/src/main/AndroidManifest.xml:144:27-73
+146            </intent-filter>
+147            <intent-filter android:priority="10" >
+147-->/storage/Development/CSipSimple-new/app/src/main/AndroidManifest.xml:146:13-153:29
+147-->/storage/Development/CSipSimple-new/app/src/main/AndroidManifest.xml:146:28-49
+148                <action android:name="android.intent.action.DIAL" />
+148-->/storage/Development/CSipSimple-new/app/src/main/AndroidManifest.xml:147:17-69
+148-->/storage/Development/CSipSimple-new/app/src/main/AndroidManifest.xml:147:25-66
+149
+150                <category android:name="android.intent.category.DEFAULT" />
+150-->/storage/Development/CSipSimple-new/app/src/main/AndroidManifest.xml:144:17-76
+150-->/storage/Development/CSipSimple-new/app/src/main/AndroidManifest.xml:144:27-73
+151
+152                <data android:scheme="sip" />
+152-->/storage/Development/CSipSimple-new/app/src/main/AndroidManifest.xml:151:17-46
+152-->/storage/Development/CSipSimple-new/app/src/main/AndroidManifest.xml:151:23-43
+153                <data android:scheme="csip" />
+153-->/storage/Development/CSipSimple-new/app/src/main/AndroidManifest.xml:151:17-46
+153-->/storage/Development/CSipSimple-new/app/src/main/AndroidManifest.xml:151:23-43
+154            </intent-filter>
+155            <intent-filter android:priority="10" >
+155-->/storage/Development/CSipSimple-new/app/src/main/AndroidManifest.xml:154:13-158:29
+155-->/storage/Development/CSipSimple-new/app/src/main/AndroidManifest.xml:154:28-49
+156                <action android:name="com.csipsimple.phone.action.CALLLOG" />
+156-->/storage/Development/CSipSimple-new/app/src/main/AndroidManifest.xml:155:17-78
+156-->/storage/Development/CSipSimple-new/app/src/main/AndroidManifest.xml:155:25-75
+157
+158                <category android:name="android.intent.category.DEFAULT" />
+158-->/storage/Development/CSipSimple-new/app/src/main/AndroidManifest.xml:144:17-76
+158-->/storage/Development/CSipSimple-new/app/src/main/AndroidManifest.xml:144:27-73
+159            </intent-filter>
+160            <intent-filter android:priority="10" >
+160-->/storage/Development/CSipSimple-new/app/src/main/AndroidManifest.xml:159:13-163:29
+160-->/storage/Development/CSipSimple-new/app/src/main/AndroidManifest.xml:159:28-49
+161                <action android:name="com.csipsimple.phone.action.FAVORITES" />
+161-->/storage/Development/CSipSimple-new/app/src/main/AndroidManifest.xml:160:17-80
+161-->/storage/Development/CSipSimple-new/app/src/main/AndroidManifest.xml:160:25-77
+162
+163                <category android:name="android.intent.category.DEFAULT" />
+163-->/storage/Development/CSipSimple-new/app/src/main/AndroidManifest.xml:144:17-76
+163-->/storage/Development/CSipSimple-new/app/src/main/AndroidManifest.xml:144:27-73
+164            </intent-filter>
+165            <intent-filter android:priority="10" >
+165-->/storage/Development/CSipSimple-new/app/src/main/AndroidManifest.xml:164:13-168:29
+165-->/storage/Development/CSipSimple-new/app/src/main/AndroidManifest.xml:164:28-49
+166                <action android:name="com.csipsimple.phone.action.MESSAGES" />
+166-->/storage/Development/CSipSimple-new/app/src/main/AndroidManifest.xml:165:17-79
+166-->/storage/Development/CSipSimple-new/app/src/main/AndroidManifest.xml:165:25-76
+167
+168                <category android:name="android.intent.category.DEFAULT" />
+168-->/storage/Development/CSipSimple-new/app/src/main/AndroidManifest.xml:144:17-76
+168-->/storage/Development/CSipSimple-new/app/src/main/AndroidManifest.xml:144:27-73
+169            </intent-filter>
+170        </activity>
+171
+172        <activity-alias
+172-->/storage/Development/CSipSimple-new/app/src/main/AndroidManifest.xml:171:9-208:26
+173            android:name="com.csipsimple.ui.SipDialer"
+173-->/storage/Development/CSipSimple-new/app/src/main/AndroidManifest.xml:172:13-55
+174            android:label="@string/app_name"
+174-->/storage/Development/CSipSimple-new/app/src/main/AndroidManifest.xml:173:13-45
+175            android:launchMode="singleTask"
+175-->/storage/Development/CSipSimple-new/app/src/main/AndroidManifest.xml:174:13-44
+176            android:targetActivity="com.csipsimple.ui.SipHome"
+176-->/storage/Development/CSipSimple-new/app/src/main/AndroidManifest.xml:175:13-63
+177            android:theme="@style/DarkTheme"
+177-->/storage/Development/CSipSimple-new/app/src/main/AndroidManifest.xml:176:13-45
+178            android:uiOptions="splitActionBarWhenNarrow" >
+178-->/storage/Development/CSipSimple-new/app/src/main/AndroidManifest.xml:177:13-57
+179            <intent-filter>
+179-->/storage/Development/CSipSimple-new/app/src/main/AndroidManifest.xml:178:13-190:29
+180                <action android:name="android.intent.action.VIEW" />
+180-->/storage/Development/CSipSimple-new/app/src/main/AndroidManifest.xml:179:17-69
+180-->/storage/Development/CSipSimple-new/app/src/main/AndroidManifest.xml:179:25-66
+181                <action android:name="android.intent.action.SENDTO" />
+181-->/storage/Development/CSipSimple-new/app/src/main/AndroidManifest.xml:180:17-71
+181-->/storage/Development/CSipSimple-new/app/src/main/AndroidManifest.xml:180:25-68
+182
+183                <category android:name="android.intent.category.DEFAULT" />
+183-->/storage/Development/CSipSimple-new/app/src/main/AndroidManifest.xml:144:17-76
+183-->/storage/Development/CSipSimple-new/app/src/main/AndroidManifest.xml:144:27-73
+184                <category android:name="android.intent.category.BROWSABLE" />
+184-->/storage/Development/CSipSimple-new/app/src/main/AndroidManifest.xml:183:17-78
+184-->/storage/Development/CSipSimple-new/app/src/main/AndroidManifest.xml:183:27-75
+185
+186                <data android:scheme="csip" />
+186-->/storage/Development/CSipSimple-new/app/src/main/AndroidManifest.xml:151:17-46
+186-->/storage/Development/CSipSimple-new/app/src/main/AndroidManifest.xml:151:23-43
+187                <data android:scheme="sip" />
+187-->/storage/Development/CSipSimple-new/app/src/main/AndroidManifest.xml:151:17-46
+187-->/storage/Development/CSipSimple-new/app/src/main/AndroidManifest.xml:151:23-43
+188                <data android:scheme="sips" />
+188-->/storage/Development/CSipSimple-new/app/src/main/AndroidManifest.xml:151:17-46
+188-->/storage/Development/CSipSimple-new/app/src/main/AndroidManifest.xml:151:23-43
+189                <data android:scheme="sms" />
+189-->/storage/Development/CSipSimple-new/app/src/main/AndroidManifest.xml:151:17-46
+189-->/storage/Development/CSipSimple-new/app/src/main/AndroidManifest.xml:151:23-43
+190                <data android:scheme="smsto" />
+190-->/storage/Development/CSipSimple-new/app/src/main/AndroidManifest.xml:151:17-46
+190-->/storage/Development/CSipSimple-new/app/src/main/AndroidManifest.xml:151:23-43
+191            </intent-filter>
+192            <intent-filter>
+192-->/storage/Development/CSipSimple-new/app/src/main/AndroidManifest.xml:191:13-207:29
+193                <action android:name="android.intent.action.VIEW" />
+193-->/storage/Development/CSipSimple-new/app/src/main/AndroidManifest.xml:179:17-69
+193-->/storage/Development/CSipSimple-new/app/src/main/AndroidManifest.xml:179:25-66
+194                <action android:name="android.intent.action.SENDTO" />
+194-->/storage/Development/CSipSimple-new/app/src/main/AndroidManifest.xml:180:17-71
+194-->/storage/Development/CSipSimple-new/app/src/main/AndroidManifest.xml:180:25-68
+195
+196                <category android:name="android.intent.category.DEFAULT" />
+196-->/storage/Development/CSipSimple-new/app/src/main/AndroidManifest.xml:144:17-76
+196-->/storage/Development/CSipSimple-new/app/src/main/AndroidManifest.xml:144:27-73
+197                <category android:name="android.intent.category.BROWSABLE" />
+197-->/storage/Development/CSipSimple-new/app/src/main/AndroidManifest.xml:183:17-78
+197-->/storage/Development/CSipSimple-new/app/src/main/AndroidManifest.xml:183:27-75
+198
+199                <data
+199-->/storage/Development/CSipSimple-new/app/src/main/AndroidManifest.xml:151:17-46
+200                    android:host="csip"
+200-->/storage/Development/CSipSimple-new/app/src/main/AndroidManifest.xml:199:21-40
+201                    android:scheme="imto" />
+201-->/storage/Development/CSipSimple-new/app/src/main/AndroidManifest.xml:151:23-43
+202                <data
+202-->/storage/Development/CSipSimple-new/app/src/main/AndroidManifest.xml:151:17-46
+203                    android:host="sip"
+203-->/storage/Development/CSipSimple-new/app/src/main/AndroidManifest.xml:199:21-40
+204                    android:scheme="imto" />
+204-->/storage/Development/CSipSimple-new/app/src/main/AndroidManifest.xml:151:23-43
+205                <data
+205-->/storage/Development/CSipSimple-new/app/src/main/AndroidManifest.xml:151:17-46
+206                    android:host="skype"
+206-->/storage/Development/CSipSimple-new/app/src/main/AndroidManifest.xml:199:21-40
+207                    android:scheme="imto" />
+207-->/storage/Development/CSipSimple-new/app/src/main/AndroidManifest.xml:151:23-43
+208            </intent-filter>
+209        </activity-alias>
+210
+211        <!-- Main service -->
+212        <!-- Require at least the configure permission to use -->
+213        <service
+213-->/storage/Development/CSipSimple-new/app/src/main/AndroidManifest.xml:212:9-221:19
+214            android:name="com.csipsimple.service.SipService"
+214-->/storage/Development/CSipSimple-new/app/src/main/AndroidManifest.xml:213:13-61
+215            android:exported="true"
+215-->/storage/Development/CSipSimple-new/app/src/main/AndroidManifest.xml:214:13-36
+216            android:permission="android.permission.CONFIGURE_SIP"
+216-->/storage/Development/CSipSimple-new/app/src/main/AndroidManifest.xml:215:13-66
+217            android:process=":sipStack" >
+217-->/storage/Development/CSipSimple-new/app/src/main/AndroidManifest.xml:216:13-40
+218            <intent-filter>
+218-->/storage/Development/CSipSimple-new/app/src/main/AndroidManifest.xml:217:13-220:29
+219                <action android:name="com.csipsimple.service.SipService" />
+219-->/storage/Development/CSipSimple-new/app/src/main/AndroidManifest.xml:218:17-76
+219-->/storage/Development/CSipSimple-new/app/src/main/AndroidManifest.xml:218:25-73
+220                <action android:name="com.csipsimple.service.SipConfiguration" />
+220-->/storage/Development/CSipSimple-new/app/src/main/AndroidManifest.xml:219:17-82
+220-->/storage/Development/CSipSimple-new/app/src/main/AndroidManifest.xml:219:25-79
+221            </intent-filter>
+222        </service>
+223        <service android:name="com.csipsimple.service.Downloader" />
+223-->/storage/Development/CSipSimple-new/app/src/main/AndroidManifest.xml:222:9-69
+223-->/storage/Development/CSipSimple-new/app/src/main/AndroidManifest.xml:222:18-66
+224
+225        <receiver
+225-->/storage/Development/CSipSimple-new/app/src/main/AndroidManifest.xml:224:9-243:20
+226            android:name="com.csipsimple.service.DeviceStateReceiver"
+226-->/storage/Development/CSipSimple-new/app/src/main/AndroidManifest.xml:225:13-70
+227            android:permission="android.permission.CONFIGURE_SIP"
+227-->/storage/Development/CSipSimple-new/app/src/main/AndroidManifest.xml:226:13-66
+228            android:process=":sipStack" >
+228-->/storage/Development/CSipSimple-new/app/src/main/AndroidManifest.xml:227:13-40
+229
+230            <!-- Here filter for protected-broadcasts -->
+231            <intent-filter>
+231-->/storage/Development/CSipSimple-new/app/src/main/AndroidManifest.xml:230:13-232:29
+232                <action android:name="com.csipsimple.accounts.activate" />
+232-->/storage/Development/CSipSimple-new/app/src/main/AndroidManifest.xml:231:17-75
+232-->/storage/Development/CSipSimple-new/app/src/main/AndroidManifest.xml:231:25-72
+233            </intent-filter>
+234            <intent-filter>
+234-->/storage/Development/CSipSimple-new/app/src/main/AndroidManifest.xml:233:13-236:29
+235                <action android:name="android.net.conn.CONNECTIVITY_CHANGE" />
+235-->/storage/Development/CSipSimple-new/app/src/main/AndroidManifest.xml:234:17-79
+235-->/storage/Development/CSipSimple-new/app/src/main/AndroidManifest.xml:234:25-76
+236                <action android:name="android.intent.action.BOOT_COMPLETED" />
+236-->/storage/Development/CSipSimple-new/app/src/main/AndroidManifest.xml:235:17-79
+236-->/storage/Development/CSipSimple-new/app/src/main/AndroidManifest.xml:235:25-76
+237            </intent-filter>
+238            <intent-filter>
+238-->/storage/Development/CSipSimple-new/app/src/main/AndroidManifest.xml:237:13-242:29
+239                <action android:name="android.intent.action.PACKAGE_ADDED" />
+239-->/storage/Development/CSipSimple-new/app/src/main/AndroidManifest.xml:238:17-78
+239-->/storage/Development/CSipSimple-new/app/src/main/AndroidManifest.xml:238:25-75
+240                <action android:name="android.intent.action.PACKAGE_REMOVED" />
+240-->/storage/Development/CSipSimple-new/app/src/main/AndroidManifest.xml:239:17-80
+240-->/storage/Development/CSipSimple-new/app/src/main/AndroidManifest.xml:239:25-77
+241
+242                <data android:scheme="package" />
+242-->/storage/Development/CSipSimple-new/app/src/main/AndroidManifest.xml:151:17-46
+242-->/storage/Development/CSipSimple-new/app/src/main/AndroidManifest.xml:151:23-43
+243            </intent-filter>
+244        </receiver>
+245
+246        <!-- Main ui -->
+247        <activity
+247-->/storage/Development/CSipSimple-new/app/src/main/AndroidManifest.xml:246:9-248:48
+248            android:name="com.csipsimple.ui.calllog.CallLogDetailsActivity"
+248-->/storage/Development/CSipSimple-new/app/src/main/AndroidManifest.xml:247:13-76
+249            android:theme="@style/DarkTheme" />
+249-->/storage/Development/CSipSimple-new/app/src/main/AndroidManifest.xml:248:13-45
+250
+251        <!-- Accounts -->
+252        <activity
+252-->/storage/Development/CSipSimple-new/app/src/main/AndroidManifest.xml:251:9-255:48
+253            android:name="com.csipsimple.ui.filters.AccountFilters"
+253-->/storage/Development/CSipSimple-new/app/src/main/AndroidManifest.xml:252:13-68
+254            android:configChanges="orientation"
+254-->/storage/Development/CSipSimple-new/app/src/main/AndroidManifest.xml:253:13-48
+255            android:label="@string/filters"
+255-->/storage/Development/CSipSimple-new/app/src/main/AndroidManifest.xml:254:13-44
+256            android:theme="@style/DarkTheme" />
+256-->/storage/Development/CSipSimple-new/app/src/main/AndroidManifest.xml:255:13-45
+257        <activity
+257-->/storage/Development/CSipSimple-new/app/src/main/AndroidManifest.xml:256:9-260:48
+258            android:name="com.csipsimple.ui.filters.EditFilter"
+258-->/storage/Development/CSipSimple-new/app/src/main/AndroidManifest.xml:257:13-64
+259            android:configChanges="orientation"
+259-->/storage/Development/CSipSimple-new/app/src/main/AndroidManifest.xml:258:13-48
+260            android:label="@string/filters"
+260-->/storage/Development/CSipSimple-new/app/src/main/AndroidManifest.xml:259:13-44
+261            android:theme="@style/DarkTheme" />
+261-->/storage/Development/CSipSimple-new/app/src/main/AndroidManifest.xml:260:13-45
+262        <activity
+262-->/storage/Development/CSipSimple-new/app/src/main/AndroidManifest.xml:261:9-265:55
+263            android:name="com.csipsimple.wizards.WizardChooser"
+263-->/storage/Development/CSipSimple-new/app/src/main/AndroidManifest.xml:262:13-64
+264            android:configChanges="orientation"
+264-->/storage/Development/CSipSimple-new/app/src/main/AndroidManifest.xml:263:13-48
+265            android:label="@string/choose_wizard"
+265-->/storage/Development/CSipSimple-new/app/src/main/AndroidManifest.xml:264:13-50
+266            android:theme="@style/DarkTheme.Dialog" />
+266-->/storage/Development/CSipSimple-new/app/src/main/AndroidManifest.xml:265:13-52
+267
+268        <!-- Preferences -->
+269        <activity
+269-->/storage/Development/CSipSimple-new/app/src/main/AndroidManifest.xml:268:9-280:20
+270            android:name="com.csipsimple.ui.prefs.hc.MainPrefs"
+270-->/storage/Development/CSipSimple-new/app/src/main/AndroidManifest.xml:269:13-64
+271            android:configChanges="orientation"
+271-->/storage/Development/CSipSimple-new/app/src/main/AndroidManifest.xml:270:13-48
+272            android:enabled="@bool/use_hc_prefs"
+272-->/storage/Development/CSipSimple-new/app/src/main/AndroidManifest.xml:271:13-49
+273            android:label="@string/prefs"
+273-->/storage/Development/CSipSimple-new/app/src/main/AndroidManifest.xml:272:13-42
+274            android:permission="android.permission.CONFIGURE_SIP"
+274-->/storage/Development/CSipSimple-new/app/src/main/AndroidManifest.xml:273:13-66
+275            android:theme="@style/DarkTheme" >
+275-->/storage/Development/CSipSimple-new/app/src/main/AndroidManifest.xml:274:13-45
+276            <intent-filter>
+276-->/storage/Development/CSipSimple-new/app/src/main/AndroidManifest.xml:275:13-279:29
+277                <action android:name="com.csipsimple.ui.action.PREFS_GLOBAL" />
+277-->/storage/Development/CSipSimple-new/app/src/main/AndroidManifest.xml:276:17-80
+277-->/storage/Development/CSipSimple-new/app/src/main/AndroidManifest.xml:276:25-77
+278
+279                <category android:name="android.intent.category.DEFAULT" />
+279-->/storage/Development/CSipSimple-new/app/src/main/AndroidManifest.xml:144:17-76
+279-->/storage/Development/CSipSimple-new/app/src/main/AndroidManifest.xml:144:27-73
+280            </intent-filter>
+281        </activity>
+282        <activity
+282-->/storage/Development/CSipSimple-new/app/src/main/AndroidManifest.xml:281:9-293:20
+283            android:name="com.csipsimple.ui.prefs.cupcake.MainPrefs"
+283-->/storage/Development/CSipSimple-new/app/src/main/AndroidManifest.xml:282:13-69
+284            android:configChanges="orientation"
+284-->/storage/Development/CSipSimple-new/app/src/main/AndroidManifest.xml:283:13-48
+285            android:enabled="@bool/use_cupcake_prefs"
+285-->/storage/Development/CSipSimple-new/app/src/main/AndroidManifest.xml:284:13-54
+286            android:label="@string/prefs"
+286-->/storage/Development/CSipSimple-new/app/src/main/AndroidManifest.xml:285:13-42
+287            android:permission="android.permission.CONFIGURE_SIP"
+287-->/storage/Development/CSipSimple-new/app/src/main/AndroidManifest.xml:286:13-66
+288            android:theme="@style/DarkTheme" >
+288-->/storage/Development/CSipSimple-new/app/src/main/AndroidManifest.xml:287:13-45
+289            <intent-filter>
+289-->/storage/Development/CSipSimple-new/app/src/main/AndroidManifest.xml:275:13-279:29
+290                <action android:name="com.csipsimple.ui.action.PREFS_GLOBAL" />
+290-->/storage/Development/CSipSimple-new/app/src/main/AndroidManifest.xml:276:17-80
+290-->/storage/Development/CSipSimple-new/app/src/main/AndroidManifest.xml:276:25-77
+291
+292                <category android:name="android.intent.category.DEFAULT" />
+292-->/storage/Development/CSipSimple-new/app/src/main/AndroidManifest.xml:144:17-76
+292-->/storage/Development/CSipSimple-new/app/src/main/AndroidManifest.xml:144:27-73
+293            </intent-filter>
+294        </activity>
+295        <activity
+295-->/storage/Development/CSipSimple-new/app/src/main/AndroidManifest.xml:294:9-297:48
+296            android:name="com.csipsimple.ui.prefs.cupcake.PrefsLoaderActivity"
+296-->/storage/Development/CSipSimple-new/app/src/main/AndroidManifest.xml:295:13-79
+297            android:label=""
+297-->/storage/Development/CSipSimple-new/app/src/main/AndroidManifest.xml:296:13-29
+298            android:theme="@style/DarkTheme" />
+298-->/storage/Development/CSipSimple-new/app/src/main/AndroidManifest.xml:297:13-45
+299        <activity
+299-->/storage/Development/CSipSimple-new/app/src/main/AndroidManifest.xml:298:9-302:48
+300            android:name="com.csipsimple.ui.prefs.PrefsFilters"
+300-->/storage/Development/CSipSimple-new/app/src/main/AndroidManifest.xml:299:13-64
+301            android:configChanges="orientation"
+301-->/storage/Development/CSipSimple-new/app/src/main/AndroidManifest.xml:300:13-48
+302            android:label="@string/filters"
+302-->/storage/Development/CSipSimple-new/app/src/main/AndroidManifest.xml:301:13-44
+303            android:theme="@style/DarkTheme" />
+303-->/storage/Development/CSipSimple-new/app/src/main/AndroidManifest.xml:302:13-45
+304        <activity
+304-->/storage/Development/CSipSimple-new/app/src/main/AndroidManifest.xml:303:9-314:20
+305            android:name="com.csipsimple.ui.prefs.PrefsFast"
+305-->/storage/Development/CSipSimple-new/app/src/main/AndroidManifest.xml:304:13-61
+306            android:configChanges="orientation"
+306-->/storage/Development/CSipSimple-new/app/src/main/AndroidManifest.xml:305:13-48
+307            android:label="@string/prefs_fast"
+307-->/storage/Development/CSipSimple-new/app/src/main/AndroidManifest.xml:306:13-47
+308            android:permission="android.permission.CONFIGURE_SIP"
+308-->/storage/Development/CSipSimple-new/app/src/main/AndroidManifest.xml:307:13-66
+309            android:theme="@style/DarkTheme.Dialog" >
+309-->/storage/Development/CSipSimple-new/app/src/main/AndroidManifest.xml:308:13-52
+310            <intent-filter>
+310-->/storage/Development/CSipSimple-new/app/src/main/AndroidManifest.xml:309:13-313:29
+311                <action android:name="com.csipsimple.ui.action.PREFS_FAST" />
+311-->/storage/Development/CSipSimple-new/app/src/main/AndroidManifest.xml:310:17-78
+311-->/storage/Development/CSipSimple-new/app/src/main/AndroidManifest.xml:310:25-75
+312
+313                <category android:name="android.intent.category.DEFAULT" />
+313-->/storage/Development/CSipSimple-new/app/src/main/AndroidManifest.xml:144:17-76
+313-->/storage/Development/CSipSimple-new/app/src/main/AndroidManifest.xml:144:27-73
+314            </intent-filter>
+315        </activity>
+316        <activity
+316-->/storage/Development/CSipSimple-new/app/src/main/AndroidManifest.xml:315:9-319:48
+317            android:name="com.csipsimple.ui.prefs.Codecs"
+317-->/storage/Development/CSipSimple-new/app/src/main/AndroidManifest.xml:316:13-58
+318            android:configChanges="orientation"
+318-->/storage/Development/CSipSimple-new/app/src/main/AndroidManifest.xml:317:13-48
+319            android:label="@string/codecs"
+319-->/storage/Development/CSipSimple-new/app/src/main/AndroidManifest.xml:318:13-43
+320            android:theme="@style/DarkTheme" />
+320-->/storage/Development/CSipSimple-new/app/src/main/AndroidManifest.xml:319:13-45
+321        <activity
+321-->/storage/Development/CSipSimple-new/app/src/main/AndroidManifest.xml:320:9-324:55
+322            android:name="com.csipsimple.ui.prefs.AudioTester"
+322-->/storage/Development/CSipSimple-new/app/src/main/AndroidManifest.xml:321:13-63
+323            android:label="@string/test_audio"
+323-->/storage/Development/CSipSimple-new/app/src/main/AndroidManifest.xml:322:13-47
+324            android:screenOrientation="portrait"
+324-->/storage/Development/CSipSimple-new/app/src/main/AndroidManifest.xml:323:13-49
+325            android:theme="@style/DarkTheme.Dialog" />
+325-->/storage/Development/CSipSimple-new/app/src/main/AndroidManifest.xml:324:13-52
+326
+327        <!-- Wizards -->
+328        <activity
+328-->/storage/Development/CSipSimple-new/app/src/main/AndroidManifest.xml:327:9-331:48
+329            android:name="com.csipsimple.wizards.BasePrefsWizard"
+329-->/storage/Development/CSipSimple-new/app/src/main/AndroidManifest.xml:328:13-66
+330            android:configChanges="orientation"
+330-->/storage/Development/CSipSimple-new/app/src/main/AndroidManifest.xml:329:13-48
+331            android:label="@string/edit"
+331-->/storage/Development/CSipSimple-new/app/src/main/AndroidManifest.xml:330:13-41
+332            android:theme="@style/DarkTheme" />
+332-->/storage/Development/CSipSimple-new/app/src/main/AndroidManifest.xml:331:13-45
+333
+334        <!-- Call management -->
+335        <receiver
+335-->/storage/Development/CSipSimple-new/app/src/main/AndroidManifest.xml:334:9-343:20
+336            android:name="com.csipsimple.service.OutgoingCall"
+336-->/storage/Development/CSipSimple-new/app/src/main/AndroidManifest.xml:335:13-63
+337            android:permission="android.permission.CALL_PHONE"
+337-->/storage/Development/CSipSimple-new/app/src/main/AndroidManifest.xml:336:13-63
+338            android:process=":sipStack" >
+338-->/storage/Development/CSipSimple-new/app/src/main/AndroidManifest.xml:337:13-40
+339
+340            <!-- Here filter for protected-broadcasts -->
+341            <intent-filter android:priority="0" >
+341-->/storage/Development/CSipSimple-new/app/src/main/AndroidManifest.xml:340:13-342:29
+341-->/storage/Development/CSipSimple-new/app/src/main/AndroidManifest.xml:340:28-48
+342                <action android:name="android.intent.action.NEW_OUTGOING_CALL" />
+342-->/storage/Development/CSipSimple-new/app/src/main/AndroidManifest.xml:341:17-82
+342-->/storage/Development/CSipSimple-new/app/src/main/AndroidManifest.xml:341:25-79
+343            </intent-filter>
+344        </receiver>
+345
+346        <activity
+346-->/storage/Development/CSipSimple-new/app/src/main/AndroidManifest.xml:345:9-374:20
+347            android:name="com.csipsimple.ui.outgoingcall.OutgoingCallChooser"
+347-->/storage/Development/CSipSimple-new/app/src/main/AndroidManifest.xml:346:13-78
+348            android:allowTaskReparenting="false"
+348-->/storage/Development/CSipSimple-new/app/src/main/AndroidManifest.xml:347:13-49
+349            android:configChanges="orientation"
+349-->/storage/Development/CSipSimple-new/app/src/main/AndroidManifest.xml:348:13-48
+350            android:excludeFromRecents="true"
+350-->/storage/Development/CSipSimple-new/app/src/main/AndroidManifest.xml:349:13-46
+351            android:label="@string/call"
+351-->/storage/Development/CSipSimple-new/app/src/main/AndroidManifest.xml:350:13-41
+352            android:launchMode="singleTask"
+352-->/storage/Development/CSipSimple-new/app/src/main/AndroidManifest.xml:351:13-44
+353            android:permission="android.permission.USE_SIP"
+353-->/storage/Development/CSipSimple-new/app/src/main/AndroidManifest.xml:352:13-60
+354            android:process=":sipStack"
+354-->/storage/Development/CSipSimple-new/app/src/main/AndroidManifest.xml:353:13-40
+355            android:taskAffinity=""
+355-->/storage/Development/CSipSimple-new/app/src/main/AndroidManifest.xml:354:13-36
+356            android:theme="@style/DarkTheme.Dialog" >
+356-->/storage/Development/CSipSimple-new/app/src/main/AndroidManifest.xml:355:13-52
+357            <intent-filter>
+357-->/storage/Development/CSipSimple-new/app/src/main/AndroidManifest.xml:356:13-364:29
+358                <action android:name="android.intent.action.CALL" />
+358-->/storage/Development/CSipSimple-new/app/src/main/AndroidManifest.xml:357:17-69
+358-->/storage/Development/CSipSimple-new/app/src/main/AndroidManifest.xml:357:25-66
+359
+360                <category android:name="android.intent.category.DEFAULT" />
+360-->/storage/Development/CSipSimple-new/app/src/main/AndroidManifest.xml:144:17-76
+360-->/storage/Development/CSipSimple-new/app/src/main/AndroidManifest.xml:144:27-73
+361
+362                <data android:scheme="csip" />
+362-->/storage/Development/CSipSimple-new/app/src/main/AndroidManifest.xml:151:17-46
+362-->/storage/Development/CSipSimple-new/app/src/main/AndroidManifest.xml:151:23-43
+363                <data android:scheme="sip" />
+363-->/storage/Development/CSipSimple-new/app/src/main/AndroidManifest.xml:151:17-46
+363-->/storage/Development/CSipSimple-new/app/src/main/AndroidManifest.xml:151:23-43
+364                <data android:scheme="sips" />
+364-->/storage/Development/CSipSimple-new/app/src/main/AndroidManifest.xml:151:17-46
+364-->/storage/Development/CSipSimple-new/app/src/main/AndroidManifest.xml:151:23-43
+365            </intent-filter>
+366            <intent-filter android:priority="10" >
+366-->/storage/Development/CSipSimple-new/app/src/main/AndroidManifest.xml:365:13-373:29
+366-->/storage/Development/CSipSimple-new/app/src/main/AndroidManifest.xml:365:28-49
+367                <action android:name="android.phone.extra.NEW_CALL_INTENT" />
+367-->/storage/Development/CSipSimple-new/app/src/main/AndroidManifest.xml:366:17-78
+367-->/storage/Development/CSipSimple-new/app/src/main/AndroidManifest.xml:366:25-75
+368
+369                <category android:name="android.intent.category.DEFAULT" />
+369-->/storage/Development/CSipSimple-new/app/src/main/AndroidManifest.xml:144:17-76
+369-->/storage/Development/CSipSimple-new/app/src/main/AndroidManifest.xml:144:27-73
+370
+371                <data android:scheme="csip" />
+371-->/storage/Development/CSipSimple-new/app/src/main/AndroidManifest.xml:151:17-46
+371-->/storage/Development/CSipSimple-new/app/src/main/AndroidManifest.xml:151:23-43
+372                <data android:scheme="sip" />
+372-->/storage/Development/CSipSimple-new/app/src/main/AndroidManifest.xml:151:17-46
+372-->/storage/Development/CSipSimple-new/app/src/main/AndroidManifest.xml:151:23-43
+373                <data android:scheme="sips" />
+373-->/storage/Development/CSipSimple-new/app/src/main/AndroidManifest.xml:151:17-46
+373-->/storage/Development/CSipSimple-new/app/src/main/AndroidManifest.xml:151:23-43
+374            </intent-filter>
+375        </activity>
+376
+377        <activity-alias
+377-->/storage/Development/CSipSimple-new/app/src/main/AndroidManifest.xml:392:9-427:26
+378            android:name="com.csipsimple.ui.PrivilegedOutgoingCallBroadcaster"
+378-->/storage/Development/CSipSimple-new/app/src/main/AndroidManifest.xml:393:13-79
+379            android:configChanges="orientation"
+379-->/storage/Development/CSipSimple-new/app/src/main/AndroidManifest.xml:394:13-48
+380            android:enabled="false"
+380-->/storage/Development/CSipSimple-new/app/src/main/AndroidManifest.xml:395:13-36
+381            android:excludeFromRecents="true"
+381-->/storage/Development/CSipSimple-new/app/src/main/AndroidManifest.xml:396:13-46
+382            android:label="@string/sip_call"
+382-->/storage/Development/CSipSimple-new/app/src/main/AndroidManifest.xml:397:13-45
+383            android:launchMode="singleTask"
+383-->/storage/Development/CSipSimple-new/app/src/main/AndroidManifest.xml:398:13-44
+384            android:permission="android.permission.CALL_PRIVILEGED"
+384-->/storage/Development/CSipSimple-new/app/src/main/AndroidManifest.xml:399:13-68
+385            android:targetActivity="com.csipsimple.ui.outgoingcall.OutgoingCallChooser"
+385-->/storage/Development/CSipSimple-new/app/src/main/AndroidManifest.xml:400:13-88
+386            android:theme="@style/DarkTheme.Dialog" >
+386-->/storage/Development/CSipSimple-new/app/src/main/AndroidManifest.xml:401:13-52
+387            <intent-filter>
+387-->/storage/Development/CSipSimple-new/app/src/main/AndroidManifest.xml:402:13-408:29
+388                <action android:name="android.intent.action.CALL_PRIVILEGED" />
+388-->/storage/Development/CSipSimple-new/app/src/main/AndroidManifest.xml:385:17-80
+388-->/storage/Development/CSipSimple-new/app/src/main/AndroidManifest.xml:385:25-77
+389
+390                <category android:name="android.intent.category.DEFAULT" />
+390-->/storage/Development/CSipSimple-new/app/src/main/AndroidManifest.xml:144:17-76
+390-->/storage/Development/CSipSimple-new/app/src/main/AndroidManifest.xml:144:27-73
+391
+392                <data android:scheme="tel" />
+392-->/storage/Development/CSipSimple-new/app/src/main/AndroidManifest.xml:151:17-46
+392-->/storage/Development/CSipSimple-new/app/src/main/AndroidManifest.xml:151:23-43
+393            </intent-filter>
+394            <intent-filter>
+394-->/storage/Development/CSipSimple-new/app/src/main/AndroidManifest.xml:409:13-417:29
+395                <action android:name="android.intent.action.CALL_PRIVILEGED" />
+395-->/storage/Development/CSipSimple-new/app/src/main/AndroidManifest.xml:385:17-80
+395-->/storage/Development/CSipSimple-new/app/src/main/AndroidManifest.xml:385:25-77
+396
+397                <category android:name="android.intent.category.DEFAULT" />
+397-->/storage/Development/CSipSimple-new/app/src/main/AndroidManifest.xml:144:17-76
+397-->/storage/Development/CSipSimple-new/app/src/main/AndroidManifest.xml:144:27-73
+398
+399                <data android:mimeType="vnd.android.cursor.item/phone" />
+399-->/storage/Development/CSipSimple-new/app/src/main/AndroidManifest.xml:151:17-46
+399-->/storage/Development/CSipSimple-new/app/src/main/AndroidManifest.xml:414:23-71
+400                <data android:mimeType="vnd.android.cursor.item/phone_v2" />
+400-->/storage/Development/CSipSimple-new/app/src/main/AndroidManifest.xml:151:17-46
+400-->/storage/Development/CSipSimple-new/app/src/main/AndroidManifest.xml:414:23-71
+401                <data android:mimeType="vnd.android.cursor.item/person" />
+401-->/storage/Development/CSipSimple-new/app/src/main/AndroidManifest.xml:151:17-46
+401-->/storage/Development/CSipSimple-new/app/src/main/AndroidManifest.xml:414:23-71
+402            </intent-filter>
+403            <intent-filter>
+403-->/storage/Development/CSipSimple-new/app/src/main/AndroidManifest.xml:418:13-426:29
+404                <action android:name="android.intent.action.SENDTO" />
+404-->/storage/Development/CSipSimple-new/app/src/main/AndroidManifest.xml:180:17-71
+404-->/storage/Development/CSipSimple-new/app/src/main/AndroidManifest.xml:180:25-68
+405
+406                <category android:name="android.intent.category.DEFAULT" />
+406-->/storage/Development/CSipSimple-new/app/src/main/AndroidManifest.xml:144:17-76
+406-->/storage/Development/CSipSimple-new/app/src/main/AndroidManifest.xml:144:27-73
+407                <category android:name="android.intent.category.BROWSABLE" />
+407-->/storage/Development/CSipSimple-new/app/src/main/AndroidManifest.xml:183:17-78
+407-->/storage/Development/CSipSimple-new/app/src/main/AndroidManifest.xml:183:27-75
+408
+409                <data android:scheme="sms" />
+409-->/storage/Development/CSipSimple-new/app/src/main/AndroidManifest.xml:151:17-46
+409-->/storage/Development/CSipSimple-new/app/src/main/AndroidManifest.xml:151:23-43
+410                <data android:scheme="smsto" />
+410-->/storage/Development/CSipSimple-new/app/src/main/AndroidManifest.xml:151:17-46
+410-->/storage/Development/CSipSimple-new/app/src/main/AndroidManifest.xml:151:23-43
+411            </intent-filter>
+412        </activity-alias>
+413        <activity-alias
+413-->/storage/Development/CSipSimple-new/app/src/main/AndroidManifest.xml:376:9-391:26
+414            android:name="com.csipsimple.ui.PrivilegedOutgoingSipCallBroadcaster"
+414-->/storage/Development/CSipSimple-new/app/src/main/AndroidManifest.xml:377:13-82
+415            android:configChanges="orientation"
+415-->/storage/Development/CSipSimple-new/app/src/main/AndroidManifest.xml:378:13-48
+416            android:excludeFromRecents="true"
+416-->/storage/Development/CSipSimple-new/app/src/main/AndroidManifest.xml:379:13-46
+417            android:launchMode="singleTask"
+417-->/storage/Development/CSipSimple-new/app/src/main/AndroidManifest.xml:380:13-44
+418            android:permission="android.permission.CALL_PRIVILEGED"
+418-->/storage/Development/CSipSimple-new/app/src/main/AndroidManifest.xml:381:13-68
+419            android:targetActivity="com.csipsimple.ui.outgoingcall.OutgoingCallChooser"
+419-->/storage/Development/CSipSimple-new/app/src/main/AndroidManifest.xml:382:13-88
+420            android:theme="@style/DarkTheme.Dialog" >
+420-->/storage/Development/CSipSimple-new/app/src/main/AndroidManifest.xml:383:13-52
+421            <intent-filter>
+421-->/storage/Development/CSipSimple-new/app/src/main/AndroidManifest.xml:384:13-390:29
+422                <action android:name="android.intent.action.CALL_PRIVILEGED" />
+422-->/storage/Development/CSipSimple-new/app/src/main/AndroidManifest.xml:385:17-80
+422-->/storage/Development/CSipSimple-new/app/src/main/AndroidManifest.xml:385:25-77
+423
+424                <category android:name="android.intent.category.DEFAULT" />
+424-->/storage/Development/CSipSimple-new/app/src/main/AndroidManifest.xml:144:17-76
+424-->/storage/Development/CSipSimple-new/app/src/main/AndroidManifest.xml:144:27-73
+425
+426                <data android:scheme="sip" />
+426-->/storage/Development/CSipSimple-new/app/src/main/AndroidManifest.xml:151:17-46
+426-->/storage/Development/CSipSimple-new/app/src/main/AndroidManifest.xml:151:23-43
+427            </intent-filter>
+428        </activity-alias>
+429
+430        <!-- To be able to do video, this has to be launched in sipStack process -->
+431        <activity
+431-->/storage/Development/CSipSimple-new/app/src/main/AndroidManifest.xml:430:9-445:20
+432            android:name="com.csipsimple.ui.incall.InCallActivity"
+432-->/storage/Development/CSipSimple-new/app/src/main/AndroidManifest.xml:431:13-67
+433            android:allowTaskReparenting="true"
+433-->/storage/Development/CSipSimple-new/app/src/main/AndroidManifest.xml:432:13-48
+434            android:configChanges="orientation"
+434-->/storage/Development/CSipSimple-new/app/src/main/AndroidManifest.xml:433:13-48
+435            android:excludeFromRecents="true"
+435-->/storage/Development/CSipSimple-new/app/src/main/AndroidManifest.xml:434:13-46
+436            android:launchMode="singleTask"
+436-->/storage/Development/CSipSimple-new/app/src/main/AndroidManifest.xml:435:13-44
+437            android:permission="android.permission.CONFIGURE_SIP"
+437-->/storage/Development/CSipSimple-new/app/src/main/AndroidManifest.xml:436:13-66
+438            android:process=":sipStack"
+438-->/storage/Development/CSipSimple-new/app/src/main/AndroidManifest.xml:437:13-40
+439            android:taskAffinity=""
+439-->/storage/Development/CSipSimple-new/app/src/main/AndroidManifest.xml:438:13-36
+440            android:theme="@style/DarkTheme.NoTitle" >
+440-->/storage/Development/CSipSimple-new/app/src/main/AndroidManifest.xml:439:13-53
+441            <intent-filter android:priority="10" >
+441-->/storage/Development/CSipSimple-new/app/src/main/AndroidManifest.xml:440:13-444:29
+441-->/storage/Development/CSipSimple-new/app/src/main/AndroidManifest.xml:440:28-49
+442                <action android:name="com.csipsimple.phone.action.INCALL" />
+442-->/storage/Development/CSipSimple-new/app/src/main/AndroidManifest.xml:441:17-77
+442-->/storage/Development/CSipSimple-new/app/src/main/AndroidManifest.xml:441:25-74
+443
+444                <category android:name="android.intent.category.DEFAULT" />
+444-->/storage/Development/CSipSimple-new/app/src/main/AndroidManifest.xml:144:17-76
+444-->/storage/Development/CSipSimple-new/app/src/main/AndroidManifest.xml:144:27-73
+445            </intent-filter>
+446        </activity>
+447        <activity
+447-->/storage/Development/CSipSimple-new/app/src/main/AndroidManifest.xml:446:9-450:48
+448            android:name="com.csipsimple.ui.PickupSipUri"
+448-->/storage/Development/CSipSimple-new/app/src/main/AndroidManifest.xml:447:13-58
+449            android:configChanges="orientation"
+449-->/storage/Development/CSipSimple-new/app/src/main/AndroidManifest.xml:448:13-48
+450            android:label="@string/pickup_sip_uri"
+450-->/storage/Development/CSipSimple-new/app/src/main/AndroidManifest.xml:449:13-51
+451            android:theme="@style/DarkTheme" />
+451-->/storage/Development/CSipSimple-new/app/src/main/AndroidManifest.xml:450:13-45
+452        <activity
+452-->/storage/Development/CSipSimple-new/app/src/main/AndroidManifest.xml:451:9-456:55
+453            android:name="com.csipsimple.ui.incall.InCallMediaControl"
+453-->/storage/Development/CSipSimple-new/app/src/main/AndroidManifest.xml:452:13-71
+454            android:configChanges="orientation"
+454-->/storage/Development/CSipSimple-new/app/src/main/AndroidManifest.xml:453:13-48
+455            android:label="@string/prefs_media"
+455-->/storage/Development/CSipSimple-new/app/src/main/AndroidManifest.xml:454:13-48
+456            android:taskAffinity="com.csipsimple.ui.incall.InCallActivity"
+456-->/storage/Development/CSipSimple-new/app/src/main/AndroidManifest.xml:455:13-75
+457            android:theme="@style/DarkTheme.Dialog" />
+457-->/storage/Development/CSipSimple-new/app/src/main/AndroidManifest.xml:456:13-52
+458
+459        <receiver android:name="com.csipsimple.service.HeadsetButtonReceiver" />
+459-->/storage/Development/CSipSimple-new/app/src/main/AndroidManifest.xml:458:9-81
+459-->/storage/Development/CSipSimple-new/app/src/main/AndroidManifest.xml:458:19-78
+460
+461        <!-- Widget -->
+462        <receiver
+462-->/storage/Development/CSipSimple-new/app/src/main/AndroidManifest.xml:461:9-474:20
+463            android:name="com.csipsimple.widgets.AccountWidgetProvider"
+463-->/storage/Development/CSipSimple-new/app/src/main/AndroidManifest.xml:462:13-72
+464            android:icon="@drawable/appwidget_preview"
+464-->/storage/Development/CSipSimple-new/app/src/main/AndroidManifest.xml:463:13-55
+465            android:label="@string/gadget_title" >
+465-->/storage/Development/CSipSimple-new/app/src/main/AndroidManifest.xml:464:13-49
+466            <intent-filter>
+466-->/storage/Development/CSipSimple-new/app/src/main/AndroidManifest.xml:465:13-469:29
+467                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+467-->/storage/Development/CSipSimple-new/app/src/main/AndroidManifest.xml:466:17-84
+467-->/storage/Development/CSipSimple-new/app/src/main/AndroidManifest.xml:466:25-81
+468                <action android:name="com.csipsimple.service.ACCOUNT_CHANGED" />
+468-->/storage/Development/CSipSimple-new/app/src/main/AndroidManifest.xml:467:17-81
+468-->/storage/Development/CSipSimple-new/app/src/main/AndroidManifest.xml:467:25-78
+469                <action android:name="com.csipsimple.service.REGISTRATION_CHANGED" />
+469-->/storage/Development/CSipSimple-new/app/src/main/AndroidManifest.xml:468:17-86
+469-->/storage/Development/CSipSimple-new/app/src/main/AndroidManifest.xml:468:25-83
+470            </intent-filter>
+471
+472            <meta-data
+472-->/storage/Development/CSipSimple-new/app/src/main/AndroidManifest.xml:471:13-473:58
+473                android:name="android.appwidget.provider"
+473-->/storage/Development/CSipSimple-new/app/src/main/AndroidManifest.xml:472:17-58
+474                android:resource="@xml/appwidget_info" />
+474-->/storage/Development/CSipSimple-new/app/src/main/AndroidManifest.xml:473:17-55
+475        </receiver>
+476
+477        <activity
+477-->/storage/Development/CSipSimple-new/app/src/main/AndroidManifest.xml:476:9-482:20
+478            android:name="com.csipsimple.widgets.AccountWidgetConfigure"
+478-->/storage/Development/CSipSimple-new/app/src/main/AndroidManifest.xml:477:13-73
+479            android:theme="@style/DarkTheme" >
+479-->/storage/Development/CSipSimple-new/app/src/main/AndroidManifest.xml:478:13-45
+480            <intent-filter>
+480-->/storage/Development/CSipSimple-new/app/src/main/AndroidManifest.xml:479:13-481:29
+481                <action android:name="android.appwidget.action.APPWIDGET_CONFIGURE" />
+481-->/storage/Development/CSipSimple-new/app/src/main/AndroidManifest.xml:480:17-87
+481-->/storage/Development/CSipSimple-new/app/src/main/AndroidManifest.xml:480:25-84
+482            </intent-filter>
+483        </activity>
+484
+485        <receiver
+485-->/storage/Development/CSipSimple-new/app/src/main/AndroidManifest.xml:484:9-495:20
+486            android:name="com.csipsimple.widgets.ShortcutWidgetProvider"
+486-->/storage/Development/CSipSimple-new/app/src/main/AndroidManifest.xml:485:13-73
+487            android:icon="@drawable/ic_ab_favourites_holo_dark"
+487-->/storage/Development/CSipSimple-new/app/src/main/AndroidManifest.xml:486:13-64
+488            android:label="@string/csipsimple_shortcut" >
+488-->/storage/Development/CSipSimple-new/app/src/main/AndroidManifest.xml:487:13-56
+489            <intent-filter>
+489-->/storage/Development/CSipSimple-new/app/src/main/AndroidManifest.xml:488:13-490:29
+490                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+490-->/storage/Development/CSipSimple-new/app/src/main/AndroidManifest.xml:466:17-84
+490-->/storage/Development/CSipSimple-new/app/src/main/AndroidManifest.xml:466:25-81
+491            </intent-filter>
+492
+493            <meta-data
+493-->/storage/Development/CSipSimple-new/app/src/main/AndroidManifest.xml:471:13-473:58
+494                android:name="android.appwidget.provider"
+494-->/storage/Development/CSipSimple-new/app/src/main/AndroidManifest.xml:472:17-58
+495                android:resource="@xml/appshortcut_info" />
+495-->/storage/Development/CSipSimple-new/app/src/main/AndroidManifest.xml:473:17-55
+496        </receiver>
+497
+498        <activity
+498-->/storage/Development/CSipSimple-new/app/src/main/AndroidManifest.xml:497:9-503:20
+499            android:name="com.csipsimple.widgets.ShortcutWidgetConfigure"
+499-->/storage/Development/CSipSimple-new/app/src/main/AndroidManifest.xml:498:13-74
+500            android:theme="@style/DarkTheme" >
+500-->/storage/Development/CSipSimple-new/app/src/main/AndroidManifest.xml:499:13-45
+501            <intent-filter>
+501-->/storage/Development/CSipSimple-new/app/src/main/AndroidManifest.xml:479:13-481:29
+502                <action android:name="android.appwidget.action.APPWIDGET_CONFIGURE" />
+502-->/storage/Development/CSipSimple-new/app/src/main/AndroidManifest.xml:480:17-87
+502-->/storage/Development/CSipSimple-new/app/src/main/AndroidManifest.xml:480:25-84
+503            </intent-filter>
+504        </activity>
+505
+506        <!-- Messages -->
+507        <activity
+507-->/storage/Development/CSipSimple-new/app/src/main/AndroidManifest.xml:506:9-511:57
+508            android:name="com.csipsimple.ui.messages.MessageActivity"
+508-->/storage/Development/CSipSimple-new/app/src/main/AndroidManifest.xml:507:13-70
+509            android:configChanges="orientation"
+509-->/storage/Development/CSipSimple-new/app/src/main/AndroidManifest.xml:508:13-48
+510            android:launchMode="singleTop"
+510-->/storage/Development/CSipSimple-new/app/src/main/AndroidManifest.xml:509:13-43
+511            android:theme="@style/DarkTheme"
+511-->/storage/Development/CSipSimple-new/app/src/main/AndroidManifest.xml:510:13-45
+512            android:windowSoftInputMode="stateHidden" />
+512-->/storage/Development/CSipSimple-new/app/src/main/AndroidManifest.xml:511:13-54
+513
+514        <!-- Embedded plugins -->
+515        <!-- Call handlers android:process=":telCallHandler" -->
+516        <receiver
+516-->/storage/Development/CSipSimple-new/app/src/main/AndroidManifest.xml:515:9-522:20
+517            android:name="com.csipsimple.plugins.telephony.CallHandler"
+517-->/storage/Development/CSipSimple-new/app/src/main/AndroidManifest.xml:516:13-72
+518            android:permission="android.permission.PROCESS_OUTGOING_CALLS"
+518-->/storage/Development/CSipSimple-new/app/src/main/AndroidManifest.xml:517:13-75
+519            android:process=":sipStack" >
+519-->/storage/Development/CSipSimple-new/app/src/main/AndroidManifest.xml:518:13-40
+520            <intent-filter>
+520-->/storage/Development/CSipSimple-new/app/src/main/AndroidManifest.xml:519:13-521:29
+521                <action android:name="com.csipsimple.phone.action.HANDLE_CALL" />
+521-->/storage/Development/CSipSimple-new/app/src/main/AndroidManifest.xml:520:17-82
+521-->/storage/Development/CSipSimple-new/app/src/main/AndroidManifest.xml:520:25-79
+522            </intent-filter>
+523        </receiver>
+524
+525        <!-- Databases providers -->
+526        <provider
+526-->/storage/Development/CSipSimple-new/app/src/main/AndroidManifest.xml:525:9-528:69
+527            android:name="com.csipsimple.service.PreferenceProvider"
+527-->/storage/Development/CSipSimple-new/app/src/main/AndroidManifest.xml:526:13-69
+528            android:authorities="com.csipsimple.prefs"
+528-->/storage/Development/CSipSimple-new/app/src/main/AndroidManifest.xml:527:13-55
+529            android:permission="android.permission.CONFIGURE_SIP" />
+529-->/storage/Development/CSipSimple-new/app/src/main/AndroidManifest.xml:528:13-66
+530        <provider
+530-->/storage/Development/CSipSimple-new/app/src/main/AndroidManifest.xml:529:9-533:43
+531            android:name="com.csipsimple.db.DBProvider"
+531-->/storage/Development/CSipSimple-new/app/src/main/AndroidManifest.xml:530:13-56
+532            android:authorities="com.csipsimple.db"
+532-->/storage/Development/CSipSimple-new/app/src/main/AndroidManifest.xml:531:13-52
+533            android:permission="android.permission.CONFIGURE_SIP"
+533-->/storage/Development/CSipSimple-new/app/src/main/AndroidManifest.xml:532:13-66
+534            android:process=":sipStack" />
+534-->/storage/Development/CSipSimple-new/app/src/main/AndroidManifest.xml:533:13-40
+535
+536        <!-- New UI -->
+537        <activity
+537-->/storage/Development/CSipSimple-new/app/src/main/AndroidManifest.xml:536:9-539:48
+538            android:name="com.csipsimple.ui.account.AccountsEditList"
+538-->/storage/Development/CSipSimple-new/app/src/main/AndroidManifest.xml:537:13-70
+539            android:label="@string/accounts"
+539-->/storage/Development/CSipSimple-new/app/src/main/AndroidManifest.xml:538:13-45
+540            android:theme="@style/DarkTheme" />
+540-->/storage/Development/CSipSimple-new/app/src/main/AndroidManifest.xml:539:13-45
+541        <activity
+541-->/storage/Development/CSipSimple-new/app/src/main/AndroidManifest.xml:540:9-542:48
+542            android:name="com.csipsimple.ui.account.AccountEdit"
+542-->/storage/Development/CSipSimple-new/app/src/main/AndroidManifest.xml:541:13-65
+543            android:theme="@style/DarkTheme" />
+543-->/storage/Development/CSipSimple-new/app/src/main/AndroidManifest.xml:542:13-45
+544
+545        <!-- Extra codecs -->
+546
+547
+548        <!--
+549        <receiver
+550            android:name="com.csipsimple.plugins.codecs.ReceiverSILK"
+551            android:exported="false" >
+552            <meta-data
+553                android:name="lib_name"
+554                android:value="libpj_silk_codec.so" />
+555            <meta-data
+556                android:name="init_factory"
+557                android:value="pjmedia_codec_silk_init" />
+558
+559            <intent-filter>
+560                <action android:name="com.csipsimple.codecs.action.REGISTER_CODEC" />
+561            </intent-filter>
+562        </receiver>
+563        -->
+564        <!-- OPUS? -->
+565
+566
+567        <!-- Extra wizard creation account activities -->
+568        <activity
+568-->/storage/Development/CSipSimple-new/app/src/main/AndroidManifest.xml:566:9-568:48
+569            android:name="com.csipsimple.wizards.impl.MondotalkCreate"
+569-->/storage/Development/CSipSimple-new/app/src/main/AndroidManifest.xml:567:13-71
+570            android:theme="@style/DarkTheme" />
+570-->/storage/Development/CSipSimple-new/app/src/main/AndroidManifest.xml:568:13-45
+571    </application>
+572
+573</manifest>

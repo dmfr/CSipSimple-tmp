@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <bool name="use_dual_panes">false</bool>
+    <item name="sip_home" type="layout">@layout/sip_home_one_pane</item>
+</resources>

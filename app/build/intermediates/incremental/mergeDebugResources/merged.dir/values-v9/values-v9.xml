@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="audio_implementation_choices">
+        <item>Java</item>
+        <item>OpenSL-ES</item>
+    </string-array>
+    <string-array name="audio_implementation_values">
+        <item>0</item>
+        <item>1</item>
+    </string-array>
+    <string-array name="sip_data_sources">
+        <item>@string/uri_nbr</item>
+        <item>@string/uri_im</item>
+        <item>@string/uri_sip</item>
+    </string-array>
+    <style name="NotificationText" parent="android:TextAppearance.StatusBar.EventContent"/>
+    <style name="NotificationTitle" parent="android:TextAppearance.StatusBar.EventContent.Title"/>
+</resources>

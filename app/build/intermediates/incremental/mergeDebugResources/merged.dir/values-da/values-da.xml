@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:ns1="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="acct_expired">Registrering Udløbet</string>
+    <string name="acct_inactive">Inaktiv</string>
+    <string name="acct_regerror">Fejl under registering</string>
+    <string name="acct_regfailed">Registrering Mislykket - Tjek din Konfiguration</string>
+    <string name="acct_registered">Registreret</string>
+    <string name="acct_registering">Registrering…</string>
+    <string name="acct_unregistered">Ikke registreret</string>
+    <string name="callAgain">Ring igen</string>
+    <string name="callBack">Ring tilbage</string>
+    <string name="callDetailsDurationFormat"><ns1:g id="minutes">%1$s</ns1:g> mins <ns1:g id="seconds=">%2$s</ns1:g> secs</string>
+    <string name="generic_wizards_text">Generisk guide</string>
+    <string name="other_country_providers_text">Vælg udbyder land</string>
+    <string name="returnCall">Retur opkald</string>
+    <string name="type_incoming">Indkommende</string>
+    <string name="type_missed">Mistet</string>
+    <string name="type_outgoing">Udgående</string>
+    <string name="unknown">Ukendt</string>
+    <string name="w_authorization_auth_name">Godkendelsesnavn</string>
+    <string name="w_authorization_auth_name_desc">Sip godkendelse</string>
+    <string name="w_authorization_phone_number">Brugernavn</string>
+    <string name="w_authorization_phone_number_desc">Sip brugerkonto</string>
+    <string name="w_basic_password">Adgangskode</string>
+    <string name="w_basic_password_desc">Adgangskode til din konto</string>
+    <string name="w_basic_username">Bruger</string>
+    <string name="w_basic_username_desc">Account name / Login (do not write the @sip.server)</string>
+    <string name="w_callcentric_password">Adgangskode</string>
+    <string name="w_callcentric_password_desc">Adgangskode til din Callcentric konto</string>
+    <string name="w_callcentric_phone_number">SIP Telefonnummer</string>
+    <string name="w_callcentric_phone_number_desc">Callcentric SIP telefonnummer (1777xxxxxxx)</string>
+    <string name="w_iinet_password">VoIP Adgangskode</string>
+    <string name="w_iinet_password_desc">Not the same as connection password</string>
+    <string name="w_iinet_state">Status</string>
+    <string name="w_iinet_state_desc">Relevant status fra følgende liste</string>
+    <string name="w_iinet_username">VoIP telefonnummer</string>
+    <string name="w_iinet_username_desc">Fjern eventuelle mellemrum og understregninger</string>
+    <string name="world_wide_providers_text">Vælg verdensomspændende udbyder</string>
+</resources>

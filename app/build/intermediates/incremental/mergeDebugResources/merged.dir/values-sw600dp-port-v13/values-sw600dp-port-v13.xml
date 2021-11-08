@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <bool name="use_dual_panes">false</bool>
+    <dimen name="right_panel_fading_edge">70px</dimen>
+    <dimen name="right_panel_margin_left">5dip</dimen>
+    <dimen name="right_panel_margin_vertical">0dip</dimen>
+    <item name="sip_home" type="layout">@layout/sip_home_one_pane</item>
+</resources>

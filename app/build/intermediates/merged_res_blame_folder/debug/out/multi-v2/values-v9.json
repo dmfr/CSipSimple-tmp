@@ -1,0 +1,64 @@
+{
+    "logs": [
+        {
+            "outputFile": "/storage/Development/CSipSimple-new/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-v9/values-v9.xml",
+            "map": [
+                {
+                    "source": "/storage/Development/CSipSimple-new/app/src/main/res/values-v9/prefs_values.xml",
+                    "from": {
+                        "startLines": "7,3",
+                        "startColumns": "4,4",
+                        "startOffsets": "176,56",
+                        "endLines": "10,6",
+                        "endColumns": "19,19",
+                        "endOffsets": "303,171"
+                    },
+                    "to": {
+                        "startLines": "2,6",
+                        "startColumns": "4,4",
+                        "startOffsets": "55,187",
+                        "endLines": "5,9",
+                        "endColumns": "19,19",
+                        "endOffsets": "182,302"
+                    }
+                },
+                {
+                    "source": "/storage/Development/CSipSimple-new/app/src/main/res/values-v9/arrays.xml",
+                    "from": {
+                        "startLines": "19",
+                        "startColumns": "4",
+                        "startOffsets": "713",
+                        "endLines": "23",
+                        "endColumns": "19",
+                        "endOffsets": "881"
+                    },
+                    "to": {
+                        "startLines": "10",
+                        "startColumns": "4",
+                        "startOffsets": "307",
+                        "endLines": "14",
+                        "endColumns": "19",
+                        "endOffsets": "475"
+                    }
+                },
+                {
+                    "source": "/storage/Development/CSipSimple-new/app/src/main/res/values-v9/style.xml",
+                    "from": {
+                        "startLines": "3,5",
+                        "startColumns": "4,4",
+                        "startOffsets": "56,150",
+                        "endColumns": "92,99",
+                        "endOffsets": "144,245"
+                    },
+                    "to": {
+                        "startLines": "15,16",
+                        "startColumns": "4,4",
+                        "startOffsets": "480,572",
+                        "endColumns": "91,98",
+                        "endOffsets": "567,666"
+                    }
+                }
+            ]
+        }
+    ]
+}

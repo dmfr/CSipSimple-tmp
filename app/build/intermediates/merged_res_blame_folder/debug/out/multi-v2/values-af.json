@@ -1,0 +1,266 @@
+{
+    "logs": [
+        {
+            "outputFile": "/storage/Development/CSipSimple-new/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-af/values-af.xml",
+            "map": [
+                {
+                    "source": "/storage/Development/CSipSimple-new/app/src/main/res/values-af/wizard_basic_strings.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "2",
+                        "startOffsets": "53",
+                        "endColumns": "52",
+                        "endOffsets": "103"
+                    },
+                    "to": {
+                        "startLines": "136",
+                        "startColumns": "4",
+                        "startOffsets": "7472",
+                        "endColumns": "54",
+                        "endOffsets": "7522"
+                    }
+                },
+                {
+                    "source": "/storage/Development/CSipSimple-new/app/src/main/res/values-af/arrays.xml",
+                    "from": {
+                        "startLines": "3",
+                        "startColumns": "4",
+                        "startOffsets": "56",
+                        "endLines": "21",
+                        "endColumns": "19",
+                        "endOffsets": "620"
+                    },
+                    "to": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endLines": "20",
+                        "endColumns": "19",
+                        "endOffsets": "619"
+                    }
+                },
+                {
+                    "source": "/storage/Development/CSipSimple-new/app/src/main/res/values-af/descriptions_strings.xml",
+                    "from": {
+                        "startLines": "69,65,73,41,26,21,46,6,61,36,31,51,16,11,56",
+                        "startColumns": "2,2,2,2,2,2,2,2,2,2,2,2,2,2,2",
+                        "startOffsets": "4101,3909,4317,2476,1544,1233,2787,302,3720,2163,1853,3098,921,610,3409",
+                        "endColumns": "61,53,70,60,59,60,60,58,62,61,58,60,61,59,59",
+                        "endOffsets": "4160,3960,4385,2534,1601,1291,2845,358,3780,2222,1909,3156,980,667,3466"
+                    },
+                    "to": {
+                        "startLines": "47,48,49,50,51,52,53,54,55,56,57,58,59,60,61",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "2210,2274,2330,2403,2466,2528,2591,2654,2715,2780,2844,2905,2968,3032,3094",
+                        "endColumns": "63,55,72,62,61,62,62,60,64,63,60,62,63,61,61",
+                        "endOffsets": "2269,2325,2398,2461,2523,2586,2649,2710,2775,2839,2900,2963,3027,3089,3151"
+                    }
+                },
+                {
+                    "source": "/storage/Development/CSipSimple-new/app/src/main/res/values-af/wizard_expert_strings.xml",
+                    "from": {
+                        "startLines": "2,4,3",
+                        "startColumns": "2,2,2",
+                        "startOffsets": "53,171,102",
+                        "endColumns": "48,76,68",
+                        "endOffsets": "99,245,168"
+                    },
+                    "to": {
+                        "startLines": "143,144,145",
+                        "startColumns": "4,4,4",
+                        "startOffsets": "7970,8021,8100",
+                        "endColumns": "50,78,70",
+                        "endOffsets": "8016,8095,8166"
+                    }
+                },
+                {
+                    "source": "/storage/Development/CSipSimple-new/app/src/main/res/values-af/strings.xml",
+                    "from": {
+                        "startLines": "11,9,10,8,7,13,4,12,17,3,14,2,18,16,6,15,5,19",
+                        "startColumns": "2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2",
+                        "startOffsets": "575,451,524,387,319,678,169,626,938,93,742,53,974,876,253,802,213,1010",
+                        "endColumns": "50,72,50,63,67,63,43,51,35,75,59,39,35,61,65,73,39,45",
+                        "endOffsets": "623,521,572,448,384,739,210,675,971,166,799,90,1007,935,316,873,250,1053"
+                    },
+                    "to": {
+                        "startLines": "35,36,37,38,39,41,42,62,76,80,88,94,96,99,107,109,124,148",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "1482,1535,1610,1663,1729,1856,1922,3156,3899,4171,4582,4945,5029,5198,5720,5827,6664,8327",
+                        "endColumns": "52,74,52,65,69,65,45,53,37,77,61,41,37,63,67,75,41,47",
+                        "endOffsets": "1530,1605,1658,1724,1794,1917,1963,3205,3932,4244,4639,4982,5062,5257,5783,5898,6701,8370"
+                    }
+                },
+                {
+                    "source": "/storage/Development/CSipSimple-new/app/src/main/res/values-af/welcome_strings.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "2",
+                        "startOffsets": "53",
+                        "endColumns": "53",
+                        "endOffsets": "104"
+                    },
+                    "to": {
+                        "startLines": "149",
+                        "startColumns": "4",
+                        "startOffsets": "8375",
+                        "endColumns": "55",
+                        "endOffsets": "8426"
+                    }
+                },
+                {
+                    "source": "/storage/Development/CSipSimple-new/app/src/main/res/values-af/in_call_strings.xml",
+                    "from": {
+                        "startLines": "4,5,3,2",
+                        "startColumns": "2,2,2,2",
+                        "startOffsets": "141,187,98,53",
+                        "endColumns": "45,54,42,44",
+                        "endOffsets": "184,239,138,95"
+                    },
+                    "to": {
+                        "startLines": "33,40,43,114",
+                        "startColumns": "4,4,4,4",
+                        "startOffsets": "1387,1799,1968,6116",
+                        "endColumns": "47,56,44,46",
+                        "endOffsets": "1430,1851,2008,6158"
+                    }
+                },
+                {
+                    "source": "/storage/Development/CSipSimple-new/app/src/main/res/values-af/messages_strings.xml",
+                    "from": {
+                        "startLines": "13,55,62,23,26,40,17,76,8,29,15,4,50,35,64,67,71,48",
+                        "startColumns": "2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2",
+                        "startOffsets": "831,3713,4092,1515,1706,2777,1072,4623,510,1868,982,234,3466,2429,4166,4281,4436,3359",
+                        "endColumns": "53,52,38,42,57,56,37,31,39,57,52,51,39,36,44,49,49,36",
+                        "endOffsets": "882,3763,4128,1555,1761,2831,1107,4652,547,1923,1032,283,3503,2463,4208,4328,4483,3393"
+                    },
+                    "to": {
+                        "startLines": "30,45,46,64,65,77,81,84,85,86,87,93,95,108,111,112,113,152",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "1225,2114,2169,3258,3303,3937,4249,4391,4425,4467,4527,4891,4987,5788,5965,6012,6064,8570",
+                        "endColumns": "55,54,40,44,59,58,39,33,41,59,54,53,41,38,46,51,51,38",
+                        "endOffsets": "1276,2164,2205,3298,3358,3991,4284,4420,4462,4522,4577,4940,5024,5822,6007,6059,6111,8604"
+                    }
+                },
+                {
+                    "source": "/storage/Development/CSipSimple-new/app/src/main/res/values-af/log_strings.xml",
+                    "from": {
+                        "startLines": "6,4,5,3",
+                        "startColumns": "4,4,4,4",
+                        "startOffsets": "204,101,152,56",
+                        "endColumns": "46,50,51,44",
+                        "endOffsets": "246,147,199,96"
+                    },
+                    "to": {
+                        "startLines": "34,121,122,123",
+                        "startColumns": "4,4,4,4",
+                        "startOffsets": "1435,6516,6567,6619",
+                        "endColumns": "46,50,51,44",
+                        "endOffsets": "1477,6562,6614,6659"
+                    }
+                },
+                {
+                    "source": "/storage/Development/CSipSimple-new/app/src/main/res/values-af/wizard_iinet_strings.xml",
+                    "from": {
+                        "startLines": "3,2",
+                        "startColumns": "2,2",
+                        "startOffsets": "113,53",
+                        "endColumns": "91,59",
+                        "endOffsets": "202,110"
+                    },
+                    "to": {
+                        "startLines": "146,147",
+                        "startColumns": "4,4",
+                        "startOffsets": "8171,8265",
+                        "endColumns": "93,61",
+                        "endOffsets": "8260,8322"
+                    }
+                },
+                {
+                    "source": "/storage/Development/CSipSimple-new/app/src/main/res/values-af/wizard_callcentric_strings.xml",
+                    "from": {
+                        "startLines": "4,2,3",
+                        "startColumns": "2,2,2",
+                        "startOffsets": "222,53,122",
+                        "endColumns": "57,68,99",
+                        "endOffsets": "277,119,219"
+                    },
+                    "to": {
+                        "startLines": "137,138,139",
+                        "startColumns": "4,4,4",
+                        "startOffsets": "7527,7587,7658",
+                        "endColumns": "59,70,101",
+                        "endOffsets": "7582,7653,7755"
+                    }
+                },
+                {
+                    "source": "/storage/Development/CSipSimple-new/app/src/main/res/values-af/prefs_strings.xml",
+                    "from": {
+                        "startLines": "55,56,54,37,38,60,42,25,26,18,19,20,27,21,8,9,45,49,51,50,44,23,22,32,58,43,6,2,5,3,4,46,52,39,59,31,34,35,33,10,15,47,16,17,24,14,40,41,11,12,13,57",
+                        "startColumns": "2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2",
+                        "startOffsets": "3006,3066,2938,1991,2047,3388,2320,1381,1431,1030,1071,1135,1495,1176,400,462,2459,2622,2756,2706,2411,1280,1217,1746,3234,2366,331,53,287,156,204,2499,2843,2093,3294,1712,1861,1909,1809,524,834,2541,934,982,1333,775,2153,2220,570,618,696,3174",
+                        "endColumns": "59,107,67,55,45,98,45,49,63,40,63,40,50,40,61,61,39,83,86,49,47,52,62,62,59,44,51,102,43,47,82,41,71,59,93,33,47,66,51,45,99,68,47,47,47,58,66,99,47,77,78,59",
+                        "endOffsets": "3063,3171,3003,2044,2090,3484,2363,1428,1492,1068,1132,1173,1543,1214,459,521,2496,2703,2840,2753,2456,1330,1277,1806,3291,2408,380,153,328,201,284,2538,2912,2150,3385,1743,1906,1973,1858,567,931,2607,979,1027,1378,831,2217,2317,615,693,772,3231"
+                    },
+                    "to": {
+                        "startLines": "27,28,29,31,32,44,63,66,67,68,69,70,71,72,73,74,75,78,79,82,83,89,90,91,92,97,100,101,102,103,104,105,106,110,115,116,117,118,119,120,125,126,127,128,129,130,131,132,133,134,135,150",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "983,1045,1155,1281,1339,2013,3210,3363,3415,3481,3524,3590,3633,3686,3729,3793,3857,3996,4082,4289,4341,4644,4699,4764,4829,5067,5262,5316,5421,5467,5517,5602,5646,5903,6163,6259,6295,6345,6414,6468,6706,6808,6879,6929,6979,7029,7090,7159,7261,7311,7391,8431",
+                        "endColumns": "61,109,69,57,47,100,47,51,65,42,65,42,52,42,63,63,41,85,88,51,49,54,64,64,61,46,53,104,45,49,84,43,73,61,95,35,49,68,53,47,101,70,49,49,49,60,68,101,49,79,80,61",
+                        "endOffsets": "1040,1150,1220,1334,1382,2109,3253,3410,3476,3519,3585,3628,3681,3724,3788,3852,3894,4077,4166,4336,4386,4694,4759,4824,4886,5109,5311,5416,5462,5512,5597,5641,5715,5960,6254,6290,6340,6409,6463,6511,6803,6874,6924,6974,7024,7085,7154,7256,7306,7386,7467,8488"
+                    }
+                },
+                {
+                    "source": "/storage/Development/CSipSimple-new/app/src/main/res/values-af/wizard_strings.xml",
+                    "from": {
+                        "startLines": "2,3",
+                        "startColumns": "2,2",
+                        "startOffsets": "53,135",
+                        "endColumns": "81,74",
+                        "endOffsets": "132,207"
+                    },
+                    "to": {
+                        "startLines": "98,151",
+                        "startColumns": "4,4",
+                        "startOffsets": "5114,8493",
+                        "endColumns": "83,76",
+                        "endOffsets": "5193,8565"
+                    }
+                },
+                {
+                    "source": "/storage/Development/CSipSimple-new/app/src/main/res/values-af/wizard_common_strings.xml",
+                    "from": {
+                        "startLines": "4,2,3",
+                        "startColumns": "2,2,2",
+                        "startOffsets": "204,53,113",
+                        "endColumns": "52,59,90",
+                        "endOffsets": "254,110,201"
+                    },
+                    "to": {
+                        "startLines": "140,141,142",
+                        "startColumns": "4,4,4",
+                        "startOffsets": "7760,7815,7877",
+                        "endColumns": "54,61,92",
+                        "endOffsets": "7810,7872,7965"
+                    }
+                },
+                {
+                    "source": "/storage/Development/CSipSimple-new/app/src/main/res/values-af/acct_status_strings.xml",
+                    "from": {
+                        "startLines": "4,2,7,6,5,3",
+                        "startColumns": "2,2,2,2,2,2",
+                        "startOffsets": "167,53,339,284,229,102",
+                        "endColumns": "61,48,60,54,54,64",
+                        "endOffsets": "226,99,397,336,281,164"
+                    },
+                    "to": {
+                        "startLines": "21,22,23,24,25,26",
+                        "startColumns": "4,4,4,4,4,4",
+                        "startOffsets": "624,688,739,802,859,916",
+                        "endColumns": "63,50,62,56,56,66",
+                        "endOffsets": "683,734,797,854,911,978"
+                    }
+                }
+            ]
+        }
+    ]
+}

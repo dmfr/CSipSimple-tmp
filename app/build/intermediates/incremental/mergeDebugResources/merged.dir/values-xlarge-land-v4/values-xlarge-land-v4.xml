@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <bool name="use_dual_panes">true</bool>
+    <dimen name="right_panel_fading_edge">70px</dimen>
+    <dimen name="right_panel_margin_left">15dip</dimen>
+    <dimen name="right_panel_margin_vertical">25dip</dimen>
+    <item name="dialpad_compose" type="layout">@layout/dialpad_compose_3x5</item>
+    <item name="sip_home" type="layout">@layout/sip_home_dual_pane</item>
+</resources>

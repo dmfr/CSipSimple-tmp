@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="default_smiley_names">
+        <item>Gelukkig</item>
+        <item>Hartseer</item>
+        <item>Verleë</item>
+        <item>Engel</item>
+        <item>Besluitloos</item>
+        <item>Huil</item>
+        <item>Lippe is geseel</item>
+        <item>Lag</item>
+        <item>Verward</item>
+        <item>knipoog</item>
+        <item>Tong uitsteek</item>
+        <item>Verras</item>
+        <item>Soen</item>
+        <item>Skree</item>
+        <item>Cool</item>
+        <item>Geld mond</item>
+        <item>Foot in mouth</item>
+    </string-array>
+    <string name="acct_expired">Registrasie het verval</string>
+    <string name="acct_inactive">Onaktief</string>
+    <string name="acct_regerror">Fout met registrasie</string>
+    <string name="acct_registered">Geregistreer</string>
+    <string name="acct_registering">Registreer…</string>
+    <string name="acct_unregistered">Nie Geregistreer Nie</string>
+    <string name="always_available">Altyd beskikbaar</string>
+    <string name="always_available_desc">Sal battery gebruik maar incomende oproepe sal ontvang word</string>
+    <string name="android_integration">Integreer met Andriod</string>
+    <string name="anonymous_recipient">Anoniem</string>
+    <string name="audio_quality">Klank kwaliteit</string>
+    <string name="audio_volume">Volume</string>
+    <string name="bluetooth">Bluetooth</string>
+    <string name="callAgain">Bel weer</string>
+    <string name="callLog_delDialog_no">Nee</string>
+    <string name="callLog_delDialog_title">Skrap Oproep Registers</string>
+    <string name="callLog_delDialog_yes">Ja</string>
+    <string name="callLog_delete_all">Skrap alle oproepe</string>
+    <string name="callLog_delete_entry">Skrap hierdie oproep</string>
+    <string name="call_state_calling">Bel tans…</string>
+    <string name="calllog_tab_name_text">OproepRegisters</string>
+    <string name="cancel">Kanselleer</string>
+    <string name="clear_call">Einde</string>
+    <string name="codecs_availability_text">Net beskikbaar as sip huidiglik geregistreer is</string>
+    <string name="confirm_dialog_title">Skrap</string>
+    <string name="delete">Skrap</string>
+    <string name="description_delete_button">backspace</string>
+    <string name="description_dial_button">bel</string>
+    <string name="description_digits_edittext">nommer om te bel</string>
+    <string name="description_image_button_eight">agt</string>
+    <string name="description_image_button_five">vyf</string>
+    <string name="description_image_button_four">vier</string>
+    <string name="description_image_button_nine">nege</string>
+    <string name="description_image_button_one">een</string>
+    <string name="description_image_button_pound">pound</string>
+    <string name="description_image_button_seven">sewe</string>
+    <string name="description_image_button_six">ses</string>
+    <string name="description_image_button_star">ster</string>
+    <string name="description_image_button_three">drie</string>
+    <string name="description_image_button_two">twee</string>
+    <string name="description_image_button_zero">nil</string>
+    <string name="dial_tab_name_text">Skakel</string>
+    <string name="disabled">Deaktiveer</string>
+    <string name="download">Laai af</string>
+    <string name="downloading">Besig om af te laai</string>
+    <string name="enable_ice">Aktiveer ICE</string>
+    <string name="enable_ice_desc">Skakel ICE funkie aan</string>
+    <string name="enable_tcp">TCP</string>
+    <string name="enable_tcp_desc">Gebruik TCP transport</string>
+    <string name="enable_tls">TLS</string>
+    <string name="enable_turn">Gebruik TURN</string>
+    <string name="enable_udp">UDP</string>
+    <string name="for_incomings">Vir inkomende oproepe</string>
+    <string name="for_outgoings">Vir uitgaande oproepe</string>
+    <string name="force">Forseer</string>
+    <string name="help">Help</string>
+    <string name="image_too_large">Prent te groot</string>
+    <string name="integrate_with_native_calllogs">Oproep register integrasie</string>
+    <string name="integrate_with_native_music">Integrasie met musiek applikasie</string>
+    <string name="invalid_sip_uri">Sip uri nie geldig vir oproep nie</string>
+    <string name="kilobyte">KB</string>
+    <string name="log_level">Register vlak</string>
+    <string name="mandatory">Verpligtend</string>
+    <string name="me">Ek</string>
+    <string name="menu_call">Bel</string>
+    <string name="message_options">Boodskap opsies</string>
+    <string name="messagelist_sender_self">Ek</string>
+    <string name="messages_tab_name_text">Boodskappe</string>
+    <string name="network_rtp_port">RTP Poort</string>
+    <string name="network_tcp_transport_port">TCP Poort</string>
+    <string name="network_tls_transport_port">TLS Poort</string>
+    <string name="never_available">Net vir uitgaande</string>
+    <string name="new_message">Nuwe boodskap</string>
+    <string name="next">Volgende</string>
+    <string name="no">Kanselleer</string>
+    <string name="ok">Anvaar</string>
+    <string name="optional">Opsioneel</string>
+    <string name="other_country_providers_text">Ander lande se verskaffers</string>
+    <string name="outgoing_call_chooser_call_text">Bel</string>
+    <string name="prefs_calls">Oproep opsies</string>
+    <string name="prefs_fast_desc">Vinnige opsies om te gebruik as jy nie weet hoe SIP werk nie</string>
+    <string name="prefs_media">Media</string>
+    <string name="prefs_network">Netwerk</string>
+    <string name="prefs_network_desc">Hoe SIP kan konnekteer op die netwerk</string>
+    <string name="prevent">Verhoed</string>
+    <string name="prevent_screen_rotation">Verhoed skerm rotasie</string>
+    <string name="recentCalls_empty">Geen Oproep Registers</string>
+    <string name="send">Stuur</string>
+    <string name="service_ticker_registered_text">SIP Geregistreer</string>
+    <string name="snd_media_quality">Media kwaliteit</string>
+    <string name="status_none">(Geen)</string>
+    <string name="status_received">Ontvang</string>
+    <string name="status_rejected">Geweier</string>
+    <string name="take_call">Antwoord</string>
+    <string name="tg_allowed_desc">Jou netwerk laat VoIP toe oor mobiele data koneksie</string>
+    <string name="tls">TLS</string>
+    <string name="tls_method">TLS Metode</string>
+    <string name="tls_method_desc">Metode vir TLS transport</string>
+    <string name="tls_password">TLS wagwoord</string>
+    <string name="transport">Transport</string>
+    <string name="type_incoming">Inkomend</string>
+    <string name="type_outgoing">Uitgaande</string>
+    <string name="unknown">Onbekend</string>
+    <string name="use">Gebruik :</string>
+    <string name="use_3g_disclamer">jou netwerk MOET jou toelaat om hierdie opsie te gebruik</string>
+    <string name="use_android_setting">Gebruik Android Opsies</string>
+    <string name="use_edge">Gebruik EDGE</string>
+    <string name="use_gprs">Gebruik GPRS</string>
+    <string name="use_ipv6">Gebruik IPv6</string>
+    <string name="use_other">Gebruik ander netwerke</string>
+    <string name="use_soft_volume">Gebruik sagteware volume</string>
+    <string name="use_soft_volume_desc">Gebruik sagteware volume in plaas van Android volume</string>
+    <string name="use_wifi">Gebruik WiFi</string>
+    <string name="use_wifi_in_desc">Gebruik WiFi vir inkomende oproepe</string>
+    <string name="use_wifi_out_desc">Gebruik WiFi vir uitgaande oproepe</string>
+    <string name="w_basic_username">Gebruiker</string>
+    <string name="w_callcentric_password">Wagwoord</string>
+    <string name="w_callcentric_phone_number">SIP Foon Nommer</string>
+    <string name="w_callcentric_phone_number_desc">Callcentric SIP foon nommer (1777xxxxxxx)</string>
+    <string name="w_common_password">Wagwoord</string>
+    <string name="w_common_phone_number">Foon nommer</string>
+    <string name="w_common_phone_number_desc">Sip foon nommer gegee deur verskaffer</string>
+    <string name="w_expert_data">Wagwoord</string>
+    <string name="w_expert_prevent_tcp">Verhoed TCP (probeer net UDP)</string>
+    <string name="w_expert_use_tcp">Gebruik TCP (nie UDP nie)</string>
+    <string name="w_iinet_password_desc">Nie dieselfde as gekonekteerde wagwoord nie</string>
+    <string name="w_iinet_username">VoIP foon nommer</string>
+    <string name="warning">WAARSKUWING</string>
+    <string name="welcome_caption_text">Welkom</string>
+    <string name="wifi_available">Beskikbaar op WiFi</string>
+    <string name="world_wide_providers_text">Wêreld wye verskaffers</string>
+    <string name="yes">Anvaar</string>
+</resources>

@@ -1,0 +1,26 @@
+{
+    "logs": [
+        {
+            "outputFile": "/storage/Development/CSipSimple-new/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-xlarge-port-v4/values-xlarge-port-v4.xml",
+            "map": [
+                {
+                    "source": "/storage/Development/CSipSimple-new/app/src/main/res/values-xlarge-port/layout.xml",
+                    "from": {
+                        "startLines": "20,18",
+                        "startColumns": "4,4",
+                        "startOffsets": "859,785",
+                        "endColumns": "44,72",
+                        "endOffsets": "899,853"
+                    },
+                    "to": {
+                        "startLines": "2,3",
+                        "startColumns": "4,4",
+                        "startOffsets": "55,100",
+                        "endColumns": "44,72",
+                        "endOffsets": "95,168"
+                    }
+                }
+            ]
+        }
+    ]
+}
