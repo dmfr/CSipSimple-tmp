@@ -329,6 +329,7 @@ public class PjSipService {
                 int implementation = prefsWrapper
                         .getPreferenceIntegerValue(SipConfigManager.AUDIO_IMPLEMENTATION);
                 if (implementation == SipConfigManager.AUDIO_IMPLEMENTATION_OPENSLES) {
+                    /*
                     dynamic_factory audImp = cssCfg.getAudio_implementation();
                     audImp.setInit_factory_name(pjsua.pj_str_copy("pjmedia_opensl_factory"));
                     File openslLib = NativeLibManager.getBundledStackLibFile(service,
@@ -336,6 +337,7 @@ public class PjSipService {
                     audImp.setShared_lib_path(pjsua.pj_str_copy(openslLib.getAbsolutePath()));
                     cssCfg.setAudio_implementation(audImp);
                     Log.d(THIS_FILE, "Use OpenSL-ES implementation");
+                     */
                 }
 
                 // Video implementation
@@ -1026,7 +1028,7 @@ public class PjSipService {
                 for (i = 0; i < nbrCodecs; i++) {
                     String codecId = pjStrToString(pjsua.codecs_get_id(i));
                     codecs.add(codecId);
-                    // Log.d(THIS_FILE, "Added codec " + codecId);
+                    Log.d(THIS_FILE, "Added codec " + codecId);
                 }
                 // Set it in prefs if not already set correctly
                 prefsWrapper.setCodecList(codecs);

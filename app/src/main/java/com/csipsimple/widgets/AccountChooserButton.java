@@ -83,13 +83,7 @@ public class AccountChooserButton extends LinearLayout implements OnClickListene
      */
     public interface OnAccountChangeListener {
 
-        /**
-         * Called when the user make an action
-         * 
-         * @param keyCode keyCode pressed
-         * @param dialTone corresponding dialtone
-         */
-        void onChooseAccount(SipProfile account);
+         void onChooseAccount(SipProfile account);
     }
 
     public AccountChooserButton(Context context) {
@@ -103,7 +97,7 @@ public class AccountChooserButton extends LinearLayout implements OnClickListene
         // UI management
         setClickable(true);
         setFocusable(true);
-        setBackgroundResource(R.drawable.abs__spinner_ab_holo_dark);
+        //setBackgroundResource(R.drawable.abs__spinner_ab_holo_dark);
         setOrientation(VERTICAL);
         setPadding(6, 0, 6, 0);
         setGravity(Gravity.CENTER);
@@ -114,7 +108,7 @@ public class AccountChooserButton extends LinearLayout implements OnClickListene
         textView = (TextView) findViewById(R.id.quickaction_text);
         imageView = (ImageView) findViewById(R.id.quickaction_icon);
 
-        mMenuBuilder = new MenuBuilder(getContext());
+        //mMenuBuilder = new MenuBuilder(getContext());
         
         // Init accounts
         setAccount(null);
@@ -128,8 +122,8 @@ public class AccountChooserButton extends LinearLayout implements OnClickListene
     private AccountStatusContentObserver statusObserver = null;
     private boolean canChangeIfValid = true;
 
-    private MenuPopupHelper mPopupMenu;
-    private MenuBuilder mMenuBuilder;
+    //private MenuPopupHelper mPopupMenu;
+    //private MenuBuilder mMenuBuilder;
     private final Set<View.OnAttachStateChangeListener> mListeners = new HashSet<View.OnAttachStateChangeListener>();
 
     /**
@@ -199,67 +193,7 @@ public class AccountChooserButton extends LinearLayout implements OnClickListene
 
     @Override
     public void onClick(View v) {
-        Log.d(THIS_FILE, "Click the account chooser button");
-
-        if(mPopupMenu == null) {
-            mPopupMenu = new MenuPopupHelper(getContext(), mMenuBuilder, this, false);
-            mPopupMenu.setForceShowIcon(true);
-        }
-        mMenuBuilder.removeGroup(R.id.menu_accbtn_accounts);
-
-        Cursor c = getContext().getContentResolver().query(SipProfile.ACCOUNT_URI, ACC_PROJECTION, SipProfile.FIELD_ACTIVE + "=?", new String[] {
-                "1"
-        }, null);
-        
-        boolean hasSomeSip = false;
-        if (c != null) {
-            try {
-                if (c.moveToFirst()) {
-                    do {
-                        final SipProfile account = new SipProfile(c);
-                        AccountStatusDisplay accountStatusDisplay = AccountListUtils
-                                .getAccountDisplay(getContext(), account.id);
-                        if (accountStatusDisplay.availableForCalls) {
-                            BitmapDrawable drawable = new BitmapDrawable(getResources(), 
-                                    WizardUtils.getWizardBitmap(getContext(), account));
-                            
-                            MenuItem item = mMenuBuilder.add(R.id.menu_accbtn_accounts, MenuBuilder.NONE, MenuBuilder.NONE, account.display_name);
-                            item.setIcon(drawable);
-                            item.setOnMenuItemClickListener(new OnAccountMenuItemListener(account));
-                            
-                            hasSomeSip = true;
-                        }
-                    } while (c.moveToNext());
-                }
-            } catch (Exception e) {
-                Log.e(THIS_FILE, "Error on looping over sip profiles", e);
-            } finally {
-                c.close();
-            }
-        }
-        if(!hasSomeSip) {
-            MenuItem item = mMenuBuilder.add(R.id.menu_accbtn_accounts, MenuBuilder.NONE, MenuBuilder.NONE, R.string.acct_inactive);
-            item.setIcon(android.R.drawable.ic_dialog_alert);
-        }
-
-        if (showExternals) {
-            // Add external rows
-            Map<String, String> callHandlers = CallHandlerPlugin.getAvailableCallHandlers(getContext());
-            boolean includeGsm = Compatibility.canMakeGSMCall(getContext()); 
-            for (String packageName : callHandlers.keySet()) {
-                Log.d(THIS_FILE, "Compare "+packageName+" to "+telCmp.flattenToString());
-                // We ensure that GSM integration is not prevented
-                if(!includeGsm && packageName.equals(telCmp.flattenToString())) {
-                    continue;
-                }
-                // Else we can add
-                CallHandlerPlugin ch = new CallHandlerPlugin(getContext());
-                ch.loadFrom(packageName, null, new OnPluginLoadListener());
-            }
-        }
-
-        mPopupMenu.show();
-    }
+   }
     
     private class OnPluginLoadListener implements OnLoadListener {
         @Override
@@ -279,9 +213,11 @@ public class AccountChooserButton extends LinearLayout implements OnClickListene
 
         @Override
         public void run() {
+            /*
             MenuItem item = mMenuBuilder.add(R.id.menu_accbtn_accounts, Menu.NONE, Menu.NONE,  ch.getLabel().toString());
             item.setIcon(ch.getIconDrawable());
             item.setOnMenuItemClickListener(new OnAccountMenuItemListener(ch.getFakeProfile()));
+             */
         }
     }
 
@@ -463,8 +399,5 @@ public class AccountChooserButton extends LinearLayout implements OnClickListene
         }
     }
     
-    public MenuItem addExtraMenuItem(int titleRes) {
-        return mMenuBuilder.add(R.id.menu_accbtn_extras, MenuBuilder.NONE, 100, titleRes);
-    }
 
 }

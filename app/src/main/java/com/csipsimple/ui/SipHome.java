@@ -48,9 +48,10 @@ import android.view.ViewParent;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 
+
 import android.app.ActionBar;
 import android.app.ActionBar.Tab;
-import com.actionbarsherlock.internal.utils.UtilityWrapper;
+//import com.actionbarsherlock.internal.utils.UtilityWrapper;
 import com.csipsimple.R;
 import com.csipsimple.api.SipConfigManager;
 import com.csipsimple.api.SipManager;
@@ -58,7 +59,6 @@ import com.csipsimple.api.SipProfile;
 import com.csipsimple.ui.account.AccountsEditList;
 import com.csipsimple.ui.calllog.CallLogListFragment;
 import com.csipsimple.ui.dialpad.DialerFragment;
-import com.csipsimple.ui.favorites.FavListFragment;
 import com.csipsimple.ui.help.Help;
 import com.csipsimple.ui.messages.ConversationsListFragment;
 import com.csipsimple.ui.warnings.WarningFragment;
@@ -80,7 +80,7 @@ import com.csipsimple.wizards.WizardUtils.WizardInfo;
 import java.util.ArrayList;
 import java.util.List;
 
-public class SipHome extends Activity implements OnWarningChanged {
+public class SipHome extends Activity implements ActionBar.TabListener, OnWarningChanged {
     public static final int ACCOUNTS_MENU = Menu.FIRST + 1;
     public static final int PARAMS_MENU = Menu.FIRST + 2;
     public static final int CLOSE_MENU = Menu.FIRST + 3;
@@ -104,15 +104,32 @@ public class SipHome extends Activity implements OnWarningChanged {
 
     private boolean hasTriedOnceActivateAcc = false;
     // private ImageButton pickupContact;
-    private ViewPager mViewPager;
-    private TabsAdapter mTabsAdapter;
+    //private ViewPager mViewPager;
+    //private TabsAdapter mTabsAdapter;
+    private int mFragmentId ;
     private boolean mDualPane;
     private Thread asyncSanityChecker;
     private Tab warningTab;
     private ObjectAnimator warningTabfadeAnim;
 
+    @Override
+    public void onTabSelected(Tab tab, FragmentTransaction fragmentTransaction) {
+        Log.w("dams","Selected tab"+tab.getPosition()) ;
+        switchToFragment(tab.getPosition(),fragmentTransaction);
+    }
+
+    @Override
+    public void onTabUnselected(Tab tab, FragmentTransaction fragmentTransaction) {
+
+    }
+
+    @Override
+    public void onTabReselected(Tab tab, FragmentTransaction fragmentTransaction) {
+
+    }
+
     /**
-     * Listener interface for Fragments accommodated in {@link ViewPager}
+     * Listener interface for Fragments accommodated in
      * enabling them to know when it becomes visible or invisible inside the
      * ViewPager.
      */
@@ -142,24 +159,32 @@ public class SipHome extends Activity implements OnWarningChanged {
         
 
         Tab dialerTab = ab.newTab()
+                .setTabListener(this)
                  .setContentDescription(R.string.dial_tab_name_text)
                 .setIcon(R.drawable.ic_ab_dialer_holo_dark);
+        ab.addTab(dialerTab);
         Tab callLogTab = ab.newTab()
+                .setTabListener(this)
                  .setContentDescription(R.string.calllog_tab_name_text)
                 .setIcon(R.drawable.ic_ab_history_holo_dark);
+        ab.addTab(callLogTab);
         Tab favoritesTab = null;
         if(CustomDistribution.supportFavorites()) {
             favoritesTab = ab.newTab()
+                    .setTabListener(this)
                     .setContentDescription(R.string.favorites_tab_name_text)
                     .setIcon(R.drawable.ic_ab_favourites_holo_dark);
+            ab.addTab(favoritesTab);
         }
         Tab messagingTab = null;
         if (CustomDistribution.supportMessaging()) {
             messagingTab = ab.newTab()
+                    .setTabListener(this)
                     .setContentDescription(R.string.messages_tab_name_text)
                     .setIcon(R.drawable.ic_ab_text_holo_dark);
+            ab.addTab(messagingTab);
         }
-        
+
         warningTab = ab.newTab().setIcon(android.R.drawable.ic_dialog_alert);
         warningTabfadeAnim = ObjectAnimator.ofInt(warningTab.getIcon(), "alpha", 255, 100);
         warningTabfadeAnim.setDuration(1500);
@@ -168,16 +193,15 @@ public class SipHome extends Activity implements OnWarningChanged {
         
         mDualPane = getResources().getBoolean(R.bool.use_dual_panes);
 
+        /*
         mViewPager = (ViewPager) findViewById(R.id.pager);
         mTabsAdapter = new TabsAdapter(this, getActionBar(), mViewPager);
         mTabsAdapter.addTab(dialerTab, DialerFragment.class, TAB_ID_DIALER);
         mTabsAdapter.addTab(callLogTab, CallLogListFragment.class, TAB_ID_CALL_LOG);
-        if(favoritesTab != null) {
-            mTabsAdapter.addTab(favoritesTab, FavListFragment.class, TAB_ID_FAVORITES);
-        }
         if (messagingTab != null) {
             mTabsAdapter.addTab(messagingTab, ConversationsListFragment.class, TAB_ID_MESSAGES);
         }
+         */
         
 
         hasTriedOnceActivateAcc = false;
@@ -211,157 +235,15 @@ public class SipHome extends Activity implements OnWarningChanged {
      * switch to the correct paged in the ViewPager whenever the selected tab
      * changes.
      */
-    private class TabsAdapter extends FragmentStatePagerAdapter implements
-            ViewPager.OnPageChangeListener, ActionBar.TabListener {
-        private final Context mContext;
-        private final ActionBar mActionBar;
-        private final ViewPager mViewPager;
-        private final List<String> mTabs = new ArrayList<String>();
-        private final List<Integer> mTabsId = new ArrayList<Integer>();
-        private boolean hasClearedDetails = false;
-        
-
-        private int mCurrentPosition = -1;
-        /**
-         * Used during page migration, to remember the next position
-         * {@link #onPageSelected(int)} specified.
-         */
-        private int mNextPosition = -1;
-
-        public TabsAdapter(Activity activity, ActionBar actionBar, ViewPager pager) {
-            super(activity.getFragmentManager());
-            mContext = activity;
-            mActionBar = actionBar;
-            mViewPager = pager;
-            mViewPager.setAdapter(this);
-            mViewPager.setOnPageChangeListener(this);
-        }
-
-        public void addTab(ActionBar.Tab tab, Class<?> clss, int tabId) {
-            mTabs.add(clss.getName());
-            mTabsId.add(tabId);
-            mActionBar.addTab(tab.setTabListener(this));
-            notifyDataSetChanged();
-        }
-        
-        public void removeTabAt(int location) {
-            mTabs.remove(location);
-            mTabsId.remove(location);
-            mActionBar.removeTabAt(location);
-            notifyDataSetChanged();
-        }
-        
-        public Integer getIdForPosition(int position) {
-            if(position >= 0 && position < mTabsId.size()) {
-                return mTabsId.get(position);
-            }
-            return null;
-        }
-        
-        public Integer getPositionForId(int id) {
-            int fPos = mTabsId.indexOf(id);
-            if(fPos >= 0) {
-                return fPos;
-            }
-            return null;
-        }
-
-        @Override
-        public int getCount() {
-            return mTabs.size();
-        }
-
-        @Override
-        public Fragment getItem(int position) {
-            return Fragment.instantiate(mContext, mTabs.get(position), new Bundle());
-        }
-
-        @Override
-        public void onTabSelected(Tab tab, FragmentTransaction ft) {
-            clearDetails();
-            if (mViewPager.getCurrentItem() != tab.getPosition()) {
-                mViewPager.setCurrentItem(tab.getPosition(), true);
-            }
-        }
-
-        @Override
-        public void onPageSelected(int position) {
-            mActionBar.setSelectedNavigationItem(position);
-
-            if (mCurrentPosition == position) {
-                Log.w(THIS_FILE, "Previous position and next position became same (" + position
-                        + ")");
-            }
-
-            mNextPosition = position;
-        }
-
-        @Override
-        public void onTabReselected(Tab tab, FragmentTransaction ft) {
-            // Nothing to do
-        }
-
-        @Override
-        public void onTabUnselected(Tab tab, FragmentTransaction ft) {
-            // Nothing to do
-        }
-
-        @Override
-        public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
-            // Nothing to do
-        }
-
-        /*
-         * public void setCurrentPosition(int position) { mCurrentPosition =
-         * position; }
-         */
-
-        @Override
-        public void onPageScrollStateChanged(int state) {
-            switch (state) {
-                case ViewPager.SCROLL_STATE_IDLE: {
-                    if (mCurrentPosition >= 0) {
-                        sendFragmentVisibilityChange(mCurrentPosition, false);
-                    }
-                    if (mNextPosition >= 0) {
-                        sendFragmentVisibilityChange(mNextPosition, true);
-                    }
-                    invalidateOptionsMenu();
-
-                    mCurrentPosition = mNextPosition;
-                    break;
-                }
-                case ViewPager.SCROLL_STATE_DRAGGING:
-                    clearDetails();
-                    hasClearedDetails = true;
-                    break;
-                case ViewPager.SCROLL_STATE_SETTLING:
-                    hasClearedDetails = false;
-                    break;
-                default:
-                    break;
-            }
-        }
-
-        private void clearDetails() {
-            if (mDualPane && !hasClearedDetails) {
-                FragmentTransaction ft = SipHome.this.getFragmentManager()
-                        .beginTransaction();
-                ft.replace(R.id.details, new Fragment(), null);
-                ft.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE);
-                ft.commit();
-            }
-        }
-    }
 
     private DialerFragment mDialpadFragment;
     private CallLogListFragment mCallLogFragment;
     private ConversationsListFragment mMessagesFragment;
-    private FavListFragment mPhoneFavoriteFragment;
+    //private FavListFragment mPhoneFavoriteFragment;
     private WarningFragment mWarningFragment;
 
     private Fragment getFragmentAt(int position) {
-        Integer id = mTabsAdapter.getIdForPosition(position);
+        Integer id = mFragmentId ;
         if(id != null) {
             if (id == TAB_ID_DIALER) {
                 return mDialpadFragment;
@@ -369,8 +251,6 @@ public class SipHome extends Activity implements OnWarningChanged {
                 return mCallLogFragment;
             } else if (id == TAB_ID_MESSAGES) {
                 return mMessagesFragment;
-            } else if (id == TAB_ID_FAVORITES) {
-                return mPhoneFavoriteFragment;
             } else if (id == TAB_ID_WARNING) {
                 return mWarningFragment;
             }
@@ -378,9 +258,66 @@ public class SipHome extends Activity implements OnWarningChanged {
         throw new IllegalStateException("Unknown fragment index: " + position);
     }
 
+    private void switchToFragment(int position, FragmentTransaction ft) {
+        Integer id = position ;
+        if(id != null) {
+            mFragmentId = id ;
+            if (id == TAB_ID_DIALER) {
+                DialerFragment f = new DialerFragment();
+                //Bundle args = new Bundle() ;
+                //Fragment.instantiate(this, "DialerFragment", args) ;
+
+                //FragmentTransaction ft = getFragmentManager().beginTransaction() ;
+                ft.replace(R.id.pager, (Fragment)f, "visible_fragment");
+                //ft.commit();
+                //return mDialpadFragment;
+                return ;
+            } else if (id == TAB_ID_CALL_LOG) {
+                CallLogListFragment f = new CallLogListFragment();
+                ft.replace(R.id.pager, (Fragment)f, "visible_fragment");
+                //return mCallLogFragment;
+                return ;
+            } else if (id == TAB_ID_FAVORITES) {
+                Fragment f = getCurrentFragment() ;
+                if( f != null ) {
+                    ft.remove(f) ;
+                }
+                //return mCallLogFragment;
+                return ;
+            } else if (id == TAB_ID_MESSAGES) {
+                //return mMessagesFragment;
+                ConversationsListFragment f = new ConversationsListFragment();
+                ft.replace(R.id.pager, (Fragment)f, "visible_fragment");
+                return ;
+            } else if (id == TAB_ID_WARNING) {
+                WarningFragment f = new WarningFragment();
+                ft.replace(R.id.pager, (Fragment)f, "visible_fragment");
+                //return mWarningFragment;
+                return ;
+            }
+        }
+        throw new IllegalStateException("Unknown fragment index: " + position);
+    }
+
     public Fragment getCurrentFragment() {
-        if (mViewPager != null) {
-            return getFragmentAt(mViewPager.getCurrentItem());
+        Fragment f = getFragmentManager().findFragmentById(R.id.pager);
+        if (f != null) {
+            return f;
+        }
+        return null;
+    }
+    public Integer getCurrentFragmentId() {
+        Fragment fragment = getFragmentManager().findFragmentById(R.id.pager);
+        if (fragment != null) {
+            if (fragment instanceof DialerFragment) {
+                return TAB_ID_DIALER ;
+            } else if (fragment instanceof CallLogListFragment) {
+                return TAB_ID_CALL_LOG ;
+            } else if (fragment instanceof ConversationsListFragment) {
+                return TAB_ID_MESSAGES ;
+            } else if (fragment instanceof WarningFragment) {
+                return TAB_ID_WARNING ;
+            }
         }
         return null;
     }
@@ -402,17 +339,14 @@ public class SipHome extends Activity implements OnWarningChanged {
         // rely on ViewPager.
         // In that case, we will setup the "current position" soon after the
         // ViewPager is ready.
-        final int currentPosition = mViewPager != null ? mViewPager.getCurrentItem() : -1;
-        Integer tabId = null; 
-        if(mTabsAdapter != null) {
-            tabId = mTabsAdapter.getIdForPosition(currentPosition);
+        final int currentPosition = getCurrentFragmentId() != null ? getCurrentFragmentId() : -1;
+        Integer tabId = -1 ;
+        if(getCurrentFragmentId() != null) {
+            tabId = getCurrentFragmentId();
         }
         if (fragment instanceof DialerFragment) {
             mDialpadFragment = (DialerFragment) fragment;
-            if (initTabId == tabId && tabId != null && tabId == TAB_ID_DIALER) {
-                mDialpadFragment.onVisibilityChanged(true);
-                initTabId = null;
-            }
+            mDialpadFragment.onVisibilityChanged(true);
             if(initDialerWithText != null) {
                 mDialpadFragment.setTextDialing(true);
                 mDialpadFragment.setTextFieldValue(initDialerWithText);
@@ -420,22 +354,10 @@ public class SipHome extends Activity implements OnWarningChanged {
             }
         } else if (fragment instanceof CallLogListFragment) {
             mCallLogFragment = (CallLogListFragment) fragment;
-            if (initTabId == tabId && tabId != null && tabId == TAB_ID_CALL_LOG) {
-                mCallLogFragment.onVisibilityChanged(true);
-                initTabId = null;
-            }
+            mCallLogFragment.onVisibilityChanged(true);
         } else if (fragment instanceof ConversationsListFragment) {
             mMessagesFragment = (ConversationsListFragment) fragment;
-            if (initTabId == tabId && tabId != null && tabId == TAB_ID_MESSAGES) {
-                mMessagesFragment.onVisibilityChanged(true);
-                initTabId = null;
-            }
-        } else if (fragment instanceof FavListFragment) {
-            mPhoneFavoriteFragment = (FavListFragment) fragment;
-            if (initTabId == tabId && tabId != null && tabId == TAB_ID_FAVORITES) {
-                mPhoneFavoriteFragment.onVisibilityChanged(true);
-                initTabId = null;
-            }
+            mMessagesFragment.onVisibilityChanged(true);
         } else if (fragment instanceof WarningFragment) {
             mWarningFragment = (WarningFragment) fragment;
             synchronized (warningList) {
@@ -583,8 +505,8 @@ public class SipHome extends Activity implements OnWarningChanged {
 
         prefProviderWrapper.setPreferenceBooleanValue(PreferencesWrapper.HAS_BEEN_QUIT, false);
         
-        // Set visible the currently selected account
-        sendFragmentVisibilityChange(mViewPager.getCurrentItem(), true);
+        // Set visible the currently selected account TODO
+        sendFragmentVisibilityChange(getCurrentFragmentId(), true);
         
         Log.d(THIS_FILE, "WE CAN NOW start SIP service");
         startSipService();
@@ -621,7 +543,8 @@ public class SipHome extends Activity implements OnWarningChanged {
                 int i = 0;
                 for (View leaf : leafs) {
                     if (leaf instanceof ImageView) {
-                        Integer id = mTabsAdapter.getIdForPosition(i);
+                        //Integer id = mTabsAdapter.getIdForPosition(i);
+                        Integer id = i ;
                         if (id != null) {
                             int tabId = id;
                             Drawable customIcon = null;
@@ -652,14 +575,22 @@ public class SipHome extends Activity implements OnWarningChanged {
                                 if (tabLayout instanceof LinearLayout) {
                                     Drawable d = t.getDrawableResource("tab_divider");
                                     if (d != null) {
+                                        /*
                                         UtilityWrapper.getInstance()
                                                 .setLinearLayoutDividerDrawable(
                                                         (LinearLayout) tabLayout, d);
+
+                                         */
+                                        ((LinearLayout) tabLayout).setDividerDrawable(d);
                                     }
                                     Integer dim = t.getDimension("tab_divider_padding");
                                     if (dim != null) {
+                                        /*
                                         UtilityWrapper.getInstance().setLinearLayoutDividerPadding(
                                                 (LinearLayout) tabLayout, dim);
+
+                                         */
+                                        ((LinearLayout) tabLayout).setDividerPadding(dim);
                                     }
                                 }
                             }
@@ -670,12 +601,12 @@ public class SipHome extends Activity implements OnWarningChanged {
                 if(i > 0) {
                     t.applyBackgroundDrawable((View) leafs.get(0).getParent().getParent(), "abs_background");
                 }
-                
+
                 Drawable d = t.getDrawableResource("split_background");
                 if (d != null) {
                     ab.setSplitBackgroundDrawable(d);
                 }
-                
+
                 t.applyBackgroundDrawable(vg, "content_background");
             }
         }
@@ -700,7 +631,7 @@ public class SipHome extends Activity implements OnWarningChanged {
                         || callAction.equalsIgnoreCase(Intent.ACTION_DIAL)
                         || callAction.equalsIgnoreCase(Intent.ACTION_VIEW)
                         || callAction.equalsIgnoreCase(Intent.ACTION_SENDTO) /* TODO : sendto should im if not csip? */) {
-                    Integer pos = mTabsAdapter.getPositionForId(TAB_ID_DIALER);
+                    Integer pos = TAB_ID_DIALER;
                     if(pos != null) {
                         toSelectTab = ab.getTabAt(pos);
                         Uri data = intent.getData();
@@ -717,19 +648,19 @@ public class SipHome extends Activity implements OnWarningChanged {
                         toSelectId = TAB_ID_DIALER;
                     }
                 } else if (callAction.equalsIgnoreCase(SipManager.ACTION_SIP_CALLLOG)) {
-                    Integer pos = mTabsAdapter.getPositionForId(TAB_ID_CALL_LOG);
+                    Integer pos = TAB_ID_CALL_LOG;
                     if(pos != null) {
                         toSelectTab = ab.getTabAt(pos);
                         toSelectId = TAB_ID_CALL_LOG;
                     }
                 } else if (callAction.equalsIgnoreCase(SipManager.ACTION_SIP_FAVORITES)) {
-                    Integer pos = mTabsAdapter.getPositionForId(TAB_ID_FAVORITES);
+                    Integer pos = TAB_ID_FAVORITES;
                     if(pos != null) {
                         toSelectTab = ab.getTabAt(pos);
                         toSelectId = TAB_ID_FAVORITES;
                     }
                 } else if (callAction.equalsIgnoreCase(SipManager.ACTION_SIP_MESSAGES)) {
-                    Integer pos = mTabsAdapter.getPositionForId(TAB_ID_MESSAGES);
+                    Integer pos = TAB_ID_MESSAGES;
                     if(pos != null) {
                         toSelectTab = ab.getTabAt(pos);
                         toSelectId = TAB_ID_MESSAGES;
@@ -902,10 +833,11 @@ public class SipHome extends Activity implements OnWarningChanged {
     Runnable refreshWarningTabRunnable = new Runnable() {
         @Override
         public void run() {
-            refreshWarningTabDisplay();
+            //refreshWarningTabDisplay();
         }
     };
-    
+
+    /*
     private void refreshWarningTabDisplay() {
         List<String> warnList = new ArrayList<String>();
         synchronized (warningList) {
@@ -943,6 +875,7 @@ public class SipHome extends Activity implements OnWarningChanged {
             }
         }
     }
+     */
 
     @Override
     public void onWarningRemoved(String warnKey) {

@@ -140,11 +140,11 @@ public abstract class BaseImplementation implements WizardIface {
 	
 
 	private void markFieldInvalid(Preference field) {
-		field.setLayoutResource(R.layout.invalid_preference_row);
+		//field.setLayoutResource(R.layout.invalid_preference_row);
 	}
 
 	private void markFieldValid(Preference field) {
-		field.setLayoutResource(R.layout.valid_preference_row);
+		//field.setLayoutResource(R.layout.valid_preference_row);
 	}
 
 	/**

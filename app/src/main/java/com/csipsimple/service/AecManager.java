@@ -58,10 +58,12 @@ public class AecManager {
 				mAec = aec ;
 				winnerId = id ;
 				break ;
+			} else {
+				Log.e("DAMS","AEC failed for id : "+id) ;
 			}
 		}
 		if( mAec != null ) {
-			Log.e("DAMS","AEC id is "+winnerId) ;
+			Log.e("DAMS","AEC success for id : "+winnerId) ;
 		}
 		if( mAec == null && mStartId > 0 ) {
 			mStartId = 0 ;

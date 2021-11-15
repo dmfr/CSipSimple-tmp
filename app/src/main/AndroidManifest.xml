@@ -13,8 +13,8 @@
         android:xlargeScreens="true" />
 
     <uses-sdk
-        android:minSdkVersion="16"
-        android:targetSdkVersion="22" />
+        android:minSdkVersion="26"
+        android:targetSdkVersion="30" />
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.RECORD_AUDIO" />
@@ -45,6 +45,13 @@
     <uses-permission android:name="android.permission.CAMERA" />
     <uses-permission android:name="android.permission.BROADCAST_STICKY" />
     <uses-permission android:name="android.permission.READ_PROFILE" />
+
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+    <uses-permission android:name="android.permission.USE_FULL_SCREEN_INTENT" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+
+
+
     <!--
     Not taken into account?
     Regarding Diane's comment this was never implemented 
@@ -436,6 +443,7 @@
             android:permission="android.permission.CONFIGURE_SIP"
             android:process=":sipStack"
             android:taskAffinity=""
+            android:showOnLockScreen="true"
             android:theme="@style/DarkTheme.NoTitle" >
             <intent-filter android:priority="10" >
                 <action android:name="com.csipsimple.phone.action.INCALL" />

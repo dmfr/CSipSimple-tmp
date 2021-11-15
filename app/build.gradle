@@ -1,13 +1,13 @@
 apply plugin: 'com.android.application'
 
 android {
-    compileSdkVersion 22
+    compileSdkVersion 30
     buildToolsVersion "30.0.3"
 
     defaultConfig {
         applicationId "com.csipsimple"
-        minSdkVersion 4
-        targetSdkVersion 16
+        minSdkVersion 23
+        targetSdkVersion 30
     }
 
     buildTypes {
@@ -16,8 +16,10 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.txt'
         }
     }
+    useLibrary 'org.apache.http.legacy'
+
 }
 
 dependencies {
-    implementation 'com.android.support:support-v4:22.2.1'
+    //implementation 'com.android.support:support-v4:22.2.1'
 }

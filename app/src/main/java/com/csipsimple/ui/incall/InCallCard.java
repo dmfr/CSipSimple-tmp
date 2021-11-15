@@ -41,13 +41,6 @@ import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
-import com.actionbarsherlock.internal.utils.UtilityWrapper;
-import com.actionbarsherlock.internal.view.menu.ActionMenuPresenter;
-import com.actionbarsherlock.internal.view.menu.ActionMenuView;
-import com.actionbarsherlock.internal.view.menu.MenuBuilder;
-import com.actionbarsherlock.internal.view.menu.MenuBuilder.Callback;
-import com.actionbarsherlock.view.MenuInflater;
-import com.actionbarsherlock.view.MenuItem;
 import com.csipsimple.R;
 import com.csipsimple.api.SipCallSession;
 import com.csipsimple.api.SipCallSession.MediaState;
@@ -71,7 +64,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
-public class InCallCard extends FrameLayout implements OnClickListener, Callback {
+public class InCallCard extends FrameLayout implements OnClickListener {
 
     private static final String THIS_FILE = "InCallCard";
     
@@ -90,13 +83,13 @@ public class InCallCard extends FrameLayout implements OnClickListener, Callback
     private SurfaceView renderView;
     private PreferencesProviderWrapper prefs;
     private ViewGroup endCallBar;
-    private MenuBuilder btnMenuBuilder;
+    //private MenuBuilder btnMenuBuilder;
     private boolean hasVideo = false;
     private boolean canVideo = false;
     private boolean cachedZrtpVerified;
     private boolean cachedZrtpActive;
 
-    private ActionMenuPresenter mActionMenuPresenter;
+    //private ActionMenuPresenter mActionMenuPresenter;
 
     private Map<String, DynActivityPlugin> incallPlugins;
 
@@ -128,6 +121,7 @@ public class InCallCard extends FrameLayout implements OnClickListener, Callback
         btn = findViewById(R.id.endButton);
         btn.setOnClickListener(this);
 
+        /*
         btnMenuBuilder = new MenuBuilder(getContext());
         btnMenuBuilder.setCallback(this);
         MenuInflater inflater = new MenuInflater(getContext());
@@ -137,12 +131,13 @@ public class InCallCard extends FrameLayout implements OnClickListener, Callback
         mActionMenuPresenter.setReserveOverflow(true);
         
         btnMenuBuilder.addMenuPresenter(mActionMenuPresenter);
-        
+        */
         updateMenuView();
     }
     
     private boolean added = false;
     private void updateMenuView() {
+        /*
         int w = getWidth();
         if(w <= 0) {
             w = getResources().getDisplayMetrics().widthPixels;
@@ -164,6 +159,7 @@ public class InCallCard extends FrameLayout implements OnClickListener, Callback
             mActionMenuPresenter.setWidthLimit(w, true);
             mActionMenuPresenter.updateMenuView(true);
         }
+         */
     }
 
     public synchronized void setCallState(SipCallSession aCallInfo) {
@@ -265,11 +261,11 @@ public class InCallCard extends FrameLayout implements OnClickListener, Callback
                 Log.d(THIS_FILE, "Current ratio is " + currentRatio);
                 if(currentRatio < minRatio) {
                     newHeight = w / minRatio;
-                    int padding = (int) FloatMath.floor((h - newHeight) /2);
+                    int padding = (int) Math.floor((h - newHeight) /2);
                     setPadding(0, padding, 0, padding);
                 }else if(currentRatio > maxRatio) {
                     newWidth = h * maxRatio;
-                    int padding = (int) FloatMath.floor((w - newWidth) /2);
+                    int padding = (int) Math.floor((w - newWidth) /2);
                     setPadding(padding, 0, padding, 0);
                 }else {
                     setPadding(0, 0, 0, 0);
@@ -299,91 +295,7 @@ public class InCallCard extends FrameLayout implements OnClickListener, Callback
 
     private void updateQuickActions() {
         
-        // Useless to process that
-        if (cachedInvState == callInfo.getCallState() &&
-                cachedMediaState == callInfo.getMediaStatus() &&
-                cachedIsRecording == callInfo.isRecording() &&
-                cachedCanRecord == callInfo.canRecord() &&
-                cachedIsHold == callInfo.isLocalHeld() &&
-                cachedVideo  == callInfo.mediaHasVideo() &&
-                cachedZrtpActive == callInfo.getHasZrtp() &&
-                cachedZrtpVerified == callInfo.isZrtpSASVerified()
-                ) {
-            Log.d(THIS_FILE, "Nothing changed, ignore this update");
-            return;
-        }
-        
-        boolean active = callInfo.isBeforeConfirmed() && callInfo.isIncoming();
-        btnMenuBuilder.findItem(R.id.takeCallButton).setVisible(active);
-        btnMenuBuilder.findItem(R.id.dontTakeCallButton).setVisible(active);
-        btnMenuBuilder.findItem(R.id.declineCallButton).setVisible(active);
-        
-        active = !callInfo.isAfterEnded()
-                && (!callInfo.isBeforeConfirmed() || (!callInfo.isIncoming() && callInfo
-                        .isBeforeConfirmed()));
-        btnMenuBuilder.findItem(R.id.terminateCallButton).setVisible(active);
-        
-        active = (!callInfo.isAfterEnded() && !callInfo.isBeforeConfirmed());
-        btnMenuBuilder.findItem(R.id.xferCallButton).setVisible(active);
-        btnMenuBuilder.findItem(R.id.transferCallButton).setVisible(active);
-        btnMenuBuilder.findItem(R.id.holdCallButton).setVisible(active)
-                .setTitle(callInfo.isLocalHeld() ? R.string.resume_call : R.string.hold_call);
-        btnMenuBuilder.findItem(R.id.videoCallButton).setVisible(active && canVideo && !callInfo.mediaHasVideo());
-        
 
-        // DTMF
-        active = callInfo.isActive() ;
-        active &= ( (callInfo.getMediaStatus() == MediaState.ACTIVE) || (callInfo.getMediaStatus() == MediaState.REMOTE_HOLD));
-        btnMenuBuilder.findItem(R.id.dtmfCallButton).setVisible(active);
-        
-        // Info
-        active = !callInfo.isAfterEnded();
-        btnMenuBuilder.findItem(R.id.detailedDisplayCallButton).setVisible(active);
-        
-        // Record
-        active = CustomDistribution.supportCallRecord();
-        if(!callInfo.isRecording() && !callInfo.canRecord()) {
-            active = false;
-        }
-        if(callInfo.isAfterEnded()) {
-            active = false;
-        }
-        btnMenuBuilder.findItem(R.id.recordCallButton).setVisible(active).setTitle(
-                callInfo.isRecording() ? R.string.stop_recording : R.string.record);
-        
-        // ZRTP
-        active = callInfo.getHasZrtp() && !callInfo.isAfterEnded();
-        btnMenuBuilder.findItem(R.id.zrtpAcceptance).setVisible(active).setTitle(
-                callInfo.isZrtpSASVerified() ? R.string.zrtp_revoke_trusted_remote : R.string.zrtp_trust_remote);
-        
-        
-        
-        // Expand plugins
-        btnMenuBuilder.removeGroup(R.id.controls);
-        for(DynActivityPlugin callPlugin : incallPlugins.values()) {
-            int minState = callPlugin.getMetaDataInt(SipManager.EXTRA_SIP_CALL_MIN_STATE, SipCallSession.InvState.EARLY);
-            int maxState = callPlugin.getMetaDataInt(SipManager.EXTRA_SIP_CALL_MAX_STATE, SipCallSession.InvState.CONFIRMED);
-            int way = callPlugin.getMetaDataInt(SipManager.EXTRA_SIP_CALL_CALL_WAY, (1 << 0 | 1 << 1));
-            Log.d(THIS_FILE, "Can add plugin ? " + minState + ", " + maxState + ", "+ way);
-            if(callInfo.getCallState() < minState) {
-                continue;
-            }
-            if(callInfo.getCallState() > maxState) {
-                continue;
-            }
-            if(callInfo.isIncoming() && ((way & (1 << 0)) == 0) ) {
-                continue;
-            }
-            if(!callInfo.isIncoming() && ((way & (1 << 1)) == 0) ) {
-                continue;
-            }
-            MenuItem pluginMenu = btnMenuBuilder.add(R.id.controls, MenuBuilder.NONE, MenuBuilder.NONE, callPlugin.getName());
-            Intent it = callPlugin.getIntent();
-            it.putExtra(SipManager.EXTRA_CALL_INFO, new SipCallSession(callInfo));
-            pluginMenu.setIntent(it);
-        }
-        
-        
     }
 
     /**
@@ -630,52 +542,5 @@ public class InCallCard extends FrameLayout implements OnClickListener, Callback
         }
     }
 
-    @Override
-    public boolean onMenuItemSelected(MenuBuilder menu, MenuItem item) {
-        int itemId = item.getItemId();
-        if(itemId == R.id.takeCallButton) {
-            dispatchTriggerEvent(IOnCallActionTrigger.TAKE_CALL);
-            return true;
-        }else if(itemId == R.id.terminateCallButton) {
-            dispatchTriggerEvent(IOnCallActionTrigger.TERMINATE_CALL);
-            return true;
-        }else if(itemId ==  R.id.dontTakeCallButton) {
-            dispatchTriggerEvent(IOnCallActionTrigger.DONT_TAKE_CALL);
-            return true;
-        }else if(itemId ==  R.id.declineCallButton) {
-            dispatchTriggerEvent(IOnCallActionTrigger.REJECT_CALL);
-            return true;
-        }else if(itemId == R.id.detailedDisplayCallButton) {
-            dispatchTriggerEvent(IOnCallActionTrigger.DETAILED_DISPLAY);
-            return true;
-        }else if(itemId == R.id.holdCallButton) {
-            dispatchTriggerEvent(IOnCallActionTrigger.TOGGLE_HOLD);
-            return true;
-        }else if(itemId == R.id.recordCallButton) {
-            dispatchTriggerEvent(callInfo.isRecording() ? IOnCallActionTrigger.STOP_RECORDING : IOnCallActionTrigger.START_RECORDING);
-            return true;
-        }else if(itemId == R.id.dtmfCallButton) {
-            dispatchTriggerEvent(IOnCallActionTrigger.DTMF_DISPLAY);
-            return true;
-        }else if(itemId == R.id.videoCallButton) {
-            dispatchTriggerEvent(callInfo.mediaHasVideo() ? IOnCallActionTrigger.STOP_VIDEO : IOnCallActionTrigger.START_VIDEO);
-            return true;
-        }else if(itemId == R.id.xferCallButton) {
-            dispatchTriggerEvent(IOnCallActionTrigger.XFER_CALL);
-            return true;
-        }else if(itemId == R.id.transferCallButton) {
-            dispatchTriggerEvent(IOnCallActionTrigger.TRANSFER_CALL);
-            return true;
-        }else if(itemId == R.id.zrtpAcceptance) {
-            dispatchTriggerEvent(callInfo.isZrtpSASVerified()? IOnCallActionTrigger.ZRTP_REVOKE : IOnCallActionTrigger.ZRTP_TRUST);
-            return true;
-        }
-        return false;
-    }
-
-    @Override
-    public void onMenuModeChange(MenuBuilder menu) {
-        // Nothing to do.
-    }
 
 }

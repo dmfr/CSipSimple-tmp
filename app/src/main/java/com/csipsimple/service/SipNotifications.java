@@ -23,11 +23,13 @@ package com.csipsimple.service;
 
 import android.app.Notification;
 import android.app.Notification.Builder;
+import android.app.NotificationChannel;
 import android.app.NotificationManager;
 import android.app.PendingIntent;
 import android.content.ContentValues;
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Color;
 import android.graphics.Typeface;
 import android.provider.CallLog;
 import android.text.Spannable;
@@ -65,6 +67,9 @@ public class SipNotifications {
 	private Builder messageVoicemail;
 	private boolean resolveContacts = true;
 
+	public static final String NOTIFICATION_CHANNEL_ID_SERVICE = "com.csipsimple.service" ;
+	public static final String NOTIFICATION_CHANNEL_ID_CALL = "com.csipsimple.call" ;
+
 	public static final int REGISTER_NOTIF_ID = 1;
 	public static final int CALL_NOTIF_ID = REGISTER_NOTIF_ID + 1;
 	public static final int CALLLOG_NOTIF_ID = REGISTER_NOTIF_ID + 2;
@@ -86,6 +91,23 @@ public class SipNotifications {
 		if( ! Compatibility.isCompatible(9) ) {
 		    searchNotificationPrimaryText(aContext);
 		}
+
+		if( notificationManager.getNotificationChannel(NOTIFICATION_CHANNEL_ID_SERVICE) == null ) {
+			String channelName = "CSipSimple service";
+			NotificationChannel chan = new NotificationChannel(NOTIFICATION_CHANNEL_ID_SERVICE, channelName, NotificationManager.IMPORTANCE_NONE);
+			chan.setLightColor(Color.BLUE);
+			chan.setLockscreenVisibility(Notification.VISIBILITY_PUBLIC);
+			assert notificationManager != null;
+			notificationManager.createNotificationChannel(chan);
+		}
+		if( notificationManager.getNotificationChannel(NOTIFICATION_CHANNEL_ID_CALL) == null ) {
+			String channelName = "CSipSimple service";
+			NotificationChannel chan = new NotificationChannel(NOTIFICATION_CHANNEL_ID_CALL, channelName, NotificationManager.IMPORTANCE_HIGH);
+			chan.setLightColor(Color.BLUE);
+			chan.setLockscreenVisibility(Notification.VISIBILITY_PUBLIC);
+			assert notificationManager != null;
+			notificationManager.createNotificationChannel(chan);
+		}
 	}
 
     private Integer notificationPrimaryTextColor = null;
@@ -95,8 +117,12 @@ public class SipNotifications {
 	@SuppressWarnings("deprecation")
     private void searchNotificationPrimaryText(Context aContext) {
 	    try {
-	        Notification ntf = new Notification();
-	        ntf.setLatestEventInfo(aContext, TO_SEARCH, "", null);
+			Notification.Builder builder = new Notification.Builder(context)
+					.setContentTitle(TO_SEARCH)
+					.setContentText("")
+					.setContentIntent(null);
+			Notification ntf = builder.build();
+
 	        LinearLayout group = new LinearLayout(aContext);
 	        ViewGroup event = (ViewGroup) ntf.contentView.apply(aContext, group);
 	        recurseSearchNotificationPrimaryText(event);
@@ -227,9 +253,8 @@ public class SipNotifications {
 		int icon = R.drawable.ic_stat_sipok;
 		CharSequence tickerText = context.getString(R.string.service_ticker_registered_text);
 		long when = System.currentTimeMillis();
-		
 
-        Builder nb = new Notification.Builder(context);
+        Builder nb = new Notification.Builder(context,NOTIFICATION_CHANNEL_ID_SERVICE);
         nb.setSmallIcon(icon);
         nb.setTicker(tickerText);
         nb.setWhen(when);
@@ -310,10 +335,10 @@ public class SipNotifications {
 		long when = System.currentTimeMillis();
 
 		if(inCallNotification == null) {
-		    inCallNotification = new Notification.Builder(context);
+		    inCallNotification = new Notification.Builder(context,NOTIFICATION_CHANNEL_ID_CALL);
 		    inCallNotification.setSmallIcon(icon);
 		    inCallNotification.setTicker(tickerText);
-		    inCallNotification.setWhen(when);
+		    //inCallNotification.setWhen(when);
 		    inCallNotification.setOngoing(true);
 		}
         
@@ -323,6 +348,10 @@ public class SipNotifications {
         inCallNotification.setContentTitle(formatNotificationTitle(R.string.ongoing_call, callInfo.getAccId()));
         inCallNotification.setContentText(formatRemoteContactString(callInfo.getRemoteContact()));
 		inCallNotification.setContentIntent(contentIntent);
+		if( callInfo.isIncoming() ) {
+			//inCallNotification.setPriority(Notification.PRIORITY_HIGH) ;
+			inCallNotification.setFullScreenIntent(contentIntent,true);
+		}
 
 		Notification notification = inCallNotification.build();
 		notification.flags |= Notification.FLAG_NO_CLEAR;

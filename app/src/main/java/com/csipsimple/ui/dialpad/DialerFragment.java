@@ -204,15 +204,7 @@ public class DialerFragment extends Fragment implements OnClickListener, OnLongC
         
         accountChooserButton = (AccountChooserButton) v.findViewById(R.id.accountChooserButton);
         
-        accountChooserFilterItem = accountChooserButton.addExtraMenuItem(R.string.apply_rewrite);
-        accountChooserFilterItem.setCheckable(true);
-        accountChooserFilterItem.setOnMenuItemClickListener(new MenuItem.OnMenuItemClickListener() {
-            @Override
-            public boolean onMenuItemClick(MenuItem item) {
-                setRewritingFeature(!accountChooserFilterItem.isChecked());
-                return true;
-            }
-        });
+
         setRewritingFeature(prefsWrapper.getPreferenceBooleanValue(SipConfigManager.REWRITE_RULES_DIALER));
         
         dialerLayout = (DialerLayout) v.findViewById(R.id.top_digit_dialer);
@@ -882,7 +874,7 @@ public class DialerFragment extends Fragment implements OnClickListener, OnLongC
     // In dialer rewriting feature
     
     private void setRewritingFeature(boolean active) {
-        accountChooserFilterItem.setChecked(active);
+        //accountChooserFilterItem.setChecked(active);
         rewriteTextInfo.setVisibility(active?View.VISIBLE:View.GONE);
         if(active) {
              applyRewritingInfo();

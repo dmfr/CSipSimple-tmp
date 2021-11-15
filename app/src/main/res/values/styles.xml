@@ -75,15 +75,13 @@
     </style>
 
     <style name="DarkTheme" parent="android:Theme.Holo">
-        <item name="android:actionBarItemBackground">@drawable/abs__item_background_holo_dark</item>
+        <item name="actionBarItemBackground">@drawable/abs__item_background_holo_dark</item>
     </style>
 
     <style name="DarkTheme.Dialog" parent="android:Theme.Holo.Dialog">
 
         <!-- TODO : use android:attr on 11 -->
-        <!--
         <item name="actionBarItemBackground">@drawable/abs__item_background_holo_dark</item>
-        -->
         <!--
         <item name="android:windowNoTitle">false</item>
         <item name="android:windowAnimationStyle">@null</item>
@@ -91,10 +89,8 @@
         -->
     </style>
 
-    <style name="DarkTheme.NoTitle" parent="android:Theme.Holo.Dialog">
-    <!--
+    <style name="DarkTheme.NoTitle" parent="android:Theme.Holo.NoActionBar">
     <item name="actionBarItemBackground">@drawable/abs__item_background_holo_dark</item>
-    -->
     </style>
 
 <!-- Notification -->

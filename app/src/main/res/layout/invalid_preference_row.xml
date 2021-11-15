@@ -44,7 +44,7 @@
             android:fadingEdge="horizontal"
             android:singleLine="true"
             android:textAppearance="?android:attr/textAppearanceLarge"
-            android:textColor="#f5a500" />
+             />
 
         <TextView
             android:id="@+id/summary"
@@ -54,7 +54,7 @@
             android:layout_below="@android:id/title"
             android:maxLines="2"
             android:textAppearance="?android:attr/textAppearanceSmall"
-            android:textColor="#f5a500" />
+            />
     </RelativeLayout>
     <!-- Preference should place its actual preference widget here. -->
 

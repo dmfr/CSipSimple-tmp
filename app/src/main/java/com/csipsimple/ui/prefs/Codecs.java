@@ -33,15 +33,16 @@ import android.os.Bundle;
 
 import com.csipsimple.R;
 import com.csipsimple.api.SipConfigManager;
+import com.csipsimple.ui.calllog.CallLogListFragment;
 import com.csipsimple.utils.Log;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class Codecs extends Activity {
+public class Codecs extends Activity implements ActionBar.TabListener {
 
 	protected static final String THIS_FILE = "Codecs";
-    private ViewPager mViewPager;
+    //private ViewPager mViewPager;
     private boolean useCodecsPerSpeed = true;
     private boolean showVideoCodecs = true;
 	
@@ -57,138 +58,67 @@ public class Codecs extends Activity {
         ab.setDisplayShowHomeEnabled(true);
         ab.setDisplayShowTitleEnabled(true);
         
-        mViewPager = (ViewPager) findViewById(R.id.pager);
-        TabsAdapter tabAdapter = new TabsAdapter(this, ab, mViewPager);
+        //mViewPager = (ViewPager) findViewById(R.id.pager);
+        //TabsAdapter tabAdapter = new TabsAdapter(this, ab, mViewPager);
         useCodecsPerSpeed = SipConfigManager.getPreferenceBooleanValue(this, SipConfigManager.CODECS_PER_BANDWIDTH);
         showVideoCodecs   = SipConfigManager.getPreferenceBooleanValue(this, SipConfigManager.USE_VIDEO);
         if(useCodecsPerSpeed) {
             ActionBar.Tab audioNb = ab.newTab().setText( R.string.slow ).setIcon(R.drawable.ic_prefs_media);
+            audioNb.setTabListener(this) ;
+            ab.addTab(audioNb);
+
             ActionBar.Tab audioWb = ab.newTab().setText( R.string.fast ).setIcon(R.drawable.ic_prefs_media);
-            tabAdapter.addTab(audioWb, CodecsFragment.class);
-            tabAdapter.addTab(audioNb, CodecsFragment.class);
-            if(showVideoCodecs) {
+            audioWb.setTabListener(this) ;
+            ab.addTab(audioWb);
+
+             if(showVideoCodecs) {
                 Tab videoNb = ab.newTab().setText( R.string.slow ).setIcon(R.drawable.ic_prefs_media_video);
+                videoNb.setTabListener(this) ;
+                ab.addTab(videoNb);
+
                 Tab videoWb = ab.newTab().setText( R.string.fast ).setIcon(R.drawable.ic_prefs_media_video);
-                
-                tabAdapter.addTab(videoWb, CodecsFragment.class);
-                tabAdapter.addTab(videoNb, CodecsFragment.class);
+                 videoWb.setTabListener(this) ;
+                ab.addTab(videoWb);
             }
         }else {
             Tab audioTab = ab.newTab().setIcon(R.drawable.ic_prefs_media);
-            tabAdapter.addTab(audioTab, CodecsFragment.class);
-            
+            audioTab.setTabListener(this) ;
+            ab.addTab(audioTab);
+
             if(showVideoCodecs) {
                 Tab videoTab = ab.newTab().setIcon(R.drawable.ic_prefs_media_video);
-                tabAdapter.addTab(videoTab, CodecsFragment.class);
+                videoTab.setTabListener(this) ;
+                ab.addTab(videoTab);
             }
         }
 	}
 
-    private class TabsAdapter extends FragmentPagerAdapter implements
-            ViewPager.OnPageChangeListener, ActionBar.TabListener {
 
-        private final Context mContext;
-        private final ActionBar mActionBar;
-        private final ViewPager mViewPager;
-        private final List<String> mTabs = new ArrayList<String>();
-        
-        private int mCurrentPosition = -1;
-        /**
-         * Used during page migration, to remember the next position
-         * {@link #onPageSelected(int)} specified.
-         */
-        private int mNextPosition = -1;
-        
-        public TabsAdapter(Activity activity, ActionBar actionBar, ViewPager pager) {
-            super(activity.getFragmentManager());
-            mContext = activity;
-            mActionBar = actionBar;
-            mViewPager = pager;
-            mViewPager.setAdapter(this);
-            mViewPager.setOnPageChangeListener(this);
+    @Override
+    public void onTabSelected(Tab tab, FragmentTransaction ft) {
+	    Integer position = tab.getPosition() ;
+
+        CodecsFragment f = new CodecsFragment();
+        Bundle args = new Bundle();
+        if(useCodecsPerSpeed) {
+            args.putString(CodecsFragment.BAND_TYPE, (position % 2 == 0)? SipConfigManager.CODEC_WB : SipConfigManager.CODEC_NB );
+            args.putInt(CodecsFragment.MEDIA_TYPE, (position < 2)? CodecsFragment.MEDIA_AUDIO : CodecsFragment.MEDIA_VIDEO );
+        }else {
+            args.putString(CodecsFragment.BAND_TYPE, SipConfigManager.CODEC_WB );
+            args.putInt(CodecsFragment.MEDIA_TYPE, (position < 1)? CodecsFragment.MEDIA_AUDIO : CodecsFragment.MEDIA_VIDEO );
         }
-        
+        f.setArguments(args);
 
-        public void addTab(ActionBar.Tab tab, Class<?> clss) {
-            mTabs.add(clss.getName());
-            mActionBar.addTab(tab.setTabListener(this));
-            notifyDataSetChanged();
-        }
-        
+        ft.replace(R.id.pager, (Fragment)f, "visible_fragment");
+    }
 
-        @Override
-        public Fragment getItem(int position) {
-            Bundle args = new Bundle();
-            if(useCodecsPerSpeed) {
-                args.putString(CodecsFragment.BAND_TYPE, (position % 2 == 0)? SipConfigManager.CODEC_WB : SipConfigManager.CODEC_NB );
-                args.putInt(CodecsFragment.MEDIA_TYPE, (position < 2)? CodecsFragment.MEDIA_AUDIO : CodecsFragment.MEDIA_VIDEO );
-            }else {
-                args.putString(CodecsFragment.BAND_TYPE, SipConfigManager.CODEC_WB );
-                args.putInt(CodecsFragment.MEDIA_TYPE, (position < 1)? CodecsFragment.MEDIA_AUDIO : CodecsFragment.MEDIA_VIDEO );
-            }
-            return Fragment.instantiate(mContext, mTabs.get(position), args);
-            
-        }
-
-        @Override
-        public int getCount() {
-            return mTabs.size();
-        }
-
-
-
-        @Override
-        public void onTabReselected(ActionBar.Tab tab, FragmentTransaction ft) {
-            // Nothing to do
-        }
-
-        @Override
-        public void onTabSelected(ActionBar.Tab tab, FragmentTransaction ft) {
-            if (mViewPager.getCurrentItem() != tab.getPosition()) {
-                mViewPager.setCurrentItem(tab.getPosition(), true);
-            }
-        }
-
-        @Override
-        public void onTabUnselected(ActionBar.Tab tab, FragmentTransaction ft) {
-            // Nothing to do
-        }
-
-        @Override
-        public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
-            // Nothing to do
-        }
-
-        @Override
-        public void onPageSelected(int position) {
-            mActionBar.setSelectedNavigationItem(position);
-
-            if (mCurrentPosition == position) {
-                Log.w(THIS_FILE, "Previous position and next position became same (" + position
-                        + ")");
-            }
-
-            mNextPosition = position;
-        }
-
-        @TargetApi(Build.VERSION_CODES.HONEYCOMB)
-        @Override
-        public void onPageScrollStateChanged(int state) {
-            switch (state) {
-                case ViewPager.SCROLL_STATE_IDLE: {
-                    invalidateOptionsMenu();
-
-                    mCurrentPosition = mNextPosition;
-                    break;
-                }
-                case ViewPager.SCROLL_STATE_DRAGGING:
-                case ViewPager.SCROLL_STATE_SETTLING:
-                default:
-                    break;
-            }
-        }
+    @Override
+    public void onTabUnselected(Tab tab, FragmentTransaction ft) {
 
     }
-	
-	
+
+    @Override
+    public void onTabReselected(Tab tab, FragmentTransaction ft) {
+
+    }
 }
