@@ -144,69 +144,6 @@ public class DynamicReceiver4 extends BroadcastReceiver {
     }
     
 
-    private static final String PROC_NET_ROUTE = "/proc/net/route";
-    private String dumpRoutes() {
-        String routes = "";
-        FileReader fr = null;
-        try {
-            fr = new FileReader(PROC_NET_ROUTE);
-            if(fr != null) {
-                StringBuffer contentBuf = new StringBuffer();
-                BufferedReader buf = new BufferedReader(fr);
-                String line;
-                while ((line = buf.readLine()) != null) {
-                    contentBuf.append(line+"\n");
-                }
-                routes = contentBuf.toString();
-                buf.close();
-            }
-        } catch (FileNotFoundException e) {
-            Log.e(THIS_FILE, "No route file found routes", e);
-        } catch (IOException e) {
-            Log.e(THIS_FILE, "Unable to read route file", e);
-        }finally {
-            try {
-                fr.close();
-            } catch (IOException e) {
-                Log.e(THIS_FILE, "Unable to close route file", e);
-            }
-        }
-        
-        // Clean routes that point unique host 
-        // this aims to workaround the fact android 4.x wakeup 3G layer when position is retrieve to resolve over 3g position
-        String finalRoutes = routes;
-        if(!TextUtils.isEmpty(routes)) {
-            String[] items = routes.split("\n");
-            List<String> finalItems = new ArrayList<String>();
-            int line = 0;
-            for(String item : items) {
-                boolean addItem = true;
-                if(line > 0){
-                    String[] ent = item.split("\t");
-                    if(ent.length > 8) {
-                        String maskStr = ent[7];
-                        if(maskStr.matches("^[0-9A-F]{8}$")) {
-                            int lastMaskPart = Integer.parseInt(maskStr.substring(0, 2), 16);
-                            if(lastMaskPart > 192) {
-                                // if more than 255.255.255.192 : ignore this line
-                                addItem = false;
-                            }
-                        }else {
-                            Log.w(THIS_FILE, "The route mask does not looks like a mask" + maskStr);
-                        }
-                    }
-                }
-                
-                if(addItem) {
-                    finalItems.add(item);
-                }
-                line ++;
-            }
-            finalRoutes = TextUtils.join("\n", finalItems); 
-        }
-        
-        return finalRoutes;
-    }
 
     
     /**
@@ -230,14 +167,9 @@ public class DynamicReceiver4 extends BroadcastReceiver {
 
         boolean connected = (info != null && info.isConnected() && service.isConnectivityValid());
         String networkType = connected ? info.getTypeName() : "null";
-        String currentRoutes = dumpRoutes();
-        String oldRoutes;
-        synchronized (mRoutes) {
-            oldRoutes = mRoutes;
-        }
-        
+
         // Ignore the event if the current active network is not changed.
-        if (connected == mConnected && networkType.equals(mNetworkType) && currentRoutes.equals(oldRoutes)) {
+        if (connected == mConnected && networkType.equals(mNetworkType)) {
             return;
         }
         if(Log.getLogLevel() >= 4) {
@@ -245,13 +177,10 @@ public class DynamicReceiver4 extends BroadcastReceiver {
                 Log.d(THIS_FILE, "onConnectivityChanged(): " + mNetworkType +
                             " -> " + networkType);
             }else {
-                Log.d(THIS_FILE, "Route changed : "+ mRoutes+" -> "+currentRoutes);
+                //Log.d(THIS_FILE, "Route changed : "+ mRoutes+" -> "+currentRoutes);
             }
         }
         // Now process the event
-        synchronized (mRoutes) {
-            mRoutes = currentRoutes;
-        }
         mConnected = connected;
         mNetworkType = networkType;
 
@@ -278,20 +207,11 @@ public class DynamicReceiver4 extends BroadcastReceiver {
             pollingTimer.scheduleAtFixedRate(new TimerTask() {
                 @Override
                 public void run() {
-                    String currentRoutes = dumpRoutes();
-                    String oldRoutes;
-                    synchronized (mRoutes) {
-                        oldRoutes = mRoutes;
-                    }
-                    if(!currentRoutes.equalsIgnoreCase(oldRoutes)) {
-                        Log.d(THIS_FILE, "Route changed");
-                        // Run the handler in SipServiceExecutor to be protected by wake lock
-                        service.getExecutor().execute(new SipRunnable()  {
-                            public void doRun() throws SameThreadException {
-                                onConnectivityChanged(null, false);
-                            }
-                        });
-                    }
+                    service.getExecutor().execute(new SipRunnable()  {
+                        public void doRun() throws SameThreadException {
+                            onConnectivityChanged(null, false);
+                        }
+                    });
                 }
             }, new Date(), pollingIntervalMin * 60 * 1000);
         }

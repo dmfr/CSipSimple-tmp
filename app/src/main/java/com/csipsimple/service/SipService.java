@@ -1148,7 +1148,10 @@ public class SipService extends Service {
 	 * Remove registration of broadcasts receiver.
 	 */
 	private void unregisterBroadcasts() {
-		if(deviceStateReceiver != null) {
+		unregisterBroadcasts(true) ;
+	}
+	private void unregisterBroadcasts(Boolean unregisterAll) {
+		if(unregisterAll && deviceStateReceiver != null) {
 			try {
 				Log.d(THIS_FILE, "Stop and unregister device receiver");
 				deviceStateReceiver.stopMonitoring();
@@ -1363,7 +1366,7 @@ public class SipService extends Service {
                 applyComponentEnablingState(false);
             }
 
-            unregisterBroadcasts();
+            unregisterBroadcasts(false);
 			releaseResources();
 		}
 
