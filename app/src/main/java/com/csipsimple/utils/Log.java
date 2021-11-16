@@ -22,14 +22,14 @@
 package com.csipsimple.utils;
 
 public class Log {
-	private static int logLevel = 99;
+	private static int logLevel = 1;
 	
 	/**
 	 * Change current logging level
 	 * @param level new log level 1 <= level <= 6 
 	 */
 	public static void setLogLevel(int level) {
-		logLevel = 99;
+		logLevel = level;
 	}
 	
 	/**
