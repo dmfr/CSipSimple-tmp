@@ -5,7 +5,7 @@ SWIG_GLUE_NATIVE_PATH := $(SWIG_GLUE_PATH)/nativesrc
 SWIG_GLUE_NATIVE_FILE := pjsua_wrap.cpp
 JAVA_MODULE := pjsua
 JAVA_PACKAGE := org.pjsip.pjsua
-JAVA_PACKAGE_DIR := src/$(subst .,/,$(JAVA_PACKAGE))
+JAVA_PACKAGE_DIR := app/src/main/java/$(subst .,/,$(JAVA_PACKAGE))
 
 PJ_ROOT_DIR := $(SWIG_GLUE_PATH)/../pjsip/sources
 CSS_WRAPPER_ROOT_DIR := $(SWIG_GLUE_PATH)/../csipsimple-wrapper
