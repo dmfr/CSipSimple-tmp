@@ -93,7 +93,7 @@ public class PreferencesWrapper {
 		put(SipConfigManager.ECHO_CANCELLATION_TAIL, "200");
 		put(SipConfigManager.ECHO_MODE, "3"); /* WEBRTC */
 		put(SipConfigManager.SND_MEDIA_QUALITY, "4");
-		put(SipConfigManager.SND_CLOCK_RATE, "16000");
+		put(SipConfigManager.SND_CLOCK_RATE, "48000");
 		put(SipConfigManager.SND_PTIME, "20");
 		put(SipConfigManager.SIP_AUDIO_MODE, "0");
 		put(SipConfigManager.MICRO_SOURCE, "1");
@@ -180,7 +180,7 @@ public class PreferencesWrapper {
 		
 		
 		//Media
-		put(SipConfigManager.ECHO_CANCELLATION, true);
+		put(SipConfigManager.ECHO_CANCELLATION, false);
 		put(SipConfigManager.ENABLE_VAD, false);
         put(SipConfigManager.ENABLE_NOISE_SUPPRESSION, false);
 		put(SipConfigManager.USE_SOFT_VOLUME, false);
