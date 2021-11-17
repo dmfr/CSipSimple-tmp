@@ -127,8 +127,6 @@ endif
 
 endif
 
-LOCAL_STATIC_LIBRARIES += libgcc
-
 LOCAL_LDLIBS += -lOpenSLES
 
 include $(BUILD_SHARED_LIBRARY)

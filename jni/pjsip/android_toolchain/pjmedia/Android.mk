@@ -95,5 +95,5 @@ include $(TOOLCHAIN_PATH)/Codec_g7221.mk
 include $(TOOLCHAIN_PATH)/Video.mk
 include $(TOOLCHAIN_PATH)/Screencapture.mk
 
-$(call import-module,cpufeatures)
+$(call import-module,android/cpufeatures)
 

@@ -167,7 +167,7 @@ public class PjSipService {
                 // "libssl.so").getAbsolutePath());
                 // System.loadLibrary("crypto");
                 // System.loadLibrary("ssl");
-                System.loadLibrary(NativeLibManager.STD_LIB_NAME);
+                //System.loadLibrary(NativeLibManager.STD_LIB_NAME);
                 System.loadLibrary(NativeLibManager.STACK_NAME);
                 hasSipStack = true;
                 return true;

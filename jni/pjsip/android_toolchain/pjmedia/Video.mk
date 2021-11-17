@@ -74,7 +74,7 @@ LOCAL_CFLAGS := $(MY_PJSIP_FLAGS) -DWEBRTC_ANDROID \
 	
 LOCAL_SHARED_LIBRARIES += libpjsipjni
 LOCAL_LDLIBS += -lGLESv2 -llog
-LOCAL_STATIC_LIBRARIES += libgcc cpufeatures
+LOCAL_STATIC_LIBRARIES += cpufeatures
 
 USE_STAGEFRIGHT_H264:=0
 ANDROID_LIBS := ./jni/ffmpeg/ffmpeg_src/android-libs

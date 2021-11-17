@@ -46,7 +46,7 @@ LOCAL_CFLAGS := $(MY_PJSIP_FLAGS) \
 	
 LOCAL_SHARED_LIBRARIES += libpjsipjni
 LOCAL_LDLIBS += -llog
-LOCAL_STATIC_LIBRARIES += libvpx libgcc cpufeatures
+LOCAL_STATIC_LIBRARIES += libvpx cpufeatures
 
 
 include $(BUILD_SHARED_LIBRARY)

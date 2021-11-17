@@ -22,7 +22,6 @@ LOCAL_C_INCLUDES += $(LOCAL_PATH)/../../android_sources/pjmedia/include/pjmedia-
 LOCAL_SRC_FILES += $(PJ_ANDROID_SRC_DIR)/pjmedia-videodev/android_screen_capture_dev.c
 
 LOCAL_CFLAGS := $(MY_PJSIP_FLAGS)
-LOCAL_STATIC_LIBRARIES += libgcc
 
 LOCAL_SHARED_LIBRARIES += libpjsipjni
 

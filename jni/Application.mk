@@ -55,7 +55,7 @@ PYTHON ?= python
 # pj_screen_capture_android
 
 APP_PLATFORM := android-21
-APP_STL := stlport_shared
+APP_STL := c++_static
 
 BASE_PJSIP_FLAGS := -DPJ_ANDROID=1 -DUSE_CSIPSIMPLE=$(MY_USE_CSIPSIMPLE)
 # about codecs

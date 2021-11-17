@@ -49,8 +49,6 @@ ifeq ($(TARGET_ARCH_ABI),$(filter $(TARGET_ARCH_ABI),armeabi armeabi-v7a))
 LOCAL_CFLAGS += -DFIXED_POINT=1 -DDISABLE_FLOAT_API
 endif
 
-LOCAL_STATIC_LIBRARIES += libgcc
-
 include $(BUILD_SHARED_LIBRARY)
 include $(CLEAR_VARS)
 
