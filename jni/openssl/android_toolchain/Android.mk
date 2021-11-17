@@ -25,9 +25,6 @@ LOCAL_CFLAGS += -DOPENSSL_NO_HW -DZLIB
 
 LOCAL_C_INCLUDES = $(common_c_includes:external/openssl/%=$(LOCAL_PATH)/%)
 
-# Replace with our armcap that does not crash on android < 9
-LOCAL_SRC_FILES_arm := $(filter-out crypto/armcap.c,$(LOCAL_SRC_FILES_arm) ../android_sources/armcap.c)
-
 LOCAL_SRC_FILES := $(LOCAL_SRC_FILES_$(TARGET_ARCH))
 # Remove disabled modules
  LOCAL_SRC_FILES := $(filter-out crypto/cms/% crypto/srp/%, $(LOCAL_SRC_FILES))
