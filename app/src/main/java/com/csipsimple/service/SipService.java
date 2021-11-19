@@ -1083,14 +1083,17 @@ public class SipService extends Service {
 	    if(serviceReceiver == null) {
 	        IntentFilter intentfilter = new IntentFilter();
             intentfilter.addAction(SipManager.ACTION_DEFER_OUTGOING_UNREGISTER);
-            intentfilter.addAction(SipManager.ACTION_OUTGOING_UNREGISTER);
-            serviceReceiver = new BroadcastReceiver() {
+			intentfilter.addAction(SipManager.ACTION_OUTGOING_UNREGISTER);
+			intentfilter.addAction(SipManager.ACTION_QUIT);
+			serviceReceiver = new BroadcastReceiver() {
                 @Override
                 public void onReceive(Context context, Intent intent) {
                     String action = intent.getAction();
-                    if(action.equals(SipManager.ACTION_OUTGOING_UNREGISTER)){
-                        unregisterForOutgoing((ComponentName) intent.getParcelableExtra(SipManager.EXTRA_OUTGOING_ACTIVITY));
-                    } else if(action.equals(SipManager.ACTION_DEFER_OUTGOING_UNREGISTER)){
+					if(action.equals(SipManager.ACTION_QUIT)) {
+						cleanStop() ;
+					} else if(action.equals(SipManager.ACTION_OUTGOING_UNREGISTER)){
+						unregisterForOutgoing((ComponentName) intent.getParcelableExtra(SipManager.EXTRA_OUTGOING_ACTIVITY));
+					} else if(action.equals(SipManager.ACTION_DEFER_OUTGOING_UNREGISTER)){
                         deferUnregisterForOutgoing((ComponentName) intent.getParcelableExtra(SipManager.EXTRA_OUTGOING_ACTIVITY));
                     }
                 }
