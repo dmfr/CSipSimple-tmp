@@ -1196,7 +1196,7 @@ public class SipService extends Service {
         if (!isConnectivityValid()) {
             notifyUserOfMessage(R.string.connection_not_valid);
             Log.d(THIS_FILE, "Harakiri... we are not needed since no way to use self");
-            cleanStop();
+            //cleanStop();
             return;
         }
 		
@@ -1244,7 +1244,7 @@ public class SipService extends Service {
 	    activitiesForOutgoing.remove(activityKey);
 	    
 	    if(!isConnectivityValid()) {
-	        cleanStop();
+	        //cleanStop();
 	    }
 	}
 	public void deferUnregisterForOutgoing(ComponentName activityKey) {
@@ -1258,7 +1258,7 @@ public class SipService extends Service {
 	    }
 	    deferedUnregisterForOutgoing.clear();
         if(!isConnectivityValid()) {
-            cleanStop();
+            //cleanStop();
         }
 	}
 	

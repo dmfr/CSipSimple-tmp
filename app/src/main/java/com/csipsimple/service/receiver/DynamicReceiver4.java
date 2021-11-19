@@ -188,10 +188,7 @@ public class DynamicReceiver4 extends BroadcastReceiver {
             if (connected) {
                 service.restartSipStack();
             } else {
-                Log.d(THIS_FILE, "We are not connected, stop");
-                if(service.stopSipStack()) {
-                    service.stopSelf();
-                }
+                service.stopSipStack();
             }
         }
     }
