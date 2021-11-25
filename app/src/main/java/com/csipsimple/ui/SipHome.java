@@ -809,8 +809,6 @@ public class SipHome extends Activity implements ActionBar.TabListener, OnWarnin
         intent.putExtra(SipManager.EXTRA_OUTGOING_ACTIVITY, new ComponentName(this, SipHome.class));
         sendBroadcast(intent);
         if(quit) {
-            Intent intentQuit = new Intent(SipManager.ACTION_QUIT);
-            sendBroadcast(intentQuit);
             finish();
         }
     }

@@ -1054,7 +1054,13 @@ public class SipService extends Service {
 		notificationManager.onServiceDestroy();
 		getExecutor().execute(new FinalizeDestroyRunnable());
 	}
-	
+
+	public void cleanStopIfQuit() {
+		if( isHasQuit() ) {
+			cleanStop() ;
+		}
+	}
+
 	public void cleanStop () {
 		getExecutor().execute(new DestroyRunnable());
 	}
@@ -1084,14 +1090,11 @@ public class SipService extends Service {
 	        IntentFilter intentfilter = new IntentFilter();
             intentfilter.addAction(SipManager.ACTION_DEFER_OUTGOING_UNREGISTER);
 			intentfilter.addAction(SipManager.ACTION_OUTGOING_UNREGISTER);
-			intentfilter.addAction(SipManager.ACTION_QUIT);
 			serviceReceiver = new BroadcastReceiver() {
                 @Override
                 public void onReceive(Context context, Intent intent) {
                     String action = intent.getAction();
-					if(action.equals(SipManager.ACTION_QUIT)) {
-						cleanStop() ;
-					} else if(action.equals(SipManager.ACTION_OUTGOING_UNREGISTER)){
+					if(action.equals(SipManager.ACTION_OUTGOING_UNREGISTER)){
 						unregisterForOutgoing((ComponentName) intent.getParcelableExtra(SipManager.EXTRA_OUTGOING_ACTIVITY));
 					} else if(action.equals(SipManager.ACTION_DEFER_OUTGOING_UNREGISTER)){
                         deferUnregisterForOutgoing((ComponentName) intent.getParcelableExtra(SipManager.EXTRA_OUTGOING_ACTIVITY));
@@ -1199,7 +1202,7 @@ public class SipService extends Service {
         if (!isConnectivityValid()) {
             notifyUserOfMessage(R.string.connection_not_valid);
             Log.d(THIS_FILE, "Harakiri... we are not needed since no way to use self");
-            //cleanStop();
+            cleanStopIfQuit();
             return;
         }
 		
@@ -1247,7 +1250,7 @@ public class SipService extends Service {
 	    activitiesForOutgoing.remove(activityKey);
 	    
 	    if(!isConnectivityValid()) {
-	        //cleanStop();
+			cleanStopIfQuit();
 	    }
 	}
 	public void deferUnregisterForOutgoing(ComponentName activityKey) {
@@ -1261,7 +1264,7 @@ public class SipService extends Service {
 	    }
 	    deferedUnregisterForOutgoing.clear();
         if(!isConnectivityValid()) {
-            //cleanStop();
+			cleanStopIfQuit();
         }
 	}
 	
@@ -1274,6 +1277,12 @@ public class SipService extends Service {
 	        valid |= prefsWrapper.isValidConnectionForOutgoing();
 	    }
 	    return valid;
+	}
+	public boolean isHasQuit(){
+		if(prefsWrapper.getPreferenceBooleanValue(PreferencesWrapper.HAS_BEEN_QUIT, false)) {
+			return true;
+		}
+		return false;
 	}
 	
 	

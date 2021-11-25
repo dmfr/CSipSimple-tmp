@@ -238,8 +238,6 @@ public final class SipManager {
      */
     public static final String ACTION_DEFER_OUTGOING_UNREGISTER = "com.csipsimple.service.ACTION_DEFER_OUTGOING_UNREGISTER";
 
-    public static final String ACTION_QUIT = "com.csipsimple.service.ACTION_QUIT";
-
     // PLUGINS BROADCASTS
     /**
      * Plugin action for themes.
