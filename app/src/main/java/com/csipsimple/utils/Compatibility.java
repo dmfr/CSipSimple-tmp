@@ -231,16 +231,7 @@ public final class Compatibility {
     }
 
     public static String getDefaultFrequency() {
-        if (android.os.Build.DEVICE.equalsIgnoreCase("olympus")) {
-            // Atrix bug
-            return "32000";
-        }
-        if (android.os.Build.DEVICE.toUpperCase().equals("GT-P1010")) {
-            // Galaxy tab see issue 932
-            return "32000";
-        }
-
-        return isCompatible(4) ? "16000" : "8000";
+        return "48000" ;
     }
 
     public static String getCpuAbi() {
@@ -530,8 +521,7 @@ public final class Compatibility {
         preferencesWrapper.startEditing();
         resetCodecsSettings(preferencesWrapper);
 
-        preferencesWrapper.setPreferenceStringValue(SipConfigManager.SND_MEDIA_QUALITY, getCpuAbi()
-                .equalsIgnoreCase("armeabi-v7a") ? "4" : "3");
+        preferencesWrapper.setPreferenceStringValue(SipConfigManager.SND_MEDIA_QUALITY, "4");
         preferencesWrapper.setPreferenceStringValue(SipConfigManager.SND_AUTO_CLOSE_TIME,
                 isCompatible(4) ? "1" : "5");
         preferencesWrapper.setPreferenceStringValue(SipConfigManager.SND_CLOCK_RATE,
