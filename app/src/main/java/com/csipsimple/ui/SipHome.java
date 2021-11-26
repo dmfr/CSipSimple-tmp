@@ -215,13 +215,14 @@ public class SipHome extends Activity implements ActionBar.TabListener, OnWarnin
         
 
         // Async check
+        /*
         asyncSanityChecker = new Thread() {
             public void run() {
                 asyncSanityCheck();
             };
         };
         asyncSanityChecker.start();
-        
+        */
     }
 
     /**
