@@ -785,3 +785,23 @@ PJ_DECL(void) css_on_call_state(pjsua_call_id call_id, pjsip_event *e) {
 PJ_DECL(void) css_on_call_media_state(pjsua_call_id call_id){
 	ring_stop(call_id);
 }
+
+
+
+/**
+ * Convert pj_str_t to Java String
+ */
+PJ_DECL(jstring) pj_ptr_to_string(const pj_str_t * str) {
+	jstring result = NULL;
+	pj_str_t dup_str;
+	if(css_var.context) {
+		pj_pool_t* lpool = pjsua_pool_create("tostring", 1000, 1000);
+		pj_strdup_with_null(lpool,&dup_str,str);
+		JNIEnv *jni_env = 0;
+		ATTACH_JVM(jni_env);
+		result = (*jni_env)->NewStringUTF(jni_env, dup_str.ptr);
+		DETACH_JVM(jni_env);
+		pj_pool_release(lpool);
+	}
+	return result;
+}

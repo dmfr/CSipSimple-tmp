@@ -191,6 +191,8 @@ PJ_DECL(pj_str_t)    get_rx_data_header(const pj_str_t name, pjsip_rx_data* data
 PJ_DECL(void) css_on_call_state(pjsua_call_id call_id, pjsip_event *e);
 PJ_DECL(void) css_on_call_media_state(pjsua_call_id call_id);
 
+PJ_DECL(jstring) pj_ptr_to_string(const pj_str_t * str);
+
 PJ_END_DECL
 
 #endif

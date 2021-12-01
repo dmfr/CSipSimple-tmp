@@ -2266,7 +2266,7 @@ public class PjSipService {
         pjsua.update_transport(pjsua.pj_str_copy(oldIPAddress));
     }
 
-    public static String pjStrToString(pj_str_t pjStr) {
+    public static String pjStrToString_old(pj_str_t pjStr) {
         try {
             if (pjStr != null) {
                 // If there's utf-8 ptr length is possibly lower than slen
@@ -2286,6 +2286,9 @@ public class PjSipService {
             Log.e(THIS_FILE, "Impossible to retrieve string from pjsip ", e);
         }
         return "";
+    }
+    public static String pjStrToString(pj_str_t pjStr) {
+        return pjsua.pj_ptr_to_string(pjStr) ;
     }
 
     /**
