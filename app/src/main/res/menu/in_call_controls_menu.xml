@@ -5,19 +5,19 @@
         android:id="@+id/speakerButton"
         android:checkable="true"
         android:icon="@drawable/ic_sound_speakerphone_holo_dark"
-        android:showAsAction="ifRoom"
+        android:showAsAction="always"
         android:title="@string/speaker"/>
     <item
         android:id="@+id/muteButton"
         android:checkable="true"
         android:icon="@drawable/ic_mute_holo_dark"
-        android:showAsAction="ifRoom"
+        android:showAsAction="always"
         android:title="@string/mute"/>
     <item
         android:id="@+id/bluetoothButton"
         android:checkable="true"
         android:icon="@drawable/ic_sound_bluetooth_holo_dark"
-        android:showAsAction="ifRoom"
+        android:showAsAction="always"
         android:title="@string/bluetooth"/>
     <item
         android:id="@+id/addCallButton"
@@ -27,7 +27,7 @@
     <item
         android:id="@+id/mediaSettingsButton"
         android:icon="@android:drawable/ic_menu_preferences"
-        android:showAsAction="ifRoom"
+        android:showAsAction="always"
         android:title="@string/prefs_media"/>
 
 </menu>
