@@ -21,6 +21,7 @@
 
 package com.csipsimple.ui.incall;
 
+import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Handler;
@@ -29,6 +30,8 @@ import android.text.TextUtils;
 import android.util.AttributeSet;
 import android.util.FloatMath;
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.SurfaceView;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -40,6 +43,7 @@ import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+import android.widget.Toolbar;
 
 import com.csipsimple.R;
 import com.csipsimple.api.SipCallSession;
@@ -64,10 +68,12 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
-public class InCallCard extends FrameLayout implements OnClickListener {
+public class InCallCard extends FrameLayout implements OnClickListener, MenuItem.OnMenuItemClickListener {
 
     private static final String THIS_FILE = "InCallCard";
-    
+
+    private Activity mActivity ;
+
     private SipCallSession callInfo;
     private String cachedRemoteUri = "";
     private int cachedInvState = SipCallSession.InvState.INVALID;
@@ -94,10 +100,12 @@ public class InCallCard extends FrameLayout implements OnClickListener {
     private Map<String, DynActivityPlugin> incallPlugins;
 
 
-    public InCallCard(Context context, AttributeSet attrs) {
+    public InCallCard(Activity context, AttributeSet attrs) {
         super(context, attrs);
         LayoutInflater inflater = LayoutInflater.from(context);
         inflater.inflate(R.layout.in_call_card, this, true);
+
+        mActivity = context ;
 
         prefs = new PreferencesProviderWrapper(context);
         canVideo = prefs.getPreferenceBooleanValue(SipConfigManager.USE_VIDEO);
@@ -120,6 +128,13 @@ public class InCallCard extends FrameLayout implements OnClickListener {
         View btn;
         btn = findViewById(R.id.endButton);
         btn.setOnClickListener(this);
+
+        Toolbar callActionBar = (Toolbar)findViewById(R.id.call_action_bar);
+        Menu callActionMenu = callActionBar.getMenu();
+        mActivity.getMenuInflater().inflate(R.menu.in_call_card_menu, callActionMenu);
+        for (int i = 0; i < callActionMenu.size(); i++) {
+            callActionMenu.getItem(i).setOnMenuItemClickListener(this);
+        }
 
         /*
         btnMenuBuilder = new MenuBuilder(getContext());
@@ -294,7 +309,68 @@ public class InCallCard extends FrameLayout implements OnClickListener {
     }
 
     private void updateQuickActions() {
-        
+        Toolbar callActionBar = (Toolbar)findViewById(R.id.call_action_bar);
+        Menu callActionMenu = callActionBar.getMenu();
+
+        // Useless to process that
+        if (cachedInvState == callInfo.getCallState() &&
+                cachedMediaState == callInfo.getMediaStatus() &&
+                cachedIsRecording == callInfo.isRecording() &&
+                cachedCanRecord == callInfo.canRecord() &&
+                cachedIsHold == callInfo.isLocalHeld() &&
+                cachedVideo  == callInfo.mediaHasVideo() &&
+                cachedZrtpActive == callInfo.getHasZrtp() &&
+                cachedZrtpVerified == callInfo.isZrtpSASVerified()
+        ) {
+            Log.d(THIS_FILE, "Nothing changed, ignore this update");
+            return;
+        }
+
+        boolean active = callInfo.isBeforeConfirmed() && callInfo.isIncoming();
+        callActionMenu.findItem(R.id.takeCallButton).setVisible(active);
+        callActionMenu.findItem(R.id.dontTakeCallButton).setVisible(active);
+        callActionMenu.findItem(R.id.declineCallButton).setVisible(active);
+
+        active = !callInfo.isAfterEnded()
+                && (!callInfo.isBeforeConfirmed() || (!callInfo.isIncoming() && callInfo
+                .isBeforeConfirmed()));
+        callActionMenu.findItem(R.id.terminateCallButton).setVisible(active);
+
+        active = (!callInfo.isAfterEnded() && !callInfo.isBeforeConfirmed());
+        callActionMenu.findItem(R.id.xferCallButton).setVisible(active);
+        callActionMenu.findItem(R.id.transferCallButton).setVisible(active);
+        callActionMenu.findItem(R.id.holdCallButton).setVisible(active)
+                .setTitle(callInfo.isLocalHeld() ? R.string.resume_call : R.string.hold_call);
+        callActionMenu.findItem(R.id.videoCallButton).setVisible(active && canVideo && !callInfo.mediaHasVideo());
+
+
+        // DTMF
+        active = callInfo.isActive() ;
+        active &= ( (callInfo.getMediaStatus() == MediaState.ACTIVE) || (callInfo.getMediaStatus() == MediaState.REMOTE_HOLD));
+        callActionMenu.findItem(R.id.dtmfCallButton).setVisible(active);
+
+        // Info
+        active = !callInfo.isAfterEnded();
+        callActionMenu.findItem(R.id.detailedDisplayCallButton).setVisible(active);
+
+        // Record
+        active = CustomDistribution.supportCallRecord();
+        if(!callInfo.isRecording() && !callInfo.canRecord()) {
+            active = false;
+        }
+        if(callInfo.isAfterEnded()) {
+            active = false;
+        }
+        callActionMenu.findItem(R.id.recordCallButton).setVisible(active).setTitle(
+                callInfo.isRecording() ? R.string.stop_recording : R.string.record);
+
+        // ZRTP
+        active = callInfo.getHasZrtp() && !callInfo.isAfterEnded();
+        callActionMenu.findItem(R.id.zrtpAcceptance).setVisible(active).setTitle(
+                callInfo.isZrtpSASVerified() ? R.string.zrtp_revoke_trusted_remote : R.string.zrtp_trust_remote);
+
+
+
 
     }
 
@@ -447,6 +523,8 @@ public class InCallCard extends FrameLayout implements OnClickListener {
     }
 
     private static final int LOAD_CALLER_INFO = 0;
+
+
     private class LoadCallerInfoMessage {
         LoadCallerInfoMessage(InCallCard callCard, CallerInfo ci){
             callerInfo = ci;
@@ -542,5 +620,47 @@ public class InCallCard extends FrameLayout implements OnClickListener {
         }
     }
 
+    @Override
+    public boolean onMenuItemClick(MenuItem item) {
+        int itemId = item.getItemId();
+        if(itemId == R.id.takeCallButton) {
+            dispatchTriggerEvent(IOnCallActionTrigger.TAKE_CALL);
+            return true;
+        }else if(itemId == R.id.terminateCallButton) {
+            dispatchTriggerEvent(IOnCallActionTrigger.TERMINATE_CALL);
+            return true;
+        }else if(itemId ==  R.id.dontTakeCallButton) {
+            dispatchTriggerEvent(IOnCallActionTrigger.DONT_TAKE_CALL);
+            return true;
+        }else if(itemId ==  R.id.declineCallButton) {
+            dispatchTriggerEvent(IOnCallActionTrigger.REJECT_CALL);
+            return true;
+        }else if(itemId == R.id.detailedDisplayCallButton) {
+            dispatchTriggerEvent(IOnCallActionTrigger.DETAILED_DISPLAY);
+            return true;
+        }else if(itemId == R.id.holdCallButton) {
+            dispatchTriggerEvent(IOnCallActionTrigger.TOGGLE_HOLD);
+            return true;
+        }else if(itemId == R.id.recordCallButton) {
+            dispatchTriggerEvent(callInfo.isRecording() ? IOnCallActionTrigger.STOP_RECORDING : IOnCallActionTrigger.START_RECORDING);
+            return true;
+        }else if(itemId == R.id.dtmfCallButton) {
+            dispatchTriggerEvent(IOnCallActionTrigger.DTMF_DISPLAY);
+            return true;
+        }else if(itemId == R.id.videoCallButton) {
+            dispatchTriggerEvent(callInfo.mediaHasVideo() ? IOnCallActionTrigger.STOP_VIDEO : IOnCallActionTrigger.START_VIDEO);
+            return true;
+        }else if(itemId == R.id.xferCallButton) {
+            dispatchTriggerEvent(IOnCallActionTrigger.XFER_CALL);
+            return true;
+        }else if(itemId == R.id.transferCallButton) {
+            dispatchTriggerEvent(IOnCallActionTrigger.TRANSFER_CALL);
+            return true;
+        }else if(itemId == R.id.zrtpAcceptance) {
+            dispatchTriggerEvent(callInfo.isZrtpSASVerified()? IOnCallActionTrigger.ZRTP_REVOKE : IOnCallActionTrigger.ZRTP_TRUST);
+            return true;
+        }
+        return false;
+    }
 
 }

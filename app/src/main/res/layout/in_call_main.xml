@@ -87,7 +87,20 @@
             android:id="@+id/inCallControls"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@drawable/incall_bottom_bar_bg" />
+            android:background="@drawable/incall_bottom_bar_bg">
+
+            <Toolbar
+                android:id="@+id/inCallControls_bar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_above="@+id/end_call_bar"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentRight="true"
+                android:layout_alignWithParentIfMissing="true"
+                android:layout_marginTop="2dip"
+                android:background="#000000" />
+
+        </com.csipsimple.ui.incall.InCallControls>
     </LinearLayout>
 
     <com.csipsimple.ui.incall.locker.ScreenLocker

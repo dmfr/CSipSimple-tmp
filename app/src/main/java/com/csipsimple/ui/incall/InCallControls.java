@@ -25,10 +25,19 @@
 
 package com.csipsimple.ui.incall;
 
+import static android.graphics.BlendMode.COLOR;
+
+import android.app.Activity;
 import android.content.Context;
+import android.graphics.Color;
+import android.graphics.drawable.Drawable;
 import android.util.AttributeSet;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
+import android.widget.ActionMenuView;
 import android.widget.FrameLayout;
+import android.widget.Toolbar;
 
 import com.csipsimple.R;
 import com.csipsimple.api.MediaState;
@@ -39,10 +48,13 @@ import com.csipsimple.utils.Log;
 /**
  * Manages in call controls not relative to a particular call such as media route
  */
-public class InCallControls extends FrameLayout {
+public class InCallControls extends FrameLayout implements MenuItem.OnMenuItemClickListener {
 
 	private static final String THIS_FILE = "InCallControls";
 	IOnCallActionTrigger onTriggerListener;
+
+	private Activity mActivity ;
+	private boolean mInflated ;
 	
 	private MediaState lastMediaState;
 	private SipCallSession currentCall;
@@ -60,21 +72,34 @@ public class InCallControls extends FrameLayout {
 	
     public InCallControls(Context context, AttributeSet attrs, int style) {
         super(context, attrs, style);
+		mActivity = (Activity)context ;
+
         
         if(!isInEditMode()) {
             supportMultipleCalls = SipConfigManager.getPreferenceBooleanValue(getContext(), SipConfigManager.SUPPORT_MULTIPLE_CALLS, false);
         }
-        
+
         final FrameLayout.LayoutParams layoutParams = new FrameLayout.LayoutParams(LayoutParams.MATCH_PARENT,
                 (int) getResources().getDimension(R.dimen.incall_bottom_bar_height));
 
-    }
+	}
     
 	@Override
 	protected void onFinishInflate() {
 		super.onFinishInflate();
 		// Finalize object style
 		setEnabledMediaButtons(false);
+
+		Toolbar callControlsBar = (Toolbar)findViewById(R.id.inCallControls_bar);
+		Menu callControlsMenu = callControlsBar.getMenu();
+		mActivity.getMenuInflater().inflate(R.menu.in_call_controls_menu, callControlsMenu);
+		for (int i = 0; i < callControlsMenu.size(); i++) {
+			callControlsMenu.getItem(i).setOnMenuItemClickListener(this);
+		}
+		//((ActionMenuView)callControlsMenu).setBackgroundResource(R.drawable.abs__item_background_holo_dark);
+
+		mInflated = true ;
+		setMediaState(lastMediaState) ;
 	}
 
 	
@@ -142,7 +167,115 @@ public class InCallControls extends FrameLayout {
 	}
 	
 	public void setMediaState(MediaState mediaState) {
+		lastMediaState = mediaState;
+		if( !mInflated ) {
+			return ;
+		}
+
+		Toolbar callControlsBar = (Toolbar)findViewById(R.id.inCallControls_bar);
+		Menu callControlsMenu = callControlsBar.getMenu();
+
+		// Update menu
+		// BT
+		boolean enabled, checked;
+		if(lastMediaState == null) {
+			enabled = callOngoing;
+			checked = false;
+		}else {
+			enabled = callOngoing && lastMediaState.canBluetoothSco;
+			checked = lastMediaState.isBluetoothScoOn;
+		}
+		callControlsMenu.findItem(R.id.bluetoothButton).setVisible(enabled).setChecked(checked);
+		if( checked ) {
+			Drawable d = callControlsMenu.findItem(R.id.bluetoothButton).getIcon();
+			d.setTint(Color.RED) ;
+			callControlsMenu.findItem(R.id.bluetoothButton).setIcon(d) ;
+		} else {
+			Drawable d = callControlsMenu.findItem(R.id.bluetoothButton).getIcon();
+			d.setTintList(null); ;
+			callControlsMenu.findItem(R.id.bluetoothButton).setIcon(d) ;
+		}
+
+		// Mic
+		if(lastMediaState == null) {
+			enabled = callOngoing;
+			checked = false;
+		}else {
+			enabled = callOngoing && lastMediaState.canMicrophoneMute;
+			checked = lastMediaState.isMicrophoneMute;
+		}
+		callControlsMenu.findItem(R.id.muteButton).setVisible(enabled).setChecked(checked);
+		if( checked ) {
+			Drawable d = callControlsMenu.findItem(R.id.muteButton).getIcon();
+			d.setTint(Color.RED) ;
+			callControlsMenu.findItem(R.id.muteButton).setIcon(d) ;
+		} else {
+			Drawable d = callControlsMenu.findItem(R.id.muteButton).getIcon();
+			d.setTintList(null); ;
+			callControlsMenu.findItem(R.id.muteButton).setIcon(d) ;
+		}
+
+
+		// Speaker
+		Log.d(THIS_FILE, ">> Speaker " + lastMediaState);
+		if(lastMediaState == null) {
+			enabled = callOngoing;
+			checked = false;
+		}else {
+			Log.d(THIS_FILE, ">> Speaker " + lastMediaState.isSpeakerphoneOn);
+			enabled = callOngoing && lastMediaState.canSpeakerphoneOn;
+			checked = lastMediaState.isSpeakerphoneOn;
+		}
+		callControlsMenu.findItem(R.id.speakerButton).setVisible(enabled).setChecked(checked);
+		if( checked ) {
+			Drawable d = callControlsMenu.findItem(R.id.speakerButton).getIcon();
+			d.setTint(Color.RED) ;
+			callControlsMenu.findItem(R.id.speakerButton).setIcon(d) ;
+		} else {
+			Drawable d = callControlsMenu.findItem(R.id.speakerButton).getIcon();
+			d.setTintList(null); ;
+			callControlsMenu.findItem(R.id.speakerButton).setIcon(d) ;
+		}
+
+		// Add call
+		callControlsMenu.findItem(R.id.addCallButton).setVisible(supportMultipleCalls && callOngoing);
 	}
 
 
+	@Override
+	public boolean onMenuItemClick(MenuItem item) {
+		int id = item.getItemId();
+		if (item.isCheckable()) {
+			item.setChecked(!item.isChecked());
+		}
+		if (id == R.id.bluetoothButton) {
+			if (item.isChecked()) {
+				dispatchTriggerEvent(IOnCallActionTrigger.BLUETOOTH_ON);
+			} else {
+				dispatchTriggerEvent(IOnCallActionTrigger.BLUETOOTH_OFF);
+			}
+			return true;
+		} else if (id == R.id.speakerButton) {
+			if (item.isChecked()) {
+				dispatchTriggerEvent(IOnCallActionTrigger.SPEAKER_ON);
+			} else {
+				dispatchTriggerEvent(IOnCallActionTrigger.SPEAKER_OFF);
+			}
+			return true;
+		} else if (id == R.id.muteButton) {
+			if (item.isChecked()) {
+				dispatchTriggerEvent(IOnCallActionTrigger.MUTE_ON);
+			} else {
+				dispatchTriggerEvent(IOnCallActionTrigger.MUTE_OFF);
+			}
+			return true;
+		} else if (id == R.id.addCallButton) {
+			dispatchTriggerEvent(IOnCallActionTrigger.ADD_CALL);
+			return true;
+		} else if (id == R.id.mediaSettingsButton) {
+			dispatchTriggerEvent(IOnCallActionTrigger.MEDIA_SETTINGS);
+			return true;
+		}
+		return false;
+	}
 }
