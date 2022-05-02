@@ -351,7 +351,7 @@ public class InCallCard extends FrameLayout implements OnClickListener, MenuItem
 
         // Info
         active = !callInfo.isAfterEnded();
-        callActionMenu.findItem(R.id.detailedDisplayCallButton).setVisible(active);
+        callActionMenu.findItem(R.id.detailedDisplayCallButton).setVisible(false);
 
         // Record
         active = CustomDistribution.supportCallRecord();
